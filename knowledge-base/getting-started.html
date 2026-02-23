@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started — Knowledge Base | Technical Relief</title>
+    <meta name="description"
+        content="Learn how to get started with Technical Relief. Create your account, navigate the dashboard, and set up your first website.">
+    <link rel="icon" type="image/png" href="../images/tabicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container flex-between">
+            <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="../images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+
+                <!-- Domains Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="../services/domains-register.html" class="nav-link-trigger">Domains</a>
+                    <div class="dropdown-menu">
+                        <a href="../services/domains-register.html" class="dropdown-item">Register a Domain</a>
+                        <a href="../services/domains-transfer.html" class="dropdown-item">Transfer a Domain</a>
+                        <a href="../services/whois.html" class="dropdown-item">WHOIS Lookup</a>
+                    </div>
+                </div>
+
+                <!-- Hosting Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="../services/web-hosting.html" class="nav-link-trigger">Hosting</a>
+                    <div class="dropdown-menu">
+                        <a href="../services/web-hosting.html" class="dropdown-item">Shared Web Hosting</a>
+                        <a href="../services/wordpress-hosting.html" class="dropdown-item">WordPress Hosting</a>
+                        <a href="../services/email-hosting.html" class="dropdown-item">Email Hosting</a>
+                    </div>
+                </div>
+
+                <!-- VPS Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="../services/vps-hosting.html" class="nav-link-trigger">VPS</a>
+                    <div class="dropdown-menu">
+                        <a href="../services/vps-hosting.html" class="dropdown-item">Linux VPS Hosting</a>
+                        <a href="../services/windows-vps.html" class="dropdown-item">Windows Cloud Servers</a>
+                        <a href="../services/managed-vps.html" class="dropdown-item">Managed VPS Hosting</a>
+                        <a href="../services/cloud-vds.html" class="dropdown-item">Cloud VDS Servers</a>
+                    </div>
+                </div>
+
+                <a href="../services/development.html">Development</a>
+                <a href="../pricing.html">Pricing</a>
+                <a href="../knowledge-base.html" class="active">Knowledge Base</a>
+            </div>
+
+            <div class="nav-right">
+                <div class="dropdown-wrapper">
+                    <a class="btn btn-primary btn-sm dropdown-trigger">Get Started</a>
+                    <div class="dropdown-menu">
+                        <div class="logged-out-only">
+                            <a href="../login.html" class="dropdown-item">Login</a>
+                            <a href="../login.html" class="dropdown-item">Reset Password</a>
+                            <a href="../forgot-password.html" class="dropdown-item">Forgot Password</a>
+                        </div>
+                        <div class="logged-in-only">
+                            <a href="../client-area.html" class="dropdown-item">Client Area</a>
+                            <a href="#" class="dropdown-item">Support System</a>
+                            <a href="#" class="dropdown-item">WHM</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item" data-logout>Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../knowledge-base.html">Knowledge Base</a>
+                <span>/</span>
+                <span class="current">Getting Started</span>
+            </div>
+            <h1>Getting <span class="text-gradient">Started</span></h1>
+            <p>Step-by-step guides to help you get your Technical Relief account and services up and running.</p>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <section class="section light-section">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: 280px 1fr; gap: var(--space-3xl);">
+                <!-- Sidebar Navigation -->
+                <aside class="kb-sidebar">
+                    <div class="kb-sidebar-nav">
+                        <h4>On this page</h4>
+                        <ul>
+                            <li><a href="#account" class="active">Creating Your Account</a></li>
+                            <li><a href="#dashboard">Navigating the Dashboard</a></li>
+                            <li><a href="#connect">Connecting Your Domain</a></li>
+                            <li><a href="#setup">Setting Up Your Website</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Article Content -->
+                <div class="kb-content">
+                    <article id="account" class="kb-article">
+                        <h2>How to Create Your Account</h2>
+                        <p>Creating an account with Technical Relief is the first step towards enterprise-grade managed
+                            hosting. Our registration process is straightforward and secure.</p>
+                        <ol>
+                            <li>Visit the <a href="../register.html">Registration Page</a>.</li>
+                            <li>Enter your full name, email address, and a strong password.</li>
+                            <li>Verify your email address via the link sent to your inbox.</li>
+                            <li>Complete your profile in the client area to enable all services.</li>
+                        </ol>
+                        <div class="kb-note">
+                            <strong>Note:</strong> We recommend enabling 2FA (Two-Factor Authentication) immediately
+                            after your first login for maximum security.
+                        </div>
+                    </article>
+
+                    <article id="dashboard" class="kb-article mt-4xl">
+                        <h2>Navigating the Client Dashboard</h2>
+                        <p>The Technical Relief client dashboard is where you manage all your services, billing, and
+                            support requests from a single interface.</p>
+                        <ul>
+                            <li><strong>Services:</strong> View and manage your active web hosting, VPS, and development
+                                projects.</li>
+                            <li><strong>Domains:</strong> Register new domains or manage DNS records for existing ones.
+                            </li>
+                            <li><strong>Billing:</strong> View invoices, update payment methods, and manage
+                                subscriptions.</li>
+                            <li><strong>Support:</strong> Open support tickets and view our documentation.</li>
+                        </ul>
+                    </article>
+
+                    <article id="connect" class="kb-article mt-4xl">
+                        <h2>Connecting Your Domain to Hosting</h2>
+                        <p>Once you have a service and a domain, you need to link them. We handle most of this for you,
+                            but here is how to check your configuration.</p>
+                        <p>If your domain is registered with us, it will be automatically pointed to your new hosting
+                            service. If it's registered elsewhere, you will need to update your Nameservers:</p>
+                        <code>
+                            ns1.technicalrelief.co.za<br>
+                            ns2.technicalrelief.co.za
+                        </code>
+                    </article>
+
+                    <article id="setup" class="kb-article mt-4xl">
+                        <h2>Setting Up Your First Website</h2>
+                        <p>Whether you're using WordPress or a custom Node.js application, getting your site live is
+                            easy.
+                        </p>
+                        <p>For WordPress installations, use the 1-click installer in your control panel. For custom
+                            applications, our engineering team will assist with the initial deployment as part of our
+                            fully managed service.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="../images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+                    <p>Premium managed hosting and full-stack development services. Everything is set up and managed for
+                        you — enterprise-grade infrastructure with engineering discipline.</p>
+                </div>
+                <div>
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="../services/web-hosting.html">Web Hosting</a></li>
+                        <li><a href="../services/vps-hosting.html">VPS Hosting</a></li>
+                        <li><a href="../services/domains-register.html">Domains</a></li>
+                        <li><a href="../services/development.html">Development</a></li>
+                        <li><a href="../services/web-design.html">Web Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../pricing.html">Pricing</a></li>
+                        <li><a href="../knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="../client-area.html">Client Area</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Technical Relief. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

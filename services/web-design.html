@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Web Design — UI/UX & Figma-Based Design | Technical Relief</title>
+    <meta name="description"
+        content="Conversion-focused UI/UX design with Figma prototyping, responsive layouts, and pixel-perfect implementation. Premium web design that performs.">
+    <link rel="icon" type="image/png" href="../images/tabicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container flex-between">
+            <!--
+        LOGO: Replace the text logo below with your image logo.
+        Option 1: Image logo — uncomment the <img> and remove the text <span> elements
+        Option 2: Keep the text logo as-is
+      -->
+            <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="../images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+
+                <!-- Domains Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="domains-register.html" class="nav-link-trigger">Domains</a>
+                    <div class="dropdown-menu">
+                        <a href="domains-register.html" class="dropdown-item">Register a Domain</a>
+                        <a href="domains-transfer.html" class="dropdown-item">Transfer a Domain</a>
+                        <a href="whois.html" class="dropdown-item">WHOIS Lookup</a>
+                    </div>
+                </div>
+
+                <!-- Hosting Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="web-hosting.html" class="nav-link-trigger">Hosting</a>
+                    <div class="dropdown-menu">
+                        <a href="web-hosting.html" class="dropdown-item">Shared Web Hosting</a>
+                        <a href="wordpress-hosting.html" class="dropdown-item">WordPress Hosting</a>
+                        <a href="email-hosting.html" class="dropdown-item">Email Hosting</a>
+                    </div>
+                </div>
+
+                <!-- VPS Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="vps-hosting.html" class="nav-link-trigger">VPS</a>
+                    <div class="dropdown-menu">
+                        <a href="vps-hosting.html" class="dropdown-item">Linux VPS Hosting</a>
+                        <a href="windows-vps.html" class="dropdown-item">Windows Cloud Servers</a>
+                        <a href="managed-vps.html" class="dropdown-item">Managed VPS Hosting</a>
+                        <a href="cloud-vds.html" class="dropdown-item">Cloud VDS Servers</a>
+                    </div>
+                </div>
+
+                <a href="development.html">Development</a>
+                <a href="../pricing.html">Pricing</a>
+                <a href="../knowledge-base.html">Knowledge Base</a>
+            </div>
+
+            <div class="nav-right">
+                <div class="dropdown-wrapper">
+                    <a class="btn btn-primary btn-sm dropdown-trigger">Get Started</a>
+                    <div class="dropdown-menu">
+                        <!-- Logged Out View -->
+                        <div class="logged-out-only">
+                            <a href="../login.html" class="dropdown-item">Login</a>
+                            <a href="../login.html" class="dropdown-item">Reset Password</a>
+                            <a href="../forgot-password.html" class="dropdown-item">Forgot Password</a>
+                        </div>
+                        <!-- Logged In View -->
+                        <div class="logged-in-only">
+                            <a href="../client-area.html" class="dropdown-item">Client Area</a>
+                            <a href="#" class="dropdown-item">Support System</a>
+                            <a href="#" class="dropdown-item">WHM</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item" data-logout>Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span class="current">Web Design</span>
+            </div>
+            <h1>Premium <span class="text-gradient">Web Design</span></h1>
+            <p>Conversion-focused UI/UX design that looks stunning and performs. Figma-based workflows with
+                pixel-perfect implementation.</p>
+        </div>
+    </div>
+
+    <!-- What We Design -->
+    <section class="section light-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">Design Services</span>
+                <h2>Design That Converts, Not Just Impresses</h2>
+                <p>Every design decision is backed by user research, conversion principles, and business objectives.
+                    Beauty meets function.</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card fade-in">
+                    <div class="card-icon">🎨</div>
+                    <h3>UI/UX Design</h3>
+                    <p>User interface and experience design with wireframes, prototypes, and user flow mapping.
+                        Research-informed, data-driven design decisions.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">📐</div>
+                    <h3>Design Systems</h3>
+                    <p>Comprehensive component libraries, style guides, and design tokens that ensure consistency across
+                        your entire platform.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>Mobile-first design that looks and works perfectly across all devices, from smartphones to
+                        ultra-wide monitors.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🖌️</div>
+                    <h3>Brand Identity</h3>
+                    <p>Logo design, colour palettes, typography selection, and visual identity systems that communicate
+                        your brand values.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🔄</div>
+                    <h3>Redesign & Modernization</h3>
+                    <p>Transform outdated designs into modern, high-performing interfaces. Preserve brand equity while
+                        upgrading the experience.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">✅</div>
+                    <h3>Pixel-Perfect Implementation</h3>
+                    <p>We don't just design — we build. Every design is implemented with exact fidelity to the approved
+                        Figma mockups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-4xl); align-items: center;">
+                <div class="fade-in-left">
+                    <span class="label">Our Process</span>
+                    <h2 class="mt-md" style="color: var(--color-text-white);">From Concept to <span
+                            class="text-gradient">Pixel-Perfect</span></h2>
+                    <p class="mt-lg" style="color: var(--color-text-muted);">Our design process is collaborative,
+                        transparent, and structured. You're involved at every stage.</p>
+
+                    <div class="process-steps mt-xl">
+                        <div class="process-step">
+                            <div>
+                                <h4 style="color: var(--color-text-white);">Research & Discovery</h4>
+                                <p style="color: var(--color-text-muted);">Competitor analysis, user personas, and
+                                    business goal mapping.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div>
+                                <h4 style="color: var(--color-text-white);">Wireframing</h4>
+                                <p style="color: var(--color-text-muted);">Low-fidelity wireframes to establish layout,
+                                    hierarchy, and user flows.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div>
+                                <h4 style="color: var(--color-text-white);">Visual Design</h4>
+                                <p style="color: var(--color-text-muted);">High-fidelity Figma mockups with your brand
+                                    identity applied.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div>
+                                <h4 style="color: var(--color-text-white);">Prototyping & Testing</h4>
+                                <p style="color: var(--color-text-muted);">Interactive prototypes for stakeholder review
+                                    and usability testing.</p>
+                            </div>
+                        </div>
+                        <div class="process-step" style="border-bottom: none;">
+                            <div>
+                                <h4 style="color: var(--color-text-white);">Implementation</h4>
+                                <p style="color: var(--color-text-muted);">Pixel-perfect code implementation with
+                                    responsive behaviour and animations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in-right">
+                    <div
+                        style="background: var(--color-bg-card); border-radius: var(--radius-xl); padding: var(--space-2xl); border: 1px solid var(--color-border-dark);">
+                        <h4 style="color: var(--color-text-white); margin-bottom: var(--space-xl);">Tools We Use</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
+                            <div
+                                style="padding: var(--space-md); background: rgba(255,255,255,0.03); border-radius: var(--radius-md); text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: var(--space-xs);">🎨</div>
+                                <div style="color: var(--color-text-white); font-weight: 600; font-size: 0.9375rem;">
+                                    Figma</div>
+                                <div style="color: var(--color-text-muted); font-size: 0.75rem;">Design & Prototyping
+                                </div>
+                            </div>
+                            <div
+                                style="padding: var(--space-md); background: rgba(255,255,255,0.03); border-radius: var(--radius-md); text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: var(--space-xs);">📸</div>
+                                <div style="color: var(--color-text-white); font-weight: 600; font-size: 0.9375rem;">
+                                    Adobe Suite</div>
+                                <div style="color: var(--color-text-muted); font-size: 0.75rem;">Photo & Graphics</div>
+                            </div>
+                            <div
+                                style="padding: var(--space-md); background: rgba(255,255,255,0.03); border-radius: var(--radius-md); text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: var(--space-xs);">🖼️</div>
+                                <div style="color: var(--color-text-white); font-weight: 600; font-size: 0.9375rem;">
+                                    Framer</div>
+                                <div style="color: var(--color-text-muted); font-size: 0.75rem;">Motion & Animation
+                                </div>
+                            </div>
+                            <div
+                                style="padding: var(--space-md); background: rgba(255,255,255,0.03); border-radius: var(--radius-md); text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: var(--space-xs);">📊</div>
+                                <div style="color: var(--color-text-white); font-weight: 600; font-size: 0.9375rem;">
+                                    Hotjar</div>
+                                <div style="color: var(--color-text-muted); font-size: 0.75rem;">User Analytics</div>
+                            </div>
+                        </div>
+
+                        <div
+                            style="margin-top: var(--space-xl); padding: var(--space-lg); background: rgba(59, 130, 246, 0.08); border-radius: var(--radius-md); border: 1px solid rgba(59, 130, 246, 0.2);">
+                            <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <span style="color: var(--color-accent-light);">💡</span>
+                                <span style="color: var(--color-text-light); font-size: 0.875rem;">All deliverables
+                                    include source Figma files with full edit access.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section navy-section" id="plans">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">Design Packages</span>
+                <h2>Web Design <span class="text-gradient">Packages</span></h2>
+                <p>Transparent pricing with clear deliverables. Every package includes Figma source files and responsive
+                    implementation.</p>
+            </div>
+
+            <div class="grid grid-3 fade-in">
+                <!-- Starter Design -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">Essential</div>
+                    <div class="pricing-price" style="font-size: 2rem;"><span class="currency">R</span>8,000<span
+                            class="period"> once-off</span></div>
+                    <p class="pricing-desc">For small businesses needing a professional, modern web presence.</p>
+                    <ul class="pricing-features">
+                        <li>Up to 5 page designs</li>
+                        <li>Mobile + desktop layouts</li>
+                        <li>Figma source files</li>
+                        <li>2 rounds of revisions</li>
+                        <li>Basic brand guidelines</li>
+                        <li>3-4 week delivery</li>
+                        <li class="disabled">Custom illustrations</li>
+                        <li class="disabled">Animation design</li>
+                        <li class="disabled">Design system</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Request Quote</a>
+                </div>
+
+                <!-- Professional Design -->
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Most Popular</span>
+                    <div class="pricing-tier">Professional</div>
+                    <div class="pricing-price" style="font-size: 2rem;"><span class="currency">R</span>22,000<span
+                            class="period"> once-off</span></div>
+                    <p class="pricing-desc">For businesses that need a conversion-optimized, beautifully crafted digital
+                        presence.</p>
+                    <ul class="pricing-features">
+                        <li>Up to 12 page designs</li>
+                        <li>Full responsive layouts</li>
+                        <li>Interactive Figma prototypes</li>
+                        <li>Unlimited revisions during dev</li>
+                        <li>Complete brand identity</li>
+                        <li>Custom iconography</li>
+                        <li>Animation specifications</li>
+                        <li>5-7 week delivery</li>
+                        <li class="disabled">Full design system</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Request Quote</a>
+                </div>
+
+                <!-- Enterprise Design -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">Enterprise</div>
+                    <div class="pricing-price" style="font-size: 2rem;">Custom<span class="period"> quote</span></div>
+                    <p class="pricing-desc">For enterprises needing comprehensive design systems and ongoing design
+                        support.</p>
+                    <ul class="pricing-features">
+                        <li>Unlimited page designs</li>
+                        <li>Full responsive design system</li>
+                        <li>Component library (Figma)</li>
+                        <li>Interactive prototypes + testing</li>
+                        <li>Complete brand overhaul</li>
+                        <li>Custom illustrations & icons</li>
+                        <li>Motion design specifications</li>
+                        <li>Design documentation</li>
+                        <li>Ongoing design retainer</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="cta-banner fade-in">
+                <h2>Ready for a Design That Performs?</h2>
+                <p>Let's create something beautiful that drives results. Share your vision and we'll provide a tailored
+                    proposal.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-primary btn-lg">Start a Project</a>
+                    <a href="development.html" class="btn btn-secondary btn-lg">Need Development Too?</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="../images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+                    <p>Premium managed hosting and full-stack development services. Everything is set up and managed for
+                        you — enterprise-grade infrastructure with engineering discipline.</p>
+                </div>
+                <div>
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="web-hosting.html">Web Hosting</a></li>
+                        <li><a href="vps-hosting.html">VPS Hosting</a></li>
+                        <li><a href="domains-register.html">Domains</a></li>
+                        <li><a href="development.html">Development</a></li>
+                        <li><a href="web-design.html">Web Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../pricing.html">Pricing</a></li>
+                        <li><a href="../knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="../client-area.html">Client Area</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Technical Relief. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Terms</a>
+                    <a href="../privacy.html">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/auth.js"></script>`n
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

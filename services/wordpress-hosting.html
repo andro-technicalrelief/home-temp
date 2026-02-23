@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Hosting — Fully Managed Shared Hosting | Technical Relief</title>
+    <meta name="description"
+        content="Premium fully managed shared web hosting with automated backups, SSL, enterprise security, and expert support. Plans starting from R399/month.">
+    <link rel="icon" type="image/png" href="../images/tabicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container flex-between">
+            <!--
+        LOGO: Replace the text logo below with your image logo.
+        Option 1: Image logo — uncomment the <img> and remove the text <span> elements
+        Option 2: Keep the text logo as-is
+      -->
+            <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="../images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+
+                <!-- Domains Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="domains-register.html" class="nav-link-trigger">Domains</a>
+                    <div class="dropdown-menu">
+                        <a href="domains-register.html" class="dropdown-item">Register a Domain</a>
+                        <a href="domains-transfer.html" class="dropdown-item">Transfer a Domain</a>
+                        <a href="whois.html" class="dropdown-item">WHOIS Lookup</a>
+                    </div>
+                </div>
+
+                <!-- Hosting Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="web-hosting.html" class="active" class="nav-link-trigger">Hosting</a>
+                    <div class="dropdown-menu">
+                        <a href="web-hosting.html" class="active" class="dropdown-item">Shared Web Hosting</a>
+                        <a href="wordpress-hosting.html" class="dropdown-item">WordPress Hosting</a>
+                        <a href="email-hosting.html" class="dropdown-item">Email Hosting</a>
+                    </div>
+                </div>
+
+                <!-- VPS Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="vps-hosting.html" class="nav-link-trigger">VPS</a>
+                    <div class="dropdown-menu">
+                        <a href="vps-hosting.html" class="dropdown-item">Linux VPS Hosting</a>
+                        <a href="windows-vps.html" class="dropdown-item">Windows Cloud Servers</a>
+                        <a href="managed-vps.html" class="dropdown-item">Managed VPS Hosting</a>
+                        <a href="cloud-vds.html" class="dropdown-item">Cloud VDS Servers</a>
+                    </div>
+                </div>
+
+                <a href="development.html">Development</a>
+                <a href="../pricing.html">Pricing</a>
+                <a href="../knowledge-base.html">Knowledge Base</a>
+            </div>
+
+            <div class="nav-right">
+                <div class="dropdown-wrapper">
+                    <a class="btn btn-primary btn-sm dropdown-trigger">Get Started</a>
+                    <div class="dropdown-menu">
+                        <!-- Logged Out View -->
+                        <div class="logged-out-only">
+                            <a href="../login.html" class="dropdown-item">Login</a>
+                            <a href="../login.html" class="dropdown-item">Reset Password</a>
+                            <a href="../forgot-password.html" class="dropdown-item">Forgot Password</a>
+                        </div>
+                        <!-- Logged In View -->
+                        <div class="logged-in-only">
+                            <a href="../client-area.html" class="dropdown-item">Client Area</a>
+                            <a href="#" class="dropdown-item">Support System</a>
+                            <a href="#" class="dropdown-item">WHM</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item" data-logout>Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span class="current">Web Hosting</span>
+            </div>
+            <h1>Fully Managed <span class="text-gradient">Web Hosting</span></h1>
+            <p>Enterprise-grade shared hosting with zero server management. We handle everything so you can focus on
+                your business.</p>
+        </div>
+    </div>
+
+    <!-- What's Included -->
+    <section class="section light-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">What's Included</span>
+                <h2>Everything You Need, Nothing You Don't</h2>
+                <p>Every hosting plan comes fully loaded with the tools and management you need to run a professional
+                    web presence.</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card fade-in">
+                    <div class="card-icon">🔒</div>
+                    <h3>Free SSL Certificates</h3>
+                    <p>Automatic SSL provisioning and renewal for all domains. Your visitors see the padlock from day
+                        one.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">💾</div>
+                    <h3>Daily Backups</h3>
+                    <p>Automated daily backups with 30-day retention and one-click restore. Your data is always
+                        protected.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">📧</div>
+                    <h3>Professional Email</h3>
+                    <p>Business email hosting with webmail access, IMAP/POP3, spam filtering, and custom domain support.
+                    </p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Malware Protection</h3>
+                    <p>Real-time malware scanning, web application firewall, and automated threat detection and removal.
+                    </p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">⚡</div>
+                    <h3>SSD Storage</h3>
+                    <p>High-performance NVMe SSD storage for lightning-fast page loads and database queries.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">📊</div>
+                    <h3>Control Panel</h3>
+                    <p>Intuitive hosting control panel for managing files, databases, email, DNS, and more — all from
+                        one dashboard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-4xl); align-items: center;">
+                <div class="fade-in-left">
+                    <span class="label">Who It's For</span>
+                    <h2 class="mt-md">Built for Businesses, Not Tinkerers</h2>
+                    <p class="mt-lg">Our managed hosting is designed for businesses and professionals who need reliable,
+                        secure, and fast web hosting without the technical overhead.</p>
+
+                    <div class="mt-xl" style="display: flex; flex-direction: column; gap: var(--space-md);">
+                        <div
+                            style="display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-bg-card); border-radius: var(--radius-md);">
+                            <span style="font-size: 1.5rem;">🏢</span>
+                            <div>
+                                <h4 style="color: var(--color-text-white);">Small & Medium Businesses</h4>
+                                <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">Professional
+                                    web presence without hiring a sysadmin.</p>
+                            </div>
+                        </div>
+                        <div
+                            style="display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-bg-card); border-radius: var(--radius-md);">
+                            <span style="font-size: 1.5rem;">🛒</span>
+                            <div>
+                                <h4 style="color: var(--color-text-white);">E-Commerce Stores</h4>
+                                <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">PCI-ready
+                                    environment with performance optimization.</p>
+                            </div>
+                        </div>
+                        <div
+                            style="display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-bg-card); border-radius: var(--radius-md);">
+                            <span style="font-size: 1.5rem;">📝</span>
+                            <div>
+                                <h4 style="color: var(--color-text-white);">Content Creators & Bloggers</h4>
+                                <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">
+                                    WordPress-optimized hosting with auto-updates.</p>
+                            </div>
+                        </div>
+                        <div
+                            style="display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-bg-card); border-radius: var(--radius-md);">
+                            <span style="font-size: 1.5rem;">🏛️</span>
+                            <div>
+                                <h4 style="color: var(--color-text-white);">Professional Services</h4>
+                                <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">Lawyers,
+                                    accountants, consultants needing a reliable online presence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in-right">
+                    <div style="text-align: center;">
+                        <span class="label">Fully Managed Means</span>
+                        <h3 style="color: var(--color-text-white); margin: var(--space-lg) 0;">We Handle Everything</h3>
+                        <div
+                            style="display: flex; flex-wrap: wrap; gap: var(--space-sm); justify-content: center; margin-top: var(--space-xl);">
+                            <span class="badge badge-success">✓ Server Updates</span>
+                            <span class="badge badge-success">✓ Security Patches</span>
+                            <span class="badge badge-success">✓ SSL Management</span>
+                            <span class="badge badge-success">✓ Backup Automation</span>
+                            <span class="badge badge-success">✓ Performance Tuning</span>
+                            <span class="badge badge-success">✓ Malware Removal</span>
+                            <span class="badge badge-success">✓ DNS Management</span>
+                            <span class="badge badge-success">✓ Email Configuration</span>
+                            <span class="badge badge-success">✓ Uptime Monitoring</span>
+                            <span class="badge badge-success">✓ Incident Response</span>
+                        </div>
+
+                        <div
+                            style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border-dark);">
+                            <div
+                                style="font-size: 0.75rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-sm);">
+                                SLA Guarantee</div>
+                            <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-success);">99.9%</div>
+                            <div style="color: var(--color-text-muted); font-size: 0.875rem;">Uptime Guaranteed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Tiers -->
+    <section class="section navy-section" id="plans">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">WP Optimized Plans</span>
+                <h2>Premium <span class="text-gradient">WordPress Hosting</span></h2>
+                <p>Enterprise-grade performance with manual setup and management. We handle the technical side so you
+                    can focus on your content.</p>
+            </div>
+
+            <div class="grid grid-3 fade-in">
+                <!-- WP Starter -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">WP Starter</div>
+                    <div class="pricing-price"><span class="currency">R</span>399<span class="period">/mo</span></div>
+                    <p class="pricing-desc">Perfect for WP bloggers and personal sites. Managed updates included.</p>
+                    <ul class="pricing-features">
+                        <li>10 GB NVMe SSD Storage</li>
+                        <li>1 WordPress Site</li>
+                        <li>Auto-Updates (Core & Plugins)</li>
+                        <li>Daily Off-site Backups</li>
+                        <li>LiteSpeed Cache Optimization</li>
+                        <li>Free SSL Certificate</li>
+                        <li>✓ Full Expert Migration</li>
+                    </ul>
+                    <a href="../login.html" class="btn btn-outline">Get Started</a>
+                </div>
+
+                <!-- WP Pro -->
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Optimized</span>
+                    <div class="pricing-tier">WP Pro</div>
+                    <div class="pricing-price"><span class="currency">R</span>559<span class="period">/mo</span></div>
+                    <p class="pricing-desc">For high-traffic business blogs and e-commerce stores.</p>
+                    <ul class="pricing-features">
+                        <li>30 GB NVMe SSD Storage</li>
+                        <li>5 WordPress Sites</li>
+                        <li>Premium Security Hardening</li>
+                        <li>Staging Environment</li>
+                        <li>Object Cache (Redis)</li>
+                        <li>Priority WP Support</li>
+                        <li>✓ Hourly Backups</li>
+                    </ul>
+                    <a href="../login.html" class="btn btn-primary">Get Started</a>
+                </div>
+
+                <!-- WP Enterprise -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">WP Enterprise</div>
+                    <div class="pricing-price"><span class="currency">R</span>979<span class="period">/mo</span></div>
+                    <p class="pricing-desc">Mission-critical performance for large scale WP deployments.</p>
+                    <ul class="pricing-features">
+                        <li>100 GB NVMe SSD Storage</li>
+                        <li>Unlimited WP Sites</li>
+                        <li>Dedicated Resources</li>
+                        <li>WAF & Malware Immunity</li>
+                        <li>WP-CLI & SSH Access</li>
+                        <li>Priority Concierge</li>
+                        <li>✓ 90-day Data Retention</li>
+                    </ul>
+                    <a href="../login.html" class="btn btn-outline">Get Started</a>
+                </div>
+            </div>
+            <p class="text-center mt-2xl" style="color: var(--color-text-muted); font-size: 0.875rem;">
+                All prices exclude VAT. Annual billing available with 2 months free.
+                <a href="../pricing.html" style="color: var(--color-accent-light);">Compare all plans →</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="cta-banner fade-in">
+                <h2>Ready to Get Started?</h2>
+                <p>Launch your website on premium managed hosting. No setup fees, free migration assistance, and 30-day
+                    money-back guarantee.</p>
+                <div class="btn-group">
+                    <a href="#plans" class="btn btn-primary btn-lg">Choose a Plan</a>
+                    <a href="../about.html" class="btn btn-secondary btn-lg">Talk to Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="../images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+                    <p>Premium managed hosting and full-stack development services. Everything is set up and managed for
+                        you — enterprise-grade infrastructure with engineering discipline.</p>
+                </div>
+                <div>
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="web-hosting.html">Web Hosting</a></li>
+                        <li><a href="vps-hosting.html">VPS Hosting</a></li>
+                        <li><a href="domains-register.html">Domains</a></li>
+                        <li><a href="development.html">Development</a></li>
+                        <li><a href="web-design.html">Web Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../pricing.html">Pricing</a></li>
+                        <li><a href="../knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="../client-area.html">Client Area</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Technical Relief. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Terms</a>
+                    <a href="../privacy.html">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

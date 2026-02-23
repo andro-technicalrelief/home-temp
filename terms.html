@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | Technical Relief</title>
+    <meta name="description"
+        content="Technical Relief Terms and Conditions — hosting terms, acceptable use policy, SLA, payment terms, and liability. Read before purchasing services.">
+    <link rel="icon" type="image/png" href="images/tabicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container flex-between">
+            <!--
+        LOGO: Replace the text logo below with your image logo.
+        Option 1: Image logo — uncomment the <img> and remove the text <span> elements
+        Option 2: Keep the text logo as-is
+      -->
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+
+                <!-- Domains Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="services/domains-register.html" class="nav-link-trigger">Domains</a>
+                    <div class="dropdown-menu">
+                        <a href="services/domains-register.html" class="dropdown-item">Register a Domain</a>
+                        <a href="services/domains-transfer.html" class="dropdown-item">Transfer a Domain</a>
+                        <a href="services/whois.html" class="dropdown-item">WHOIS Lookup</a>
+                    </div>
+                </div>
+
+                <!-- Hosting Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="services/web-hosting.html" class="nav-link-trigger">Hosting</a>
+                    <div class="dropdown-menu">
+                        <a href="services/web-hosting.html" class="dropdown-item">Shared Web Hosting</a>
+                        <a href="services/wordpress-hosting.html" class="dropdown-item">WordPress Hosting</a>
+                        <a href="services/email-hosting.html" class="dropdown-item">Email Hosting</a>
+                    </div>
+                </div>
+
+                <!-- VPS Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="services/vps-hosting.html" class="nav-link-trigger">VPS</a>
+                    <div class="dropdown-menu">
+                        <a href="services/vps-hosting.html" class="dropdown-item">Linux VPS Hosting</a>
+                        <a href="services/windows-vps.html" class="dropdown-item">Windows Cloud Servers</a>
+                        <a href="services/managed-vps.html" class="dropdown-item">Managed VPS Hosting</a>
+                        <a href="services/cloud-vds.html" class="dropdown-item">Cloud VDS Servers</a>
+                    </div>
+                </div>
+
+                <a href="services/development.html">Development</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="knowledge-base.html">Knowledge Base</a>
+            </div>
+
+            <div class="nav-right">
+                <div class="dropdown-wrapper">
+                    <a class="btn btn-primary btn-sm dropdown-trigger">Get Started</a>
+                    <div class="dropdown-menu">
+                        <!-- Logged Out View -->
+                        <div class="logged-out-only">
+                            <a href="login.html" class="dropdown-item">Login</a>
+                            <a href="login.html" class="dropdown-item">Reset Password</a>
+                            <a href="forgot-password.html" class="dropdown-item">Forgot Password</a>
+                        </div>
+                        <!-- Logged In View -->
+                        <div class="logged-in-only">
+                            <a href="client-area.html" class="dropdown-item">Client Area</a>
+                            <a href="#" class="dropdown-item">Support System</a>
+                            <a href="#" class="dropdown-item">WHM</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item" data-logout>Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span class="current">Terms &amp; Conditions</span>
+            </div>
+            <h1>Terms &amp; <span class="text-gradient">Conditions</span></h1>
+            <p>Effective Date: 1 February 2026 · Last Updated: 20 February 2026</p>
+        </div>
+    </div>
+
+    <!-- Terms Content -->
+    <div class="legal-content">
+
+        <p>These Terms and Conditions ("Terms") govern your use of services provided by Technical Relief ("Company",
+            "we",
+            "us", "our"). By purchasing, accessing, or using any of our services, you agree to be bound by these Terms.
+            If you do not agree, do not use our services.</p>
+
+        <h2>1. Definitions</h2>
+        <ul>
+            <li><strong>"Services"</strong> means any hosting, VPS, domain registration, development, design, or related
+                services provided by Technical Relief.</li>
+            <li><strong>"Client"</strong> means any individual or entity that creates an account and/or purchases
+                Services.</li>
+            <li><strong>"Account"</strong> means the client account created via our client portal (powered by our
+                billing platform).</li>
+            <li><strong>"Content"</strong> means any data, files, databases, applications, or materials hosted on or
+                processed by our infrastructure.</li>
+        </ul>
+
+        <h2>2. Hosting Services</h2>
+        <h3>2.1 Shared Hosting</h3>
+        <p>Shared hosting plans provide allocated resources on shared infrastructure. Resources (storage, bandwidth,
+            email accounts) are defined per plan. Technical Relief reserves the right to limit resource usage that
+            negatively
+            impacts other users on shared infrastructure.</p>
+
+        <h3>2.2 VPS Hosting</h3>
+        <p>VPS plans provide dedicated virtualised resources. Root access is provided for managed VPS plans. Misuse of
+            root access that compromises server stability or security may result in access revocation or service
+            suspension.</p>
+
+        <h3>2.3 Domain Registration</h3>
+        <p>Domain registration is subject to the terms and conditions of the relevant domain registry. Technical Relief
+            acts as
+            a registrar and facilitates registration on behalf of clients. Domain disputes are handled under the
+            applicable dispute resolution policy (e.g., SAIIPL for .co.za domains).</p>
+
+        <h3>2.4 Managed Services</h3>
+        <p>All managed services include: server maintenance, security patching, backup management, and monitoring.
+            Technical Relief manages the infrastructure layer — clients are responsible for their own application code,
+            content, and data.</p>
+
+        <h2>3. Acceptable Use Policy</h2>
+        <p>Clients may not use Technical Relief services for:</p>
+        <ul>
+            <li>Hosting, distributing, or linking to malware, viruses, or malicious code</li>
+            <li>Sending unsolicited bulk email (spam) or phishing</li>
+            <li>Hosting illegal content under South African law</li>
+            <li>Copyright infringement or distribution of pirated material</li>
+            <li>Cryptocurrency mining on shared hosting resources</li>
+            <li>Running open proxies or anonymous relay services</li>
+            <li>Any activity that disrupts, damages, or compromises Technical Relief infrastructure or other users</li>
+            <li>Storing or processing data in violation of POPIA or other applicable privacy legislation</li>
+        </ul>
+        <p>Violation of this policy may result in immediate service suspension or termination without refund.</p>
+
+        <h2>4. Service Level Agreement (SLA)</h2>
+        <h3>4.1 Uptime Guarantee</h3>
+        <p>Technical Relief guarantees 99.9% network uptime for shared hosting and 99.95% for VPS hosting plans,
+            measured
+            monthly. This excludes scheduled maintenance windows, which will be communicated at least 48 hours in
+            advance.</p>
+
+        <h3>4.2 SLA Credits</h3>
+        <p>If monthly uptime falls below the guaranteed percentage, clients may request service credits:</p>
+        <ul>
+            <li>99.0% – 99.9% uptime: 10% monthly credit</li>
+            <li>95.0% – 99.0% uptime: 25% monthly credit</li>
+            <li>Below 95.0% uptime: 50% monthly credit</li>
+        </ul>
+        <p>SLA credits are applied to future invoices and do not constitute a refund. Credits must be requested within
+            30 days of the affected period.</p>
+
+        <h3>4.3 SLA Exclusions</h3>
+        <p>The SLA does not cover: (a) scheduled maintenance; (b) force majeure events; (c) client-caused issues (e.g.,
+            application crashes, exceeding resource limits); (d) third-party service outages beyond Technical Relief's
+            control;
+            (e) DNS propagation delays.</p>
+
+        <h2>5. Payment Terms</h2>
+        <h3>5.1 Billing</h3>
+        <p>Services are billed in South African Rand (ZAR). Prices listed exclude VAT unless stated otherwise. VAT is
+            added at the prevailing rate (currently 15%).</p>
+
+        <h3>5.2 Payment Methods</h3>
+        <p>Payments are processed via PayFast. We accept credit/debit cards, instant EFT, and SnapScan through our
+            payment gateway. Technical Relief does not store payment card details — all payment processing is handled by
+            PayFast.</p>
+
+        <h3>5.3 Recurring Billing</h3>
+        <p>Hosting and VPS services are billed on a recurring basis (monthly or annually). Invoices are generated 7 days
+            before the due date. Services may be suspended if payment is not received within 7 days of the due date.</p>
+
+        <h3>5.4 Refunds</h3>
+        <p>New hosting and VPS customers are eligible for a full refund within 30 days of initial purchase. Domain
+            registrations are non-refundable. Development and design services are refundable according to the project
+            agreement terms. SLA credits are not refundable in cash.</p>
+
+        <h2>6. Suspension & Termination</h2>
+        <h3>6.1 Suspension</h3>
+        <p>Technical Relief may suspend services for: (a) non-payment; (b) violation of the Acceptable Use Policy; (c)
+            security
+            threats originating from client infrastructure; (d) court orders or legal requirements.</p>
+
+        <h3>6.2 Termination by Client</h3>
+        <p>Clients may cancel services at any time via the client portal. Cancellations take effect at the end of the
+            current billing period. No pro-rata refunds are provided for partial billing periods.</p>
+
+        <h3>6.3 Termination by Technical Relief</h3>
+        <p>Technical Relief may terminate services with 30 days written notice for any reason. In cases of serious
+            policy
+            violations, termination may be immediate. Upon termination, clients have 14 days to download their data.
+            After 14 days, data is permanently deleted.</p>
+
+        <h2>7. Development Project Terms</h2>
+        <h3>7.1 Project Scope</h3>
+        <p>Development and design projects are governed by individual project agreements that define scope,
+            deliverables, timeline, and payment milestones. Changes to agreed scope require written approval and may
+            affect pricing and timeline.</p>
+
+        <h3>7.2 Intellectual Property</h3>
+        <p>Upon full payment, clients receive full ownership of custom code, designs, and deliverables produced
+            specifically for their project. Technical Relief retains the right to use generic components, frameworks,
+            and tools
+            that are not specific to the client's project.</p>
+
+        <h3>7.3 Third-Party Components</h3>
+        <p>Projects may include open-source or third-party components subject to their own licences. Technical Relief
+            will
+            document all third-party dependencies and their respective licences.</p>
+
+        <h2>8. Limitation of Liability</h2>
+        <h3>8.1 Service Liability</h3>
+        <p>Technical Relief's total liability for any claim arising from the use of services shall not exceed the amount
+            paid
+            by the client for the affected service in the 12-month period immediately preceding the claim.</p>
+
+        <h3>8.2 Exclusion of Damages</h3>
+        <p>Technical Relief shall not be liable for: (a) indirect, incidental, consequential, or punitive damages; (b)
+            loss of
+            data, revenue, profits, or business opportunities; (c) damages resulting from client's failure to maintain
+            adequate backups of their own data beyond what Technical Relief provides; (d) damages resulting from force
+            majeure
+            events.</p>
+
+        <h3>8.3 Data Responsibility</h3>
+        <p>While Technical Relief provides automated backups as part of managed services, clients are responsible for
+            maintaining their own independent backups. Technical Relief provides backups as a convenience and does not
+            guarantee backup integrity or availability under all circumstances.</p>
+
+        <h2>9. General Provisions</h2>
+        <h3>9.1 Governing Law</h3>
+        <p>These Terms are governed by the laws of the Republic of South Africa. Any disputes shall be resolved through
+            the Magistrate's Court or High Court of South Africa, as applicable.</p>
+
+        <h3>9.2 Amendments</h3>
+        <p>Technical Relief reserves the right to modify these Terms at any time. Material changes will be communicated
+            via
+            email and updated on this page. Continued use of services after notification of changes constitutes
+            acceptance.</p>
+
+        <h3>9.3 Severability</h3>
+        <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall
+            continue in full force and effect.</p>
+
+        <h3>9.4 Contact</h3>
+        <p>For questions about these Terms, contact us at: <a
+                href="mailto:legal@technicalrelief.co.za">legal@technicalrelief.co.za</a></p>
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+                    <p>Premium managed hosting and full-stack development services. Everything is set up and managed for
+                        you — enterprise-grade infrastructure with engineering discipline.</p>
+                </div>
+                <div>
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="services/web-hosting.html">Web Hosting</a></li>
+                        <li><a href="services/vps-hosting.html">VPS Hosting</a></li>
+                        <li><a href="services/domains-register.html">Domains</a></li>
+                        <li><a href="services/development.html">Development</a></li>
+                        <li><a href="services/web-design.html">Web Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="client-area.html">Client Area</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Technical Relief. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>`n
+    <script src="js/script.js"></script>
+</body>
+
+</html>

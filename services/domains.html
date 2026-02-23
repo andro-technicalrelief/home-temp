@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Registration & Management | Technical Relief</title>
+    <meta name="description"
+        content="Register and manage your domains with DNS management, WHOIS privacy, and automated renewals. All major TLDs supported.">
+    <link rel="icon" type="image/png" href="../images/tabicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container flex-between">
+            <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="../images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+
+                <!-- Domains Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="domains-register.html" class="active" class="nav-link-trigger">Domains</a>
+                    <div class="dropdown-menu">
+                        <a href="domains-register.html" class="active" class="dropdown-item">Register a Domain</a>
+                        <a href="domains-transfer.html" class="dropdown-item">Transfer a Domain</a>
+                        <a href="whois.html" class="dropdown-item">WHOIS Lookup</a>
+                    </div>
+                </div>
+
+                <!-- Hosting Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="web-hosting.html" class="nav-link-trigger">Hosting</a>
+                    <div class="dropdown-menu">
+                        <a href="web-hosting.html" class="dropdown-item">Shared Web Hosting</a>
+                        <a href="wordpress-hosting.html" class="dropdown-item">WordPress Hosting</a>
+                        <a href="email-hosting.html" class="dropdown-item">Email Hosting</a>
+                    </div>
+                </div>
+
+                <!-- VPS Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="vps-hosting.html" class="nav-link-trigger">VPS</a>
+                    <div class="dropdown-menu">
+                        <a href="vps-hosting.html" class="dropdown-item">Linux VPS Hosting</a>
+                        <a href="windows-vps.html" class="dropdown-item">Windows Cloud Servers</a>
+                        <a href="managed-vps.html" class="dropdown-item">Managed VPS Hosting</a>
+                        <a href="cloud-vds.html" class="dropdown-item">Cloud VDS Servers</a>
+                    </div>
+                </div>
+
+                <a href="development.html">Development</a>
+
+                <a href="../pricing.html">Pricing</a>
+                <a href="../knowledge-base.html">Knowledge Base</a>
+            </div>
+
+            <div class="nav-right">
+                <div class="dropdown-wrapper">
+                    <a class="btn btn-primary btn-sm dropdown-trigger">Get Started</a>
+                    <div class="dropdown-menu">
+                        <!-- Logged Out View -->
+                        <div class="logged-out-only">
+                            <a href="../login.html" class="dropdown-item">Login</a>
+                            <a href="../login.html" class="dropdown-item">Reset Password</a>
+                            <a href="../forgot-password.html" class="dropdown-item">Forgot Password</a>
+                        </div>
+                        <!-- Logged In View -->
+                        <div class="logged-in-only">
+                            <a href="../client-area.html" class="dropdown-item">Client Area</a>
+                            <a href="#" class="dropdown-item">Support System</a>
+                            <a href="#" class="dropdown-item">WHM</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item" data-logout>Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span class="current">Domain Registration</span>
+            </div>
+            <h1>Domain Registration &amp; <span class="text-gradient">Management</span></h1>
+            <p>Secure your online identity with premium domain registration, DNS management, and automated renewals.</p>
+        </div>
+    </div>
+
+    <!-- Domain Search Section -->
+    <section class="domain-search-hero">
+        <div class="container">
+            <div class="fade-in" style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: 2.5rem; margin-bottom: var(--space-md);">Find Your Perfect <span
+                        class="text-gradient">Domain Name</span></h2>
+                <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: var(--space-2xl);">
+                    Register your domain with Technical Relief and get free DNS management, WHOIS privacy, and
+                    monitoring.</p>
+
+                <div
+                    style="display: flex; gap: var(--space-sm); background: rgba(255,255,255,0.03); padding: var(--space-sm); border-radius: var(--radius-lg); border: 1px solid var(--color-border-dark);">
+                    <input type="text" placeholder="Enter your domain name (e.g. yourbusiness.co.za)"
+                        style="flex: 1; padding: 1rem 1.5rem; background: transparent; border: none; color: var(--color-text-white); font-size: 1.125rem; outline: none;">
+                    <button class="btn btn-primary" style="padding: 0 2rem;">Search</button>
+                </div>
+
+                <div class="tld-grid fade-in">
+                    <div class="tld-card">
+                        <div class="tld-name">.co.za</div>
+                        <div class="tld-price">R109.99 <span>/yr</span></div>
+                        <a href="#" class="btn btn-sm btn-outline">Register</a>
+                    </div>
+                    <div class="tld-card">
+                        <div class="tld-name">.com</div>
+                        <div class="tld-price">R189.99 <span>/yr</span></div>
+                        <a href="#" class="btn btn-sm btn-outline">Register</a>
+                    </div>
+                    <div class="tld-card">
+                        <div class="tld-name">.africa</div>
+                        <div class="tld-price">R299.99 <span>/yr</span></div>
+                        <a href="#" class="btn btn-sm btn-outline">Register</a>
+                    </div>
+                    <div class="tld-card">
+                        <div class="tld-name">.io</div>
+                        <div class="tld-price">R649.99 <span>/yr</span></div>
+                        <a href="#" class="btn btn-sm btn-outline">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Pricing -->
+    <section class="section navy-section" id="pricing">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">Full Pricing</span>
+                <h2>Domain <span class="text-gradient">Extension List</span></h2>
+            </div>
+            <div class="fade-in" style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>TLD</th>
+                            <th>Registration</th>
+                            <th>Renewal</th>
+                            <th>Transfer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>.co.za</strong></td>
+                            <td>R109.99/yr</td>
+                            <td>R109.99/yr</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td><strong>.com</strong></td>
+                            <td>R189.99/yr</td>
+                            <td>R219.99/yr</td>
+                            <td>R189.99/yr</td>
+                        </tr>
+                        <tr>
+                            <td><strong>.net</strong></td>
+                            <td>R199.99/yr</td>
+                            <td>R239.99/yr</td>
+                            <td>R199.99/yr</td>
+                        </tr>
+                        <tr>
+                            <td><strong>.org</strong></td>
+                            <td>R189.99/yr</td>
+                            <td>R229.99/yr</td>
+                            <td>R189.99/yr</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <p class="text-center mt-xl" style="color: var(--color-text-muted); font-size: 0.875rem;">
+        All prices exclude VAT. Many more TLDs available — search above to check
+        availability and pricing.
+    </p>
+    </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="cta-banner fade-in">
+                <h2>Secure Your Domain Today</h2>
+                <p>Register your perfect domain name and build your online presence with premium
+                    managed hosting.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-primary btn-lg">Register a Domain</a>
+                    <a href="web-hosting.html" class="btn btn-secondary btn-lg">Add Hosting</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="../images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+                    <p>Premium managed hosting and full-stack development services. Everything is set up and managed for
+                        you — enterprise-grade infrastructure with engineering discipline.</p>
+                </div>
+                <div>
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="web-hosting.html">Web Hosting</a></li>
+                        <li><a href="vps-hosting.html">VPS Hosting</a></li>
+                        <li><a href="domains-register.html">Domains</a></li>
+                        <li><a href="development.html">Development</a></li>
+                        <li><a href="web-design.html">Web Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../pricing.html">Pricing</a></li>
+                        <li><a href="../knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="../client-area.html">Client Area</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Technical Relief. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Terms</a>
+                    <a href="../privacy.html">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

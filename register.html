@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account — Get Started | Technical Relief</title>
+    <meta name="description"
+        content="Create your Technical Relief account to get started with managed hosting, VPS, domain registration, and development services.">
+    <link rel="icon" type="image/png" href="images/tabicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-2xl);
+            background: var(--color-bg-dark);
+            position: relative;
+        }
+
+        .auth-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 30% 20%, var(--color-accent-glow), transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(99, 102, 241, 0.08), transparent 50%);
+            pointer-events: none;
+        }
+
+        .auth-card {
+            position: relative;
+            z-index: 1;
+            max-width: 480px;
+            width: 100%;
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border-dark);
+            border-radius: var(--radius-xl);
+            padding: var(--space-3xl);
+            text-align: center;
+        }
+
+        .auth-card .logo {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-2xl);
+            display: inline-block;
+        }
+
+        .auth-card h1 {
+            font-size: 1.75rem;
+            color: var(--color-text-white);
+            margin-bottom: var(--space-sm);
+        }
+
+        .auth-card .subtitle {
+            color: var(--color-text-muted);
+            font-size: 0.9375rem;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .auth-notice {
+            padding: var(--space-lg);
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-xl);
+            text-align: left;
+        }
+
+        .auth-notice p {
+            color: var(--color-text-light);
+            font-size: 0.875rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .auth-btn {
+            display: block;
+            width: 100%;
+            padding: var(--space-md) var(--space-xl);
+            background: var(--color-accent);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: var(--font-body);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .auth-btn:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px var(--color-accent-glow);
+        }
+
+        .auth-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .auth-links {
+            font-size: 0.875rem;
+        }
+
+        .auth-links a {
+            color: var(--color-accent-light);
+            text-decoration: none;
+        }
+
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+
+        .register-benefits {
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-xl);
+            border-top: 1px solid var(--color-border-dark);
+            text-align: left;
+        }
+
+        .register-benefits h3 {
+            color: var(--color-text-white);
+            font-size: 1rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+        }
+
+        .benefit-item::before {
+            content: '✓';
+            color: var(--color-success);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+
+            <h1>Get Started</h1>
+            <p class="subtitle">Create your account and choose a plan</p>
+
+            <form id="registerForm" class="auth-form" style="text-align: left;">
+                <div class="grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-bottom: var(--space-md);">
+                    <div class="form-group">
+                        <label for="firstName"
+                            style="display: block; color: var(--color-text-light); font-size: 0.8125rem; margin-bottom: var(--space-xs);">First
+                            Name</label>
+                        <input type="text" id="firstName" required placeholder="John"
+                            style="width: 100%; padding: var(--space-sm) var(--space-md); background: rgba(255,255,255,0.05); border: 1px solid var(--color-border-dark); border-radius: var(--radius-md); color: white; font-family: var(--font-body);">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName"
+                            style="display: block; color: var(--color-text-light); font-size: 0.8125rem; margin-bottom: var(--space-xs);">Last
+                            Name</label>
+                        <input type="text" id="lastName" required placeholder="Doe"
+                            style="width: 100%; padding: var(--space-sm) var(--space-md); background: rgba(255,255,255,0.05); border: 1px solid var(--color-border-dark); border-radius: var(--radius-md); color: white; font-family: var(--font-body);">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: var(--space-md);">
+                    <label for="email"
+                        style="display: block; color: var(--color-text-light); font-size: 0.8125rem; margin-bottom: var(--space-xs);">Email
+                        Address</label>
+                    <input type="email" id="email" required placeholder="john@example.com"
+                        style="width: 100%; padding: var(--space-sm) var(--space-md); background: rgba(255,255,255,0.05); border: 1px solid var(--color-border-dark); border-radius: var(--radius-md); color: white; font-family: var(--font-body);">
+                </div>
+                <div class="form-group" style="margin-bottom: var(--space-xl);">
+                    <label for="password"
+                        style="display: block; color: var(--color-text-light); font-size: 0.8125rem; margin-bottom: var(--space-xs);">Password</label>
+                    <input type="password" id="password" required placeholder="Min. 8 characters"
+                        style="width: 100%; padding: var(--space-sm) var(--space-md); background: rgba(255,255,255,0.05); border: 1px solid var(--color-border-dark); border-radius: var(--radius-md); color: white; font-family: var(--font-body);">
+                </div>
+
+                <div id="registerMessage" style="margin-bottom: var(--space-lg); font-size: 0.875rem; display: none;">
+                </div>
+
+                <button type="submit" id="submitBtn" class="auth-btn">Create Your Account →</button>
+            </form>
+
+            <div class="auth-links">
+                <span style="color: var(--color-text-muted);">Already have an account?</span>
+                <a href="login.html">Sign In</a>
+            </div>
+
+            <div class="register-benefits">
+                <h3>What You Get</h3>
+                <div class="benefit-item">Full setup — hosting, email, SSL, DNS all configured for you</div>
+                <div class="benefit-item">Secure dashboard with 2FA for account protection</div>
+                <div class="benefit-item">Expert support from real engineers</div>
+                <div class="benefit-item">30-day money-back guarantee on all plans</div>
+                <div class="benefit-item">No hidden fees, no surprises</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+                    <p>Premium managed hosting and full-stack development services. Everything is set up and managed for
+                        you — enterprise-grade infrastructure with engineering discipline.</p>
+                </div>
+                <div>
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="services/web-hosting.html">Web Hosting</a></li>
+                        <li><a href="services/vps-hosting.html">VPS Hosting</a></li>
+                        <li><a href="services/domains-register.html">Domains</a></li>
+                        <li><a href="services/development.html">Development</a></li>
+                        <li><a href="services/web-design.html">Web Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="client-area.html">Client Area</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Technical Relief. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            const messageEl = document.getElementById('registerMessage');
+
+            const data = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            submitBtn.textContent = 'Creating Account...';
+            submitBtn.disabled = true;
+            messageEl.style.display = 'none';
+
+            try {
+                await Auth.register({ ...data, fullName: `${data.firstName} ${data.lastName}` });
+                messageEl.style.color = 'var(--color-success)';
+                messageEl.style.display = 'block';
+                messageEl.textContent = 'Account created! Logging you in...';
+                setTimeout(() => {
+                    window.location.href = 'client-area.html';
+                }, 1200);
+            } catch (err) {
+                submitBtn.textContent = 'Create Your Account →';
+                submitBtn.disabled = false;
+                messageEl.style.color = '#ef4444';
+                messageEl.style.display = 'block';
+                messageEl.textContent = err.message || 'Registration failed.';
+            }
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

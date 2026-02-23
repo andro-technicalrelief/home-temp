@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Relief — Premium Managed Hosting & Full-Stack Development</title>
+  <meta name="description"
+    content="Enterprise-grade managed web hosting, VPS, domain registration, and full-stack development services. Everything is fully managed and set up for you.">
+  <meta name="keywords"
+    content="managed hosting, VPS hosting, web development, domain registration, South Africa hosting, premium hosting, technical relief">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Technical Relief — Premium Managed Hosting & Full-Stack Development">
+  <meta property="og:description"
+    content="Enterprise-grade managed web hosting, VPS, domain registration, and full-stack development services. Everything is fully managed and set up for you.">
+  <meta property="og:type" content="website">
+
+  <!-- FAVICON: Drop your favicon image into the /images folder and update the href below -->
+  <link rel="icon" type="image/png" href="images/tabicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════════════════
+       NAVIGATION
+       Shared across all pages — fixed, transparent → glass on scroll
+       New order: Home, About, Domains, Hosting, VPS, Development, Pricing, Knowledge Base
+       ════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container flex-between">
+      <!--
+        LOGO: Replace the text logo below with your image logo.
+        Option 1: Image logo — uncomment the <img> and remove the text <span> elements
+        Option 2: Keep the text logo as-is
+      -->
+      <a href="index.html" class="logo active" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+
+        <!-- Domains Dropdown -->
+        <div class="nav-item has-dropdown">
+          <a href="services/domains-register.html" class="nav-link-trigger">Domains</a>
+          <div class="dropdown-menu">
+            <a href="services/domains-register.html" class="dropdown-item">Register a Domain</a>
+            <a href="services/domains-transfer.html" class="dropdown-item">Transfer a Domain</a>
+            <a href="services/whois.html" class="dropdown-item">WHOIS Lookup</a>
+          </div>
+        </div>
+
+        <!-- Hosting Dropdown -->
+        <div class="nav-item has-dropdown">
+          <a href="services/web-hosting.html" class="nav-link-trigger">Hosting</a>
+          <div class="dropdown-menu">
+            <a href="services/web-hosting.html" class="dropdown-item">Shared Web Hosting</a>
+            <a href="services/wordpress-hosting.html" class="dropdown-item">WordPress Hosting</a>
+            <a href="services/email-hosting.html" class="dropdown-item">Email Hosting</a>
+          </div>
+        </div>
+
+        <!-- VPS Dropdown -->
+        <div class="nav-item has-dropdown">
+          <a href="services/vps-hosting.html" class="nav-link-trigger">VPS</a>
+          <div class="dropdown-menu">
+            <a href="services/vps-hosting.html" class="dropdown-item">Linux VPS Hosting</a>
+            <a href="services/windows-vps.html" class="dropdown-item">Windows Cloud Servers</a>
+            <a href="services/managed-vps.html" class="dropdown-item">Managed VPS Hosting</a>
+            <a href="services/cloud-vds.html" class="dropdown-item">Cloud VDS Servers</a>
+          </div>
+        </div>
+
+        <a href="services/development.html">Development</a>
+
+        <a href="pricing.html">Pricing</a>
+        <a href="knowledge-base.html">Knowledge Base</a>
+      </div>
+
+      <div class="nav-right">
+        <div class="dropdown-wrapper">
+          <a class="btn btn-primary btn-sm dropdown-trigger">Get Started</a>
+          <div class="dropdown-menu">
+            <!-- Logged Out View -->
+            <div class="logged-out-only">
+              <a href="login.html" class="dropdown-item">Login</a>
+              <a href="login.html" class="dropdown-item">Reset Password</a>
+              <a href="forgot-password.html" class="dropdown-item">Forgot Password</a>
+            </div>
+            <!-- Logged In View -->
+            <div class="logged-in-only">
+              <a href="client-area.html" class="dropdown-item">Client Area</a>
+              <a href="#" class="dropdown-item">Support System</a>
+              <a href="#" class="dropdown-item">WHM</a>
+              <a href="#" class="dropdown-item">Settings</a>
+              <a href="#" class="dropdown-item">Sign Out</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-toggle" id="navToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════
+       HERO SECTION
+       Emphasise fully managed — everything set up for the client
+       ════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-grid"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="label mb-md" style="display:inline-block;">100% Fully Managed — We Set It All Up For You</span>
+        <h1><span class="text-gradient">The technical peace of mind</span> you have been waiting for.</h1>
+        <p>We don't just host your website — we engineer, manage, and scale your entire digital infrastructure. From
+          high-performance hosting to custom application development. <strong>Everything is set up, configured, and
+            managed for you — zero technical knowledge required.</strong></p>
+        <div class="btn-group">
+          <a href="pricing.html" class="btn btn-primary btn-lg">View Plans &amp; Pricing</a>
+          <a href="about.html" class="btn btn-secondary btn-lg">How We Work</a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-value">99.9%</div>
+            <div class="hero-stat-label">Guaranteed Uptime</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">&lt;200ms</div>
+            <div class="hero-stat-label">Avg Response Time</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">Expert</div>
+            <div class="hero-stat-label">Engineering Support</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">100%</div>
+            <div class="hero-stat-label">Fully Managed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       SERVICES OVERVIEW
+       Emphasise that everything is managed & set up for the user
+       ════════════════════════════════════════════════════════ -->
+  <section class="section dark-section" id="services">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="label">Our Fully Managed Services</span>
+        <h2>Everything You Need — <span class="text-gradient">Set Up &amp; Managed For You</span></h2>
+        <p>From domain registration to custom application development — we provide the complete digital infrastructure
+          stack. Every service is fully managed, so you never have to worry about the technical side.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Web Hosting -->
+        <div class="card fade-in">
+          <div class="card-icon">🖥️</div>
+          <h3>Web Hosting</h3>
+          <p>Fully managed shared hosting with automated backups, SSL certificates, and enterprise-grade security.
+            <strong>We set everything up — you just send us your content.</strong>
+          </p>
+          <a href="#hosting" class="btn btn-ghost" style="margin-top: var(--space-lg); padding-left: 0;">Learn More
+            →</a>
+        </div>
+
+        <!-- VPS Hosting -->
+        <div class="card fade-in">
+          <div class="card-icon">⚡</div>
+          <h3>VPS Hosting</h3>
+          <p>Managed virtual private servers optimized for Node.js, Next.js, and modern frameworks. Root access with
+            full management included. <strong>We configure the entire server for you.</strong></p>
+          <a href="#vps" class="btn btn-ghost" style="margin-top: var(--space-lg); padding-left: 0;">Learn More →</a>
+        </div>
+
+        <!-- Domain Registration -->
+        <div class="card fade-in">
+          <div class="card-icon">🌐</div>
+          <h3>Domain Registration</h3>
+          <p>Register and manage your domains with DNS management, WHOIS privacy, and automated renewals. <strong>We
+              handle all DNS configuration and pointing.</strong></p>
+          <a href="#domains" class="btn btn-ghost" style="margin-top: var(--space-lg); padding-left: 0;">Learn More
+            →</a>
+        </div>
+
+        <!-- Full-Stack Development -->
+        <div class="card fade-in">
+          <div class="card-icon">💻</div>
+          <h3>Full-Stack Development</h3>
+          <p>Custom web applications, APIs, and enterprise systems built with modern technologies. From concept to
+            deployment — <strong>we build it, deploy it, and maintain it.</strong></p>
+          <a href="#development" class="btn btn-ghost" style="margin-top: var(--space-lg); padding-left: 0;">Learn More
+            →</a>
+        </div>
+
+        <!-- Web Design -->
+        <div class="card fade-in">
+          <div class="card-icon">🎨</div>
+          <h3>Premium Web Design</h3>
+          <p>Conversion-focused UI/UX design with Figma prototyping, responsive layouts, and pixel-perfect
+            implementation. <strong>Design that performs — built and deployed for you.</strong></p>
+          <a href="services/web-design.html" class="btn btn-ghost"
+            style="margin-top: var(--space-lg); padding-left: 0;">Learn More →</a>
+        </div>
+
+        <!-- Managed Everything -->
+        <div class="card fade-in">
+          <div class="card-icon">🛡️</div>
+          <h3>We Handle Everything</h3>
+          <p>Every service is fully managed — server maintenance, security updates, performance optimization, email
+            setup, SSL, DNS, and monitoring. <strong>You focus on your business. We handle the tech.</strong></p>
+          <a href="about.html" class="btn btn-ghost" style="margin-top: var(--space-lg); padding-left: 0;">Learn More
+            →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       WHY FULLY MANAGED
+       Heavy emphasis on zero-effort for the client
+       ════════════════════════════════════════════════════════ -->
+  <section class="section light-section" id="why-managed">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-4xl); align-items: center;">
+        <div class="fade-in-left">
+          <span class="label">Why Fully Managed?</span>
+          <h2 class="mt-md">We Set It Up. We Manage It. <em>You Relax.</em></h2>
+          <p class="mt-lg" style="font-size: 1.125rem; color: var(--color-text-body);">
+            You shouldn't have to worry about server patches, SSL renewals, backup schedules, email configuration, or
+            security monitoring. That's our job — and we do it all for you, from day one.
+          </p>
+          <p style="color: var(--color-text-body);">
+            Every plan includes proactive management — we set up your hosting, configure your email, install your SSL,
+            point your domain, and monitor your infrastructure. You never have to touch a terminal or learn any
+            technical skills.
+          </p>
+
+          <div class="mt-2xl">
+            <div class="feature-item mb-xl">
+              <div class="feature-number">01</div>
+              <div>
+                <h4>Complete Setup</h4>
+                <p>We handle the full setup — hosting, email, SSL, DNS, databases, and deployment. You get a ready-to-go
+                  system from day one.</p>
+              </div>
+            </div>
+            <div class="feature-item mb-xl">
+              <div class="feature-number">02</div>
+              <div>
+                <h4>Proactive Monitoring</h4>
+                <p>Real-time server monitoring with automated alerts and response. Issues resolved before they impact
+                  your users.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-number">03</div>
+              <div>
+                <h4>Ongoing Management</h4>
+                <p>Security updates, performance optimization, backups, and maintenance — all handled continuously by
+                  our team.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-right">
+          <div
+            style="background: linear-gradient(135deg, var(--color-bg-dark), var(--color-bg-navy)); border-radius: var(--radius-xl); padding: var(--space-2xl); position: relative; overflow: hidden;">
+            <div
+              style="position: absolute; top: -30%; right: -30%; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, var(--color-accent-glow), transparent 70%); pointer-events: none;">
+            </div>
+            <div style="position: relative; z-index: 1;">
+              <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xl);">
+                <span class="badge badge-success">● Live</span>
+                <span style="color: var(--color-text-muted); font-size: 0.875rem;">System Dashboard</span>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
+                <div
+                  style="background: rgba(255,255,255,0.05); border-radius: var(--radius-md); padding: var(--space-lg);">
+                  <div
+                    style="font-size: 0.75rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em;">
+                    Uptime</div>
+                  <div
+                    style="font-size: 1.75rem; font-weight: 800; color: var(--color-success); margin-top: var(--space-xs);">
+                    99.98%</div>
+                </div>
+                <div
+                  style="background: rgba(255,255,255,0.05); border-radius: var(--radius-md); padding: var(--space-lg);">
+                  <div
+                    style="font-size: 0.75rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em;">
+                    Response</div>
+                  <div
+                    style="font-size: 1.75rem; font-weight: 800; color: var(--color-accent-light); margin-top: var(--space-xs);">
+                    142ms</div>
+                </div>
+                <div
+                  style="background: rgba(255,255,255,0.05); border-radius: var(--radius-md); padding: var(--space-lg);">
+                  <div
+                    style="font-size: 0.75rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em;">
+                    Threats Blocked</div>
+                  <div
+                    style="font-size: 1.75rem; font-weight: 800; color: var(--color-warning); margin-top: var(--space-xs);">
+                    12.4K</div>
+                </div>
+                <div
+                  style="background: rgba(255,255,255,0.05); border-radius: var(--radius-md); padding: var(--space-lg);">
+                  <div
+                    style="font-size: 0.75rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em;">
+                    Backups</div>
+                  <div
+                    style="font-size: 1.75rem; font-weight: 800; color: var(--color-success); margin-top: var(--space-xs);">
+                    Daily</div>
+                </div>
+              </div>
+
+              <div
+                style="margin-top: var(--space-xl); padding: var(--space-md); background: rgba(16, 185, 129, 0.1); border-radius: var(--radius-md); border: 1px solid rgba(16, 185, 129, 0.2);">
+                <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                  <span style="color: var(--color-success);">✓</span>
+                  <span style="color: var(--color-text-light); font-size: 0.875rem;">All systems operational — Last
+                    checked 2 min ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       INFRASTRUCTURE TRUST
+       ════════════════════════════════════════════════════════ -->
+  <section class="section navy-section" id="infrastructure">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="label">Our Infrastructure</span>
+        <h2>Enterprise Infrastructure, <span class="text-gradient">Thoughtfully Managed</span></h2>
+        <p>We partner with tier-1 infrastructure providers and layer our own engineering, monitoring, and management on
+          top — so you get enterprise-grade reliability without any complexity on your end.</p>
+      </div>
+
+      <div class="grid grid-4 fade-in">
+        <div style="text-align: center; padding: var(--space-xl);">
+          <div style="font-size: 2.5rem; margin-bottom: var(--space-md);">🏗️</div>
+          <h4 style="color: var(--color-text-white); margin-bottom: var(--space-sm);">Tier-1 Data Centres</h4>
+          <p style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0;">Enterprise-grade facilities with
+            redundant power, cooling, and network connectivity.</p>
+        </div>
+        <div style="text-align: center; padding: var(--space-xl);">
+          <div style="font-size: 2.5rem; margin-bottom: var(--space-md);">🔒</div>
+          <h4 style="color: var(--color-text-white); margin-bottom: var(--space-sm);">Defence in Depth</h4>
+          <p style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0;">Multi-layer security with WAF, IDS,
+            encryption at rest, and automated threat response.</p>
+        </div>
+        <div style="text-align: center; padding: var(--space-xl);">
+          <div style="font-size: 2.5rem; margin-bottom: var(--space-md);">🔄</div>
+          <h4 style="color: var(--color-text-white); margin-bottom: var(--space-sm);">Automated Backups</h4>
+          <p style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0;">Daily automated backups with
+            off-site replication and one-click restore capability.</p>
+        </div>
+        <div style="text-align: center; padding: var(--space-xl);">
+          <div style="font-size: 2.5rem; margin-bottom: var(--space-md);">📊</div>
+          <h4 style="color: var(--color-text-white); margin-bottom: var(--space-sm);">Proactive Monitoring</h4>
+          <p style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0;">Infrastructure monitoring with
+            automated alerting and incident response.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-3xl fade-in">
+        <div style="display: inline-flex; flex-wrap: wrap; gap: var(--space-lg); justify-content: center;">
+          <span class="badge badge-success">✓ SLA-Backed</span>
+          <span class="badge badge-success">✓ SSL Included</span>
+          <span class="badge badge-success">✓ DDoS Protected</span>
+          <span class="badge badge-success">✓ Daily Backups</span>
+          <span class="badge badge-success">✓ Monitoring</span>
+          <span class="badge badge-success">✓ Full Setup Included</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       TESTIMONIALS
+       ════════════════════════════════════════════════════════ -->
+  <section class="section dark-section" id="testimonials">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="label">Client Testimonials</span>
+        <h2>Trusted by Teams That <span class="text-gradient">Demand Reliability</span></h2>
+      </div>
+
+      <div class="grid grid-3 fade-in">
+        <div class="testimonial-card">
+          <p class="testimonial-text">Migrating to Technical Relief was the best infrastructure decision we've made.
+            Their managed hosting eliminated our DevOps overhead entirely — they set everything up and we haven't
+            touched a server config since.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JM</div>
+            <div>
+              <div class="testimonial-name">James M.</div>
+              <div class="testimonial-role">CTO, TechVentures SA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">The development team delivered our custom platform ahead of schedule with
+            incredible attention to detail. The ongoing hosting and management means we never worry about infrastructure
+            — they handle absolutely everything.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SK</div>
+            <div>
+              <div class="testimonial-name">Sarah K.</div>
+              <div class="testimonial-role">Founder, Digital Commerce Co</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">We needed enterprise-level hosting without the enterprise price tag. Technical
+            Relief delivered exactly that — 99.99% uptime over the past year and they set up everything from scratch for
+            us.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DP</div>
+            <div>
+              <div class="testimonial-name">David P.</div>
+              <div class="testimonial-role">Operations Director, LogiFlow</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       CTA BANNER
+       ════════════════════════════════════════════════════════ -->
+  <section class="section dark-section" style="padding-bottom: var(--space-5xl);">
+    <div class="container">
+      <div class="cta-banner fade-in">
+        <h2>Ready to Get Your Technical Relief?</h2>
+        <p>Get started with fully managed hosting and development services. We set everything up for you — no setup
+          fees, no hidden costs, no server management required.</p>
+        <div class="btn-group">
+          <a href="pricing.html" class="btn btn-primary btn-lg">View Plans &amp; Pricing</a>
+          <a href="about.html" class="btn btn-secondary btn-lg">Talk to Our Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+          <p>Premium managed hosting and full-stack development services. Everything is set up and managed for you —
+            enterprise-grade infrastructure with engineering discipline.</p>
+        </div>
+
+        <div>
+          <h5>Services</h5>
+          <ul class="footer-links">
+            <li><a href="#hosting">Web Hosting</a></li>
+            <li><a href="#vps">VPS Hosting</a></li>
+            <li><a href="#domains">Domains</a></li>
+            <li><a href="#development">Development</a></li>
+            <li><a href="services/web-design.html">Web Design</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Company</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="knowledge-base.html">Knowledge Base</a></li>
+            <li><a href="client-area.html">Client Area</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Legal</h5>
+          <ul class="footer-links">
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="#">SLA</a></li>
+            <li><a href="#">Acceptable Use</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Technical Relief. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+  <!--
+    ╔══════════════════════════════════════════════════════════╗
+    ║  FUTURE-PROOFING NOTES                                  ║
+    ╠══════════════════════════════════════════════════════════╣
+    ║                                                          ║
+    ║  IMAGE PLACEHOLDERS                                      ║
+    ║  - /images/logo.png → Navbar + footer logo              ║
+    ║  - /images/header-logo.png → Hero section large logo    ║
+    ║  - /images/favicon.png → Browser tab icon               ║
+    ║  Just drop your images into /images and uncomment        ║
+    ║  the relevant <img> tags above.                          ║
+    ║                                                          ║
+    ║  BLESTA INTEGRATION                                      ║
+    ║  - /login → Blesta SSO (configure OAuth/redirect)       ║
+    ║  - /register → Blesta registration form                 ║
+    ║  - /client → Blesta client dashboard                    ║
+    ║  - "Buy Now" buttons → Blesta product checkout links    ║
+    ║                                                          ║
+    ║  SSO ARCHITECTURE                                        ║
+    ║  - User state lives entirely in Blesta                  ║
+    ║  - Static site has no session/auth                      ║
+    ║                                                          ║
+    ║  n8n AUTOMATIONS                                         ║
+    ║  - Webhook triggers for new orders → Blesta             ║
+    ║  - Auto-provision hosting via DirectAdmin API           ║
+    ║  - Notification flows (email, SMS)                      ║
+    ╚══════════════════════════════════════════════════════════╝
+  -->
+</body>
+
+</html>

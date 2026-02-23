@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Stack Development — Custom Applications & APIs | Technical Relief</title>
+    <meta name="description"
+        content="Custom full-stack web application development. From concept to deployment — React, Next.js, Node.js, and modern frameworks. Enterprise-grade engineering.">
+    <link rel="icon" type="image/png" href="../images/tabicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container flex-between">
+            <!--
+        LOGO: Replace the text logo below with your image logo.
+        Option 1: Image logo — uncomment the <img> and remove the text <span> elements
+        Option 2: Keep the text logo as-is
+      -->
+            <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="../images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+
+                <!-- Domains Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="domains-register.html" class="nav-link-trigger">Domains</a>
+                    <div class="dropdown-menu">
+                        <a href="domains-register.html" class="dropdown-item">Register a Domain</a>
+                        <a href="domains-transfer.html" class="dropdown-item">Transfer a Domain</a>
+                        <a href="whois.html" class="dropdown-item">WHOIS Lookup</a>
+                    </div>
+                </div>
+
+                <!-- Hosting Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="web-hosting.html" class="nav-link-trigger">Hosting</a>
+                    <div class="dropdown-menu">
+                        <a href="web-hosting.html" class="dropdown-item">Shared Web Hosting</a>
+                        <a href="wordpress-hosting.html" class="dropdown-item">WordPress Hosting</a>
+                        <a href="email-hosting.html" class="dropdown-item">Email Hosting</a>
+                    </div>
+                </div>
+
+                <!-- VPS Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="vps-hosting.html" class="nav-link-trigger">VPS</a>
+                    <div class="dropdown-menu">
+                        <a href="vps-hosting.html" class="dropdown-item">Linux VPS Hosting</a>
+                        <a href="windows-vps.html" class="dropdown-item">Windows Cloud Servers</a>
+                        <a href="managed-vps.html" class="dropdown-item">Managed VPS Hosting</a>
+                        <a href="cloud-vds.html" class="dropdown-item">Cloud VDS Servers</a>
+                    </div>
+                </div>
+
+                <a href="development.html" class="active">Development</a>
+                <a href="../pricing.html">Pricing</a>
+                <a href="../knowledge-base.html">Knowledge Base</a>
+            </div>
+
+            <div class="nav-right">
+                <div class="dropdown-wrapper">
+                    <a class="btn btn-primary btn-sm dropdown-trigger">Get Started</a>
+                    <div class="dropdown-menu">
+                        <!-- Logged Out View -->
+                        <div class="logged-out-only">
+                            <a href="../login.html" class="dropdown-item">Login</a>
+                            <a href="../login.html" class="dropdown-item">Reset Password</a>
+                            <a href="../forgot-password.html" class="dropdown-item">Forgot Password</a>
+                        </div>
+                        <!-- Logged In View -->
+                        <div class="logged-in-only">
+                            <a href="../client-area.html" class="dropdown-item">Client Area</a>
+                            <a href="#" class="dropdown-item">Support System</a>
+                            <a href="#" class="dropdown-item">WHM</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item" data-logout>Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span class="current">Full-Stack Development</span>
+            </div>
+            <h1>Full-Stack <span class="text-gradient">Application Development</span></h1>
+            <p>Custom web applications, APIs, and enterprise systems engineered with modern technologies. From concept
+                to production and beyond.</p>
+        </div>
+    </div>
+
+    <!-- What We Build -->
+    <section class="section light-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">What We Build</span>
+                <h2>Engineering Solutions, Not Just Code</h2>
+                <p>We build scalable, maintainable applications with clean architecture, comprehensive testing, and
+                    production-grade infrastructure.</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card fade-in">
+                    <div class="card-icon">🌐</div>
+                    <h3>Web Applications</h3>
+                    <p>Full-featured web apps with React, Next.js, or Vue.js frontends and robust Node.js backends. SSR,
+                        SSG, and SPA architectures.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🔌</div>
+                    <h3>REST & GraphQL APIs</h3>
+                    <p>Clean, documented APIs with authentication, rate limiting, versioning, and comprehensive error
+                        handling.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🛒</div>
+                    <h3>E-Commerce Platforms</h3>
+                    <p>Custom storefronts with headless commerce backends, payment integration, inventory management,
+                        and order processing.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">📊</div>
+                    <h3>Dashboards & Admin Panels</h3>
+                    <p>Data-driven dashboards with real-time updates, role-based access, and interactive data
+                        visualization.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🔄</div>
+                    <h3>Automation Systems</h3>
+                    <p>Workflow automation, data pipelines, scheduled tasks, and integration layers connecting your
+                        business systems.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">📱</div>
+                    <h3>Progressive Web Apps</h3>
+                    <p>Installable, offline-capable web applications with push notifications and native-like performance
+                        on any device.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">Our Stack</span>
+                <h2>Modern <span class="text-gradient">Technology Stack</span></h2>
+                <p>We choose the right tools for each project. Here's our core expertise.</p>
+            </div>
+
+            <div class="grid grid-4 fade-in">
+                <div style="text-align: center; padding: var(--space-xl);">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-md);">⚛️</div>
+                    <h4 style="color: var(--color-text-white); margin-bottom: var(--space-xs);">Frontend</h4>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0;">React · Next.js · Vue.js
+                        · TypeScript · Tailwind CSS</p>
+                </div>
+                <div style="text-align: center; padding: var(--space-xl);">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-md);">🟢</div>
+                    <h4 style="color: var(--color-text-white); margin-bottom: var(--space-xs);">Backend</h4>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0;">Node.js · Express ·
+                        Fastify · Python · PHP</p>
+                </div>
+                <div style="text-align: center; padding: var(--space-xl);">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-md);">🗄️</div>
+                    <h4 style="color: var(--color-text-white); margin-bottom: var(--space-xs);">Database</h4>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0;">PostgreSQL · MySQL ·
+                        MongoDB · Redis · Supabase</p>
+                </div>
+                <div style="text-align: center; padding: var(--space-xl);">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-md);">☁️</div>
+                    <h4 style="color: var(--color-text-white); margin-bottom: var(--space-xs);">Infrastructure</h4>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0;">Docker · CI/CD · Git ·
+                        Nginx · PM2</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="section light-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">Our Process</span>
+                <h2>How We Deliver Projects</h2>
+                <p>A structured, transparent process from initial concept to production deployment and ongoing
+                    maintenance.</p>
+            </div>
+
+            <div class="process-steps fade-in" style="max-width: 700px; margin: 0 auto;">
+                <div class="process-step">
+                    <div>
+                        <h4>Discovery & Requirements</h4>
+                        <p>We start with deep-dive sessions to understand your business, users, and technical
+                            requirements. No assumptions — only documented specifications.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div>
+                        <h4>Architecture & Design</h4>
+                        <p>System architecture, database design, API contracts, and UI/UX wireframes — all reviewed and
+                            approved before a single line of code is written.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div>
+                        <h4>Iterative Development</h4>
+                        <p>Agile sprints with regular demos, continuous integration, and automated testing. You see
+                            progress every week, not every quarter.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div>
+                        <h4>Quality Assurance</h4>
+                        <p>Comprehensive testing — unit, integration, end-to-end, performance, and security. We ship
+                            production-grade code, not prototypes.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div>
+                        <h4>Deployment & Launch</h4>
+                        <p>Zero-downtime deployment to our managed infrastructure. DNS configuration, SSL setup,
+                            monitoring, and performance optimization included.</p>
+                    </div>
+                </div>
+                <div class="process-step" style="border-bottom: none;">
+                    <div>
+                        <h4>Ongoing Support & Maintenance</h4>
+                        <p>Post-launch support, bug fixes, security updates, and feature enhancements. Your application
+                            evolves with your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Tiers -->
+    <section class="section navy-section" id="plans">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">Project Packages</span>
+                <h2>Development <span class="text-gradient">Packages</span></h2>
+                <p>Transparent project-based pricing. Every engagement includes hosting, deployment, and post-launch
+                    support.</p>
+            </div>
+
+            <div class="grid grid-3 fade-in">
+                <!-- Starter -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">Starter Project</div>
+                    <div class="pricing-price" style="font-size: 2rem;"><span class="currency">R</span>15,000<span
+                            class="period"> once-off</span></div>
+                    <p class="pricing-desc">For small web applications, landing pages with custom functionality, or API
+                        integrations.</p>
+                    <ul class="pricing-features">
+                        <li>Up to 5 pages / views</li>
+                        <li>Responsive design</li>
+                        <li>Contact forms & basic CMS</li>
+                        <li>SEO optimization</li>
+                        <li>Hosting setup included</li>
+                        <li>2 rounds of revisions</li>
+                        <li>4-6 week delivery</li>
+                        <li>30 days post-launch support</li>
+                        <li class="disabled">Custom API integrations</li>
+                        <li class="disabled">Advanced automation</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Request Quote</a>
+                </div>
+
+                <!-- Professional -->
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Most Popular</span>
+                    <div class="pricing-tier">Professional Project</div>
+                    <div class="pricing-price" style="font-size: 2rem;"><span class="currency">R</span>45,000<span
+                            class="period"> once-off</span></div>
+                    <p class="pricing-desc">For full web applications, e-commerce platforms, dashboards, and multi-page
+                        systems.</p>
+                    <ul class="pricing-features">
+                        <li>Up to 15 pages / views</li>
+                        <li>Custom UI/UX design</li>
+                        <li>User authentication & roles</li>
+                        <li>Database design & API</li>
+                        <li>Payment integration</li>
+                        <li>Managed hosting included</li>
+                        <li>Unlimited revisions during dev</li>
+                        <li>8-12 week delivery</li>
+                        <li>90 days post-launch support</li>
+                        <li class="disabled">Microservices architecture</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Request Quote</a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">Enterprise Project</div>
+                    <div class="pricing-price" style="font-size: 2rem;">Custom<span class="period"> quote</span></div>
+                    <p class="pricing-desc">For complex enterprise applications, multi-service architectures, and
+                        ongoing development partnerships.</p>
+                    <ul class="pricing-features">
+                        <li>Unlimited scope</li>
+                        <li>Bespoke UI/UX design system</li>
+                        <li>Complex auth & multi-tenancy</li>
+                        <li>Microservices / event-driven</li>
+                        <li>Third-party integrations</li>
+                        <li>Managed VPS hosting</li>
+                        <li>Dedicated project manager</li>
+                        <li>Custom timeline</li>
+                        <li>12-month post-launch support</li>
+                        <li>Ongoing maintenance retainer</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="cta-banner fade-in">
+                <h2>Ready to Build Something Great?</h2>
+                <p>Tell us about your project and we'll provide a detailed proposal within 48 hours. No commitment
+                    required.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-primary btn-lg">Start a Project</a>
+                    <a href="../about.html" class="btn btn-secondary btn-lg">Meet the Team</a>
+                    <div class="card fade-in">
+                        <div class="card-icon">📱</div>
+                        <h3>Progressive Web Apps</h3>
+                        <p>Installable, offline-capable web applications with push notifications and native-like
+                            performance
+                            on any device.</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">Our Stack</span>
+                <h2>Modern <span class="text-gradient">Technology Stack</span></h2>
+                <p>We choose the right tools for each project. Here's our core expertise.</p>
+            </div>
+
+            <div class="grid grid-4 fade-in">
+                <div style="text-align: center; padding: var(--space-xl);">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-md);">⚛️</div>
+                    <h4 style="color: var(--color-text-white); margin-bottom: var(--space-xs);">Frontend</h4>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0;">React · Next.js · Vue.js
+                        · TypeScript · Tailwind CSS</p>
+                </div>
+                <div style="text-align: center; padding: var(--space-xl);">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-md);">🟢</div>
+                    <h4 style="color: var(--color-text-white); margin-bottom: var(--space-xs);">Backend</h4>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0;">Node.js · Express ·
+                        Fastify · Python · PHP</p>
+                </div>
+                <div style="text-align: center; padding: var(--space-xl);">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-md);">🗄️</div>
+                    <h4 style="color: var(--color-text-white); margin-bottom: var(--space-xs);">Database</h4>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0;">PostgreSQL · MySQL ·
+                        MongoDB · Redis · Supabase</p>
+                </div>
+                <div style="text-align: center; padding: var(--space-xl);">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-md);">☁️</div>
+                    <h4 style="color: var(--color-text-white); margin-bottom: var(--space-xs);">Infrastructure</h4>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin: 0;">Docker · CI/CD · Git ·
+                        Nginx · PM2</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="section light-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">Our Process</span>
+                <h2>How We Deliver Projects</h2>
+                <p>A structured, transparent process from initial concept to production deployment and ongoing
+                    maintenance.</p>
+            </div>
+
+            <div class="process-steps fade-in" style="max-width: 700px; margin: 0 auto;">
+                <div class="process-step">
+                    <div>
+                        <h4>Discovery & Requirements</h4>
+                        <p>We start with deep-dive sessions to understand your business, users, and technical
+                            requirements. No assumptions — only documented specifications.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div>
+                        <h4>Architecture & Design</h4>
+                        <p>System architecture, database design, API contracts, and UI/UX wireframes — all reviewed and
+                            approved before a single line of code is written.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div>
+                        <h4>Iterative Development</h4>
+                        <p>Agile sprints with regular demos, continuous integration, and automated testing. You see
+                            progress every week, not every quarter.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div>
+                        <h4>Quality Assurance</h4>
+                        <p>Comprehensive testing — unit, integration, end-to-end, performance, and security. We ship
+                            production-grade code, not prototypes.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div>
+                        <h4>Deployment & Launch</h4>
+                        <p>Zero-downtime deployment to our managed infrastructure. DNS configuration, SSL setup,
+                            monitoring, and performance optimization included.</p>
+                    </div>
+                </div>
+                <div class="process-step" style="border-bottom: none;">
+                    <div>
+                        <h4>Ongoing Support & Maintenance</h4>
+                        <p>Post-launch support, bug fixes, security updates, and feature enhancements. Your application
+                            evolves with your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Tiers -->
+    <section class="section navy-section" id="plans">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">Project Packages</span>
+                <h2>Development <span class="text-gradient">Packages</span></h2>
+                <p>Transparent project-based pricing. Every engagement includes hosting, deployment, and post-launch
+                    support.</p>
+            </div>
+
+            <div class="grid grid-3 fade-in">
+                <!-- Starter -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">Starter Project</div>
+                    <div class="pricing-price" style="font-size: 2rem;"><span class="currency">R</span>15,000<span
+                            class="period"> once-off</span></div>
+                    <p class="pricing-desc">For small web applications, landing pages with custom functionality, or API
+                        integrations.</p>
+                    <ul class="pricing-features">
+                        <li>Up to 5 pages / views</li>
+                        <li>Responsive design</li>
+                        <li>Contact forms & basic CMS</li>
+                        <li>SEO optimization</li>
+                        <li>Hosting setup included</li>
+                        <li>2 rounds of revisions</li>
+                        <li>4-6 week delivery</li>
+                        <li>30 days post-launch support</li>
+                        <li class="disabled">Custom API integrations</li>
+                        <li class="disabled">Advanced automation</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Request Quote</a>
+                </div>
+
+                <!-- Professional -->
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Most Popular</span>
+                    <div class="pricing-tier">Professional Project</div>
+                    <div class="pricing-price" style="font-size: 2rem;"><span class="currency">R</span>45,000<span
+                            class="period"> once-off</span></div>
+                    <p class="pricing-desc">For full web applications, e-commerce platforms, dashboards, and multi-page
+                        systems.</p>
+                    <ul class="pricing-features">
+                        <li>Up to 15 pages / views</li>
+                        <li>Custom UI/UX design</li>
+                        <li>User authentication & roles</li>
+                        <li>Database design & API</li>
+                        <li>Payment integration</li>
+                        <li>Managed hosting included</li>
+                        <li>Unlimited revisions during dev</li>
+                        <li>8-12 week delivery</li>
+                        <li>90 days post-launch support</li>
+                        <li class="disabled">Microservices architecture</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Request Quote</a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">Enterprise Project</div>
+                    <div class="pricing-price" style="font-size: 2rem;">Custom<span class="period"> quote</span></div>
+                    <p class="pricing-desc">For complex enterprise applications, multi-service architectures, and
+                        ongoing development partnerships.</p>
+                    <ul class="pricing-features">
+                        <li>Unlimited scope</li>
+                        <li>Bespoke UI/UX design system</li>
+                        <li>Complex auth & multi-tenancy</li>
+                        <li>Microservices / event-driven</li>
+                        <li>Third-party integrations</li>
+                        <li>Managed VPS hosting</li>
+                        <li>Dedicated project manager</li>
+                        <li>Custom timeline</li>
+                        <li>12-month post-launch support</li>
+                        <li>Ongoing maintenance retainer</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="cta-banner fade-in">
+                <h2>Ready to Build Something Great?</h2>
+                <p>Tell us about your project and we'll provide a detailed proposal within 48 hours. No commitment
+                    required.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-primary btn-lg">Start a Project</a>
+                    <a href="../about.html" class="btn btn-secondary btn-lg">Meet the Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="../images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+                    <p>Premium managed hosting and full-stack development services. Everything is set up and managed for
+                        you — enterprise-grade infrastructure with engineering discipline.</p>
+                </div>
+                <div>
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="web-hosting.html">Web Hosting</a></li>
+                        <li><a href="vps-hosting.html">VPS Hosting</a></li>
+                        <li><a href="domains-register.html">Domains</a></li>
+                        <li><a href="development.html">Development</a></li>
+                        <li><a href="web-design.html">Web Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../pricing.html">Pricing</a></li>
+                        <li><a href="../knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="../client-area.html">Client Area</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Technical Relief. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Terms</a>
+                    <a href="../privacy.html">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "hosting-agency",
+  "version": "1.0.0",
+  "description": "Premium Managed Hosting & Full-Stack Agency website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve -l 3000"
+  },
+  "dependencies": {
+    "serve": "^13.0.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

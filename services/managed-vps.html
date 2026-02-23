@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managed VPS Hosting | Technical Relief</title>
+    <meta name="description"
+        content="Expert-managed VPS hosting. We handle security, optimization, and updates so you can focus on your business.">
+    <link rel="icon" type="image/png" href="../images/tabicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container flex-between">
+            <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="../images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+
+                <!-- Domains Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="domains-register.html" class="nav-link-trigger">Domains</a>
+                    <div class="dropdown-menu">
+                        <a href="domains-register.html" class="dropdown-item">Register a Domain</a>
+                        <a href="domains-transfer.html" class="dropdown-item">Transfer a Domain</a>
+                        <a href="whois.html" class="dropdown-item">WHOIS Lookup</a>
+                    </div>
+                </div>
+
+                <!-- Hosting Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="web-hosting.html" class="nav-link-trigger">Hosting</a>
+                    <div class="dropdown-menu">
+                        <a href="web-hosting.html" class="dropdown-item">Shared Web Hosting</a>
+                        <a href="wordpress-hosting.html" class="dropdown-item">WordPress Hosting</a>
+                        <a href="email-hosting.html" class="dropdown-item">Email Hosting</a>
+                    </div>
+                </div>
+
+                <!-- VPS Dropdown -->
+                <div class="nav-item has-dropdown">
+                    <a href="vps-hosting.html" class="active" class="nav-link-trigger">VPS</a>
+                    <div class="dropdown-menu">
+                        <a href="vps-hosting.html" class="dropdown-item">Linux VPS Hosting</a>
+                        <a href="windows-vps.html" class="dropdown-item">Windows Cloud Servers</a>
+                        <a href="managed-vps.html" class="active" class="dropdown-item">Managed VPS Hosting</a>
+                        <a href="cloud-vds.html" class="dropdown-item">Cloud VDS Servers</a>
+                    </div>
+                </div>
+
+                <a href="development.html">Development</a>
+                <a href="../pricing.html">Pricing</a>
+                <a href="../knowledge-base.html">Knowledge Base</a>
+            </div>
+
+            <div class="nav-right">
+                <div class="dropdown-wrapper">
+                    <a class="btn btn-primary btn-sm dropdown-trigger">Get Started</a>
+                    <div class="dropdown-menu">
+                        <div class="logged-out-only">
+                            <a href="../login.html" class="dropdown-item">Login</a>
+                            <a href="../login.html" class="dropdown-item">Reset Password</a>
+                            <a href="../forgot-password.html" class="dropdown-item">Forgot Password</a>
+                        </div>
+                        <div class="logged-in-only">
+                            <a href="../client-area.html" class="dropdown-item">Client Area</a>
+                            <a href="#" class="dropdown-item" data-logout>Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span class="current">Managed VPS</span>
+            </div>
+            <h1>Expertly <span class="text-gradient">Managed VPS</span></h1>
+            <p>Our engineering team handles the entire technical stack. From security hardening to performance tuning,
+                we manage it all.</p>
+        </div>
+    </div>
+
+    <!-- White Glove Section -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-4xl); align-items: center;">
+                <div class="fade-in-left">
+                    <span class="label">Pure Management</span>
+                    <h2 class="mt-md">The <span class="text-gradient">White-Glove</span> Experience</h2>
+                    <p class="mt-lg">Managed VPS is more than just a server. It's a dedicated technical partnership. We
+                        don't just provide the hardware; we provide the engineers who run it.</p>
+                    <div class="mt-xl" style="display: flex; flex-direction: column; gap: var(--space-md);">
+                        <div
+                            style="display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-bg-card); border-radius: var(--radius-md);">
+                            <span style="font-size: 1.5rem;">🛡️</span>
+                            <div>
+                                <h4 style="color: var(--color-text-white);">Full Stack Hardening</h4>
+                                <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">From
+                                    kernel-level tuning to OS-level firewalls, we lock down your environment.</p>
+                            </div>
+                        </div>
+                        <div
+                            style="display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-bg-card); border-radius: var(--radius-md);">
+                            <span style="font-size: 1.5rem;">📈</span>
+                            <div>
+                                <h4 style="color: var(--color-text-white);">Proactive Optimization</h4>
+                                <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">We monitor
+                                    resource usage and fine-tune your configuration for peak performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in-right">
+                    <div
+                        style="background: linear-gradient(135deg, var(--color-bg-navy), var(--color-bg-dark)); padding: var(--space-2xl); border-radius: var(--radius-xl); border: 1px solid var(--color-border-dark); text-align: center;">
+                        <span class="label">Included in all plans</span>
+                        <h3 class="mt-md" style="color: var(--color-text-white);">VIP Engineering</h3>
+                        <p style="color: var(--color-text-muted); margin-top: var(--space-md);">Direct access to senior
+                            systems engineers. No level-1 support queues. No scripted answers.</p>
+                        <div
+                            style="margin-top: var(--space-xl); display: flex; flex-wrap: wrap; gap: var(--space-sm); justify-content: center;">
+                            <span class="badge badge-success">✓ Zero Management Needed</span>
+                            <span class="badge badge-success">✓ Incident Response</span>
+                            <span class="badge badge-success">✓ Custom Configurations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section navy-section" id="plans">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="label">Managed Plans</span>
+                <h2>Choose Your <span class="text-gradient">Managed VPS</span></h2>
+            </div>
+
+            <div class="grid grid-3 fade-in">
+                <div class="pricing-card">
+                    <div class="pricing-tier">Starter Managed</div>
+                    <div class="pricing-price"><span class="currency">R</span>539<span class="period">/mo</span></div>
+                    <ul class="pricing-features">
+                        <li>2 vCPU Cores / 4GB RAM</li>
+                        <li>50 GB NVMe Storage</li>
+                        <li>Full OS Management</li>
+                        <li>Weekly Tech Audit</li>
+                        <li>Daily Backups</li>
+                        <li>Free SSL & DNS</li>
+                    </ul>
+                    <a href="../login.html" class="btn btn-outline">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Recommended</span>
+                    <div class="pricing-tier">Pro Managed</div>
+                    <div class="pricing-price"><span class="currency">R</span>999<span class="period">/mo</span></div>
+                    <ul class="pricing-features">
+                        <li>4 vCPU Cores / 8GB RAM</li>
+                        <li>120 GB NVMe Storage</li>
+                        <li>Full Stack Management</li>
+                        <li>Daily Tech Audit</li>
+                        <li>Hourly Backups</li>
+                        <li>Priority Engineering</li>
+                    </ul>
+                    <a href="../login.html" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-tier">Enterprise Managed</div>
+                    <div class="pricing-price"><span class="currency">R</span>1,799<span class="period">/mo</span></div>
+                    <ul class="pricing-features">
+                        <li>8 vCPU Cores / 16GB RAM</li>
+                        <li>250 GB NVMe Storage</li>
+                        <li>White-Glove Support</li>
+                        <li>Custom Optimization</li>
+                        <li>Mirror Backups</li>
+                        <li>Dedicated Account Manager</li>
+                    </ul>
+                    <a href="../login.html" class="btn btn-outline">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none; color: white;">
+        <img src="../images/headericon-white.svg" alt="Technical Relief Icon" style="height: 48px; margin-right: 10px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white; margin-bottom: -1px;">Technical</span>
+          <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: white;">Relief</span>
+        </div>
+      </a>
+                    <p>Premium managed hosting and full-stack development services. Everything is set up and managed for
+                        you — enterprise-grade infrastructure with engineering discipline.</p>
+                </div>
+                <div>
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="web-hosting.html">Web Hosting</a></li>
+                        <li><a href="vps-hosting.html">VPS Hosting</a></li>
+                        <li><a href="domains-register.html">Domains</a></li>
+                        <li><a href="development.html">Development</a></li>
+                        <li><a href="web-design.html">Web Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../pricing.html">Pricing</a></li>
+                        <li><a href="../knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="../client-area.html">Client Area</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Technical Relief. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Terms</a>
+                    <a href="../privacy.html">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
