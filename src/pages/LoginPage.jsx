@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import { DEMO_CLIENTS } from '../context/AuthContext'
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -26,20 +26,13 @@ export default function LoginPage() {
     const result = await login(email, password)
     setSubmitting(false)
     if (result.success) {
-      // Admin user → redirect to admin area
-      const demoClient = DEMO_CLIENTS.find((c) => c.email === email)
-      const isAdmin = demoClient?.id === 'client-001'
-      const destination = isAdmin ? '/admin' : from
-      navigate(destination, { replace: true })
+      navigate(from, { replace: true })
     } else {
       setError(result.error || 'Invalid credentials. Please try again.')
     }
   }
 
-  const quickLogin = (clientEmail) => {
-    setEmail(clientEmail)
-    setPassword(clientEmail)
-  }
+
 
   return (
     <main className="min-h-screen bg-[var(--color-bg-dark)] flex items-center justify-center px-6 py-24">
@@ -123,38 +116,6 @@ export default function LoginPage() {
           </form>
         </div>
         
-        {/* Demo accounts */}
-        <div className="mt-6">
-          <div className="text-center mb-3">
-            <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[var(--color-text-muted)]">Demo Accounts</span>
-          </div>
-          <div className="flex flex-col gap-2">
-            {DEMO_CLIENTS.map((client) => (
-              <button
-                key={client.id}
-                onClick={() => quickLogin(client.email)}
-                className="w-full flex items-center gap-3 px-4 py-3 bg-[var(--color-bg-card)]/60 border border-[var(--color-border-dark)] rounded-xl hover:border-[var(--color-accent)]/20 hover:bg-[var(--color-bg-card)] transition-all cursor-pointer text-left group"
-              >
-                <div className="w-8 h-8 rounded-full bg-[var(--color-accent)]/15 text-[var(--color-accent)] font-bold text-[10px] flex items-center justify-center flex-shrink-0">
-                  {client.first_name[0]}{client.last_name[0]}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-white text-sm font-medium group-hover:text-[var(--color-accent-light)] transition-colors">
-                    {client.first_name} {client.last_name}
-                  </div>
-                  <div className="text-[var(--color-text-muted)] text-[11px] truncate">{client.company}</div>
-                </div>
-                <span className="text-[var(--color-text-muted)] text-[10px] group-hover:text-[var(--color-accent)] transition-colors flex-shrink-0">
-                  Sign in &rarr;
-                </span>
-              </button>
-            ))}
-          </div>
-          <p className="text-center text-[var(--color-text-muted)] text-[10px] mt-3">
-            Password is the same as the email address
-          </p>
-        </div>
-
         <p className="text-center text-[var(--color-text-muted)] text-sm mt-6">
           Don't have an account?{' '}
           <Link to="/register" className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-medium no-underline">

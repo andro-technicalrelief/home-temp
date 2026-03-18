@@ -20,81 +20,10 @@ const AuthContext = createContext(null)
 // handles auth and Blesta stores client profiles.
 // ═══════════════════════════════════════════════════════
 
-export const DEMO_CLIENTS = [
-  {
-    id: 'client-001',
-    first_name: 'Admin',
-    last_name: 'User',
-    email: 'admin@technicalrelief.co.za',
-    phone: '+27 12 345 6789',
-    address1: '123 Main Street',
-    city: 'Cape Town',
-    state: 'Western Cape',
-    zip: '8001',
-    country: 'ZA',
-    company: 'Technical Relief',
-    tier: 'enterprise',
-  },
-  {
-    id: 'client-002',
-    first_name: 'James',
-    last_name: 'Mitchell',
-    email: 'james@techventures.co.za',
-    phone: '+27 21 555 0142',
-    address1: '88 Bree Street',
-    city: 'Cape Town',
-    state: 'Western Cape',
-    zip: '8001',
-    country: 'ZA',
-    company: 'TechVentures SA',
-    tier: 'growth',
-  },
-  {
-    id: 'client-003',
-    first_name: 'Sarah',
-    last_name: 'Khumalo',
-    email: 'sarah@digitalcommerce.co.za',
-    phone: '+27 11 234 8800',
-    address1: '14 Sandton Drive',
-    city: 'Johannesburg',
-    state: 'Gauteng',
-    zip: '2196',
-    country: 'ZA',
-    company: 'Digital Commerce Co',
-    tier: 'sme',
-  },
-  {
-    id: 'client-004',
-    first_name: 'David',
-    last_name: 'Pretorius',
-    email: 'david@logiflow.co.za',
-    phone: '+27 12 998 3310',
-    address1: '5 Innovation Hub',
-    city: 'Pretoria',
-    state: 'Gauteng',
-    zip: '0181',
-    country: 'ZA',
-    company: 'LogiFlow',
-    tier: 'growth',
-  },
-  {
-    id: 'client-005',
-    first_name: 'Naledi',
-    last_name: 'Mokoena',
-    email: 'naledi@greenleaf.co.za',
-    phone: '+27 31 400 2211',
-    address1: '22 Umhlanga Rocks Drive',
-    city: 'Durban',
-    state: 'KwaZulu-Natal',
-    zip: '4319',
-    country: 'ZA',
-    company: 'GreenLeaf Organics',
-    tier: 'sme',
-  },
-]
+export const DEMO_CLIENTS = []
 
 function findDemoClient(email) {
-  return DEMO_CLIENTS.find((c) => c.email.toLowerCase() === email.toLowerCase())
+  return null
 }
 
 export function AuthProvider({ children }) {
@@ -119,16 +48,7 @@ export function AuthProvider({ children }) {
   // ═══════════════════════════════════════════════════════
 
   useEffect(() => {
-    // Check for demo client session first
-    const demoId = localStorage.getItem('demo_client_id')
-    if (demoId) {
-      const demoClient = DEMO_CLIENTS.find((c) => c.id === demoId)
-      if (demoClient) {
-        setUser(demoClient)
-        setLoading(false)
-        // Still listen for Firebase changes but don't block
-      }
-    }
+
 
     // Listen for Firebase auth state
     const unsubscribe = onAuthStateChanged(auth, async (fbUser) => {
@@ -180,20 +100,7 @@ export function AuthProvider({ children }) {
   const login = useCallback(async (email, password) => {
     setError(null)
     try {
-      // ─── Demo client login (password = email) ───
-      const demoClient = findDemoClient(email)
-      if (demoClient && password === demoClient.email) {
-        localStorage.setItem('demo_client_id', demoClient.id)
-        localStorage.removeItem('blesta_token')
-        localStorage.removeItem('blesta_client_id')
-        setUser(demoClient)
-        return { success: true, mode: 'demo' }
-      }
 
-      // ─── If email matched a demo client but wrong password ───
-      if (demoClient) {
-        throw new Error('Invalid credentials')
-      }
 
       // ─── Firebase login ───
       const cred = await signInWithEmailAndPassword(auth, email, password)

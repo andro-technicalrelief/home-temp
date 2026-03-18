@@ -1,0 +1,27 @@
+'Log files:
+
+
+# npm resolution error report
+
+While resolving: @tailwindcss/vite@4.2.1
+Found: vite@8.0.0
+node_modules/vite
+  dev vite@"^8.0.0" from the root project
+  peer vite@"^8.0.0" from @vitejs/plugin-react@6.0.1
+  node_modules/@vitejs/plugin-react
+    dev @vitejs/plugin-react@"^6.0.0" from the root project
+
+Could not resolve dependency:
+peer vite@"^5.2.0 || ^6 || ^7" from @tailwindcss/vite@4.2.1
+node_modules/@tailwindcss/vite
+  @tailwindcss/vite@"^4.2.1" from the root project
+
+Conflicting peer dependency: vite@7.3.1
+node_modules/vite
+  peer vite@"^5.2.0 || ^6 || ^7" from @tailwindcss/vite@4.2.1
+  node_modules/@tailwindcss/vite
+    @tailwindcss/vite@"^4.2.1" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.
