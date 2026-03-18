@@ -33,11 +33,6 @@ export default function LoginPage() {
     }
   }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> fa7cdce (Saving my local changes before syncing)
   return (
     <motion.main
       initial={{ opacity: 0, y: 20 }}
