@@ -124,17 +124,12 @@ export default function LoginPage() {
             </button>
           </form>
         </div>
-<<<<<<< HEAD
-
-=======
-
->>>>>>> fa7cdce (Saving my local changes before syncing)
-  <p className="text-center text-[var(--color-text-muted)] text-sm mt-6">
-    Don't have an account?{' '}
-    <Link to="/register" className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-medium no-underline">
-      Create one
-    </Link>
-  </p>
+        <p className="text-center text-[var(--color-text-muted)] text-sm mt-6">
+          Don't have an account?{' '}
+          <Link to="/register" className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-medium no-underline">
+            Create one
+          </Link>
+        </p>
       </div >
     </motion.main >
   )
