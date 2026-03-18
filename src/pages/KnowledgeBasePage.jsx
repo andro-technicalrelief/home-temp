@@ -171,7 +171,7 @@ export default function KnowledgeBasePage() {
             primaryText="Submit a Ticket"
             primaryHref="/dashboard/support"
             secondaryText="Contact Us"
-            secondaryHref="/about"
+            secondaryHref="/get-started"
           />
         </div>
       </section>

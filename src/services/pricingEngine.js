@@ -24,8 +24,8 @@ export const TIERS = {
 // ═══════════════════════════════════════════════════════
 
 export const PRICE_FLOORS = {
-  shared: 550,
-  vps: 5000,   // R2,500 Linux VPS + R2,500 managed support
+  shared: 1500,
+  vps: 6500,   // Linux VPS base + managed support
   custom_dev: 0,
 }
 
@@ -35,15 +35,15 @@ export const PRICE_FLOORS = {
 
 export const BASE_PLANS = {
   shared: [
-    { id: 'shared-starter',      name: 'Starter',      base: 899,   category: 'shared' },
-    { id: 'shared-professional', name: 'Professional',  base: 1499,  category: 'shared' },
-    { id: 'shared-business',     name: 'Business',      base: 2499,  category: 'shared' },
-    { id: 'shared-enterprise',   name: 'Enterprise',    base: 4499,  category: 'shared' },
+    { id: 'shared-starter',      name: 'Starter',      base: 1500,  category: 'shared' },
+    { id: 'shared-professional', name: 'Professional',  base: 2499,  category: 'shared' },
+    { id: 'shared-business',     name: 'Business',      base: 3999,  category: 'shared' },
+    { id: 'shared-enterprise',   name: 'Enterprise',    base: 6499,  category: 'shared' },
   ],
   vps: [
-    { id: 'vps-starter',         name: 'Linux VPS Starter',       base: 5000,   category: 'vps' },
-    { id: 'vps-professional',    name: 'Linux VPS Professional',  base: 8500,   category: 'vps' },
-    { id: 'vps-enterprise',      name: 'Linux VPS Enterprise',    base: 14999,  category: 'vps' },
+    { id: 'vps-starter',         name: 'Linux VPS Starter',       base: 6500,   category: 'vps' },
+    { id: 'vps-professional',    name: 'Linux VPS Professional',  base: 10500,  category: 'vps' },
+    { id: 'vps-enterprise',      name: 'Linux VPS Enterprise',    base: 17999,  category: 'vps' },
   ],
   custom_dev: [
     { id: 'dev-portfolio',       name: 'Portfolio / Blog',       base: 8000,   category: 'custom_dev' },

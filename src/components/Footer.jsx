@@ -5,9 +5,11 @@ const footerLinks = {
   Services: [
     { label: 'Managed Hosting', to: '/hosting' },
     { label: 'Linux VPS Hosting', to: '/vps' },
+    { label: 'Netlify Hosting', to: '/pricing#netlify-hosting' },
     { label: 'Domain Registration', to: '/domains/register' },
     { label: 'Domain Transfer', to: '/domains/transfer' },
     { label: 'Pricing', to: '/pricing' },
+    { label: 'Beta Program', to: '/beta' },
   ],
   Company: [
     { label: 'About Us', to: '/about' },

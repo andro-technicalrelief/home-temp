@@ -1,4 +1,12 @@
+import { Link } from 'react-router-dom'
+
 export default function PricingCard({ tier, price, period, description, features = [], ctaText = 'Get Started', ctaHref = '#', featured = false, badge = null }) {
+  const btnClass = `inline-flex items-center justify-center py-3 px-6 rounded-xl font-semibold text-sm transition-all no-underline ${
+    featured
+      ? 'bg-[var(--color-accent)] text-white shadow-[0_4px_15px_rgba(59,130,246,0.3)] hover:bg-[var(--color-accent-hover)] hover:-translate-y-0.5'
+      : 'border-[1.5px] border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white'
+  }`
+
   return (
     <div className={`relative flex flex-col rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 ${
       featured
@@ -40,16 +48,15 @@ export default function PricingCard({ tier, price, period, description, features
         ))}
       </ul>
 
-      <a
-        href={ctaHref}
-        className={`inline-flex items-center justify-center py-3 px-6 rounded-xl font-semibold text-sm transition-all no-underline ${
-          featured
-            ? 'bg-[var(--color-accent)] text-white shadow-[0_4px_15px_rgba(59,130,246,0.3)] hover:bg-[var(--color-accent-hover)] hover:-translate-y-0.5'
-            : 'border-[1.5px] border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white'
-        }`}
-      >
-        {ctaText}
-      </a>
+      {ctaHref.startsWith('/') ? (
+        <Link to={ctaHref} className={btnClass}>
+          {ctaText}
+        </Link>
+      ) : (
+        <a href={ctaHref} className={btnClass}>
+          {ctaText}
+        </a>
+      )}
     </div>
   )
 }

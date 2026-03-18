@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { useAuth } from '../context/AuthContext'
-
+//import { DEMO_CLIENTS } from '../context/AuthContext'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -32,10 +33,18 @@ export default function LoginPage() {
     }
   }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> fa7cdce (Saving my local changes before syncing)
   return (
-    <main className="min-h-screen bg-[var(--color-bg-dark)] flex items-center justify-center px-6 py-24">
+    <motion.main
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-[var(--color-bg-dark)] flex items-center justify-center px-6 py-24"
+    >
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-[radial-gradient(circle,var(--color-accent-glow),transparent_70%)] pointer-events-none opacity-40" />
 
@@ -115,15 +124,18 @@ export default function LoginPage() {
             </button>
           </form>
         </div>
-        
-        <p className="text-center text-[var(--color-text-muted)] text-sm mt-6">
-          Don't have an account?{' '}
-          <Link to="/register" className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-medium no-underline">
-            Create one
-          </Link>
-        </p>
-      </div>
-    </main>
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> fa7cdce (Saving my local changes before syncing)
+  <p className="text-center text-[var(--color-text-muted)] text-sm mt-6">
+    Don't have an account?{' '}
+    <Link to="/register" className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-medium no-underline">
+      Create one
+    </Link>
+  </p>
+      </div >
+    </motion.main >
   )
 }
-

@@ -12,7 +12,7 @@ import FadeIn, { StaggerContainer, StaggerItem } from '../components/FadeIn'
 
 const services = [
   { icon: '🖥️', title: 'Managed Hosting', desc: 'Fully managed shared hosting with automated backups, SSL, and enterprise-grade security. We set everything up — you just send us your content.', to: '/hosting' },
-  { icon: '🐧', title: 'Linux VPS Hosting', desc: 'Managed Linux VPS servers optimized for Node.js, Next.js, and modern frameworks. Root access with full management included — from R5,000/mo.', to: '/vps' },
+  { icon: '🐧', title: 'Linux VPS Hosting', desc: 'Managed Linux VPS servers optimized for Node.js, Next.js, and modern frameworks. Root access with full management included — from R6,500/mo.', to: '/vps' },
   { icon: '🌐', title: 'Domain Registration', desc: 'Register and manage your domains with DNS management, WHOIS privacy, and automated renewals. We handle all DNS configuration and pointing.', to: '/domains/register' },
   { icon: '💻', title: 'Full-Stack Development', desc: 'Custom web applications, APIs, and enterprise systems. From concept to deployment — we build it, deploy it, and maintain it for you.', to: '/pricing' },
   { icon: '🎨', title: 'Premium Web Design', desc: 'Conversion-focused UI/UX design with Figma prototyping, responsive layouts, and pixel-perfect implementation. Design that performs.', to: '/pricing' },
@@ -59,7 +59,7 @@ const partners = [
 const faq = [
   { q: 'What does "fully managed" actually mean?', a: 'It means we handle everything — server setup, software installation, SSL certificates, email configuration, DNS pointing, backups, security updates, performance optimization, and monitoring. You never need to SSH into a server or learn any technical tools. We do it all for you.' },
   { q: 'Do I need technical knowledge to use your services?', a: 'Absolutely not. Our entire service model is designed for business owners who want reliable technology without the complexity. You tell us what you need, and we build, deploy, and manage it. Zero technical knowledge required.' },
-  { q: 'What\'s the difference between Shared Hosting and VPS?', a: 'Shared Hosting (from R899/mo) is ideal for standard websites, blogs, and small applications. VPS Hosting (from R5,000/mo) provides dedicated Linux server resources for high-traffic sites, custom applications, and businesses that need root access with managed support.' },
+  { q: 'What\'s the difference between Shared Hosting and VPS?', a: 'Shared Hosting (from R1,500/mo) is ideal for standard websites, blogs, and small applications. VPS Hosting (from R6,500/mo) provides dedicated Linux server resources for high-traffic sites, custom applications, and businesses that need root access with managed support.' },
   { q: 'Can I migrate my existing website to Technical Relief?', a: 'Yes — we handle the entire migration for free. We\'ll move your files, databases, emails, and DNS records with zero downtime. We\'ve migrated hundreds of sites from cPanel, Plesk, and other hosting providers.' },
   { q: 'What happens if my server goes down?', a: 'Our 24/7 monitoring detects issues within 60 seconds. Automated failover handles most incidents instantly. For anything requiring human intervention, our engineering team is paged immediately. Our SLA guarantees 99.9% uptime.' },
   { q: 'Do you offer refunds?', a: 'Yes — all hosting plans come with a 30-day money-back guarantee. If you\'re not satisfied, we\'ll refund your payment in full. No questions asked.' },
@@ -408,7 +408,7 @@ export default function HomePage() {
               primaryText="View Plans & Pricing"
               primaryHref="/pricing"
               secondaryText="Talk to Our Team"
-              secondaryHref="/about"
+              secondaryHref="/get-started"
             />
           </FadeIn>
         </div>

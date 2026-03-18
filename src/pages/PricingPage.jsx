@@ -1,6 +1,7 @@
 import SectionHeader from '../components/SectionHeader'
 import PricingCard from '../components/PricingCard'
 import CTABanner from '../components/CTABanner'
+import FadeIn, { StaggerContainer, StaggerItem } from '../components/FadeIn'
 
 /* ════════════════════════════════════════════════════════
    SERVICES & PRICING — Updated tiers
@@ -104,22 +105,22 @@ const enterpriseTier = {
 
 const sharedHosting = [
   {
-    tier: 'Starter', price: '899', period: '/mo',
+    tier: 'Starter', price: '1,500', period: '/mo',
     description: 'Personal sites and simple blogs. Fully set up and managed.',
     features: ['10 GB NVMe SSD', '1 Website', '5 Email Accounts', 'Free SSL', 'Weekly Backups', '500 GB Bandwidth', 'DirectAdmin Panel', 'Full Setup Included'],
   },
   {
-    tier: 'Professional', price: '1,499', period: '/mo', featured: true, badge: 'Most Popular',
+    tier: 'Professional', price: '2,499', period: '/mo', featured: true, badge: 'Most Popular',
     description: 'Growing businesses and professional portfolios. We handle everything.',
     features: ['30 GB NVMe SSD', '5 Websites', '25 Email Accounts', 'Free SSL', 'Daily Backups (14-day)', '1 TB Bandwidth', 'DirectAdmin Panel', 'Priority Support'],
   },
   {
-    tier: 'Business', price: '2,499', period: '/mo',
+    tier: 'Business', price: '3,999', period: '/mo',
     description: 'High-performance hosting for demanding websites and applications.',
     features: ['60 GB NVMe SSD', '15 Websites', '50 Email Accounts', 'Wildcard SSL', 'Daily Backups (30-day)', '2 TB Bandwidth', 'Redis Caching', 'Premium Support'],
   },
   {
-    tier: 'Enterprise', price: '4,499', period: '/mo',
+    tier: 'Enterprise', price: '6,499', period: '/mo',
     description: 'Enterprise-grade hosting for mission-critical websites.',
     features: ['120 GB NVMe SSD', 'Unlimited Websites', 'Unlimited Email', 'Wildcard SSL', 'Daily Backups (60-day)', '5 TB Bandwidth', 'Dedicated IP', 'White-Glove Support'],
   },
@@ -131,19 +132,19 @@ const sharedHosting = [
 
 const vpsPlans = [
   {
-    tier: 'Linux VPS Starter', price: '5,000', period: '/mo',
-    description: 'Managed Linux VPS for small to medium workloads. R2,500 server + R2,500 managed.',
-    features: ['Linux OS (Ubuntu/Debian/Alma)', '2 vCPU · 4 GB RAM', '50 GB NVMe SSD', '2 TB Bandwidth', 'Root Access (SSH)', 'DirectAdmin License', 'R2,500 Managed Support', 'Full Server Setup'],
+    tier: 'Linux VPS Starter', price: '6,500', period: '/mo',
+    description: 'Managed Linux VPS for small to medium workloads. Full server management included.',
+    features: ['Linux OS (Ubuntu/Debian/Alma)', '2 vCPU · 4 GB RAM', '50 GB NVMe SSD', '2 TB Bandwidth', 'Root Access (SSH)', 'Full Server Setup', 'Managed Security & Firewall', 'Standard Support'],
   },
   {
-    tier: 'Linux VPS Professional', price: '8,500', period: '/mo', featured: true, badge: 'Recommended',
+    tier: 'Linux VPS Professional', price: '10,500', period: '/mo', featured: true, badge: 'Recommended',
     description: 'High-performance managed Linux VPS for production apps and e-commerce.',
-    features: ['Linux OS (Ubuntu/Debian/Alma)', '4 vCPU · 8 GB RAM', '120 GB NVMe SSD', '4 TB Bandwidth', 'Root Access (SSH)', 'DirectAdmin License', 'R2,500 Managed Support', 'Priority Support'],
+    features: ['Linux OS (Ubuntu/Debian/Alma)', '4 vCPU · 8 GB RAM', '120 GB NVMe SSD', '4 TB Bandwidth', 'Root Access (SSH)', 'Full Managed Stack', 'Daily Backups (14-day)', 'Priority Support'],
   },
   {
-    tier: 'Linux VPS Enterprise', price: '14,999', period: '/mo',
+    tier: 'Linux VPS Enterprise', price: '17,999', period: '/mo',
     description: 'Enterprise-grade managed Linux VPS for mission-critical applications.',
-    features: ['Linux OS (Ubuntu/Debian/Alma)', '8 vCPU · 16 GB RAM', '250 GB NVMe SSD', '8 TB Bandwidth', 'Root Access (SSH)', 'DirectAdmin License', 'R2,500 Managed Support', 'Dedicated Account Manager'],
+    features: ['Linux OS (Ubuntu/Debian/Alma)', '8 vCPU · 16 GB RAM', '250 GB NVMe SSD', '8 TB Bandwidth', 'Root Access (SSH)', 'Full Managed Stack', 'Daily Backups (30-day)', 'Dedicated Account Manager'],
     ctaText: 'Contact Sales',
   },
 ]
@@ -207,7 +208,7 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
             {serviceTiers.map((t) => (
               <div key={t.tier} className="flex flex-col">
-                <PricingCard {...t} ctaHref="https://www.technicalrelief.co.za/billing/client/login/" />
+                <PricingCard {...t} ctaHref="/get-started" />
                 {/* Retainer line */}
                 <div className="mt-3 text-center py-3 bg-[var(--color-bg-card)] border border-[var(--color-border-dark)] rounded-xl">
                   <span className="text-[var(--color-text-muted)] text-xs">Retainer: </span>
@@ -244,7 +245,7 @@ export default function PricingPage() {
                 ))}
               </ul>
               <a
-                href="https://www.technicalrelief.co.za/billing/client/login/"
+                href="/get-started"
                 className="mt-6 inline-flex items-center justify-center py-3 px-8 border-[1.5px] border-[var(--color-accent)] text-[var(--color-accent)] rounded-xl font-semibold text-sm hover:bg-[var(--color-accent)] hover:text-white transition-all no-underline"
               >
                 Contact Sales
@@ -293,9 +294,63 @@ export default function PricingPage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {vpsPlans.map((p) => (
-              <PricingCard key={p.tier} {...p} ctaHref="https://www.technicalrelief.co.za/billing/client/login/" />
+              <PricingCard key={p.tier} {...p} ctaHref="/get-started" />
             ))}
           </div>
+
+          {/* VPS disclaimer */}
+          <div className="max-w-[700px] mx-auto mt-8 p-5 bg-amber-500/8 rounded-2xl border border-amber-500/15 text-center">
+            <p className="text-[var(--color-text-light)] text-sm">
+              <strong className="text-amber-400">Please note:</strong> VPS pricing does not include optional add-ons — DirectAdmin license (R100/mo), Paystack integration (R100/mo), or GoHighLevel (R2,500/mo). These are billed separately if required.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ NETLIFY HOSTING ═══ */}
+      <section className="py-24 bg-[var(--color-bg-navy)]" id="netlify-hosting">
+        <div className="max-w-[800px] mx-auto px-6">
+          <FadeIn>
+            <SectionHeader
+              label="Modern App Hosting"
+              title="Managed Netlify"
+              titleGradient="React Hosting"
+              description={<>We host and manage your React, Next.js, and static web applications on Netlify — deployed, monitored, and maintained by our team. <strong className="text-white">R1,500/mo all-inclusive.</strong></>}
+              dark
+            />
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <div className="bg-[var(--color-bg-card)] border border-[var(--color-border-dark)] rounded-2xl p-8 md:p-10">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-4xl">🚀</div>
+                <div>
+                  <div className="text-[var(--color-accent-light)] text-xs font-bold tracking-[0.12em] uppercase mb-1">Netlify Managed Hosting</div>
+                  <div className="flex items-end gap-1">
+                    <span className="text-[var(--color-text-muted)] text-lg">R</span>
+                    <span className="text-white text-4xl font-extrabold tracking-tight">1,500</span>
+                    <span className="text-[var(--color-text-muted)] text-sm mb-1 ml-1">/mo</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-[var(--color-text-muted)] text-sm leading-relaxed mb-6">
+                Perfect for React, Next.js, Gatsby, and modern JavaScript applications. We handle deployment pipelines, domain configuration, SSL, environment variables, and ongoing maintenance.
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                {['Continuous Deployment (CI/CD)', 'Custom Domain & SSL', 'Environment Variables Management', 'Build Optimization', 'Edge Network (CDN)', 'Uptime Monitoring', 'Rollback Support', 'Full Setup & Maintenance'].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-[var(--color-text-light)] text-sm">
+                    <span className="text-[var(--color-success)] mt-0.5 flex-shrink-0">✓</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="/get-started"
+                className="inline-flex items-center justify-center py-3 px-8 bg-[var(--color-accent)] text-white rounded-xl font-semibold text-sm shadow-[0_4px_15px_rgba(59,130,246,0.3)] hover:bg-[var(--color-accent-hover)] hover:-translate-y-0.5 transition-all no-underline"
+              >
+                Get Started
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -373,7 +428,7 @@ export default function PricingPage() {
             primaryText="Choose a Plan"
             primaryHref="#services-pricing"
             secondaryText="Talk to Sales"
-            secondaryHref="/about"
+            secondaryHref="/get-started"
           />
         </div>
       </section>

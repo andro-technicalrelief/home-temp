@@ -184,7 +184,7 @@ export default function DomainTransferPage() {
             primaryText="Start Transfer"
             primaryHref="#transfer-form"
             secondaryText="Contact Support"
-            secondaryHref="/about"
+            secondaryHref="/get-started"
           />
         </div>
       </section>

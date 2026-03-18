@@ -23,6 +23,8 @@ import KnowledgeBasePage from './pages/KnowledgeBasePage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
+import GetStartedPage from './pages/GetStartedPage'
+import BetaPage from './pages/BetaPage'
 
 // Dashboard pages
 import DashboardPage from './pages/dashboard/DashboardPage'
@@ -91,6 +93,8 @@ function App() {
         <Route path="/hosting" element={<PublicLayout><SharedHostingPage /></PublicLayout>} />
         <Route path="/vps" element={<PublicLayout><VPSHostingPage /></PublicLayout>} />
         <Route path="/knowledge-base" element={<PublicLayout><KnowledgeBasePage /></PublicLayout>} />
+        <Route path="/get-started" element={<PublicLayout><GetStartedPage /></PublicLayout>} />
+        <Route path="/beta" element={<PublicLayout><BetaPage /></PublicLayout>} />
 
         {/* Auth Pages (no Navbar/Footer) */}
         <Route path="/login" element={<LoginPage />} />

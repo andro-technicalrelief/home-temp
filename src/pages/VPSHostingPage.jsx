@@ -4,14 +4,14 @@ import CTABanner from '../components/CTABanner'
 import PricingSlider from '../components/PricingSlider'
 import { BASE_PLANS } from '../services/pricingEngine'
 
-/* Price structure: R2,500 Linux VPS base + R2,500 fully managed = R5,000/mo minimum */
+/* Fully managed Linux VPS with dedicated resources */
 
 const plans = [
   {
     tier: 'Linux VPS Starter',
-    price: '5,000',
+    price: '6,500',
     period: '/mo',
-    description: 'Managed Linux VPS for small to medium workloads. Includes R2,500 server + R2,500 fully managed support & DirectAdmin license.',
+    description: 'Managed Linux VPS for small to medium workloads. Full server management included.',
     features: [
       'Linux VPS (Ubuntu/Debian/Alma)',
       '2 vCPU Cores',
@@ -19,8 +19,6 @@ const plans = [
       '50 GB NVMe SSD',
       '2 TB Bandwidth',
       'Root Access (SSH)',
-      'DirectAdmin License Included',
-      'R2,500 Managed Support Included',
       'Managed Security & Firewall',
       'Weekly Backups',
       'DDoS Protection',
@@ -31,11 +29,11 @@ const plans = [
   },
   {
     tier: 'Linux VPS Professional',
-    price: '8,500',
+    price: '10,500',
     period: '/mo',
     featured: true,
     badge: 'Recommended',
-    description: 'High-performance managed Linux VPS for production apps, APIs, and e-commerce. Server + fully managed stack.',
+    description: 'High-performance managed Linux VPS for production apps, APIs, and e-commerce.',
     features: [
       'Linux VPS (Ubuntu/Debian/Alma)',
       '4 vCPU Cores',
@@ -43,8 +41,6 @@ const plans = [
       '120 GB NVMe SSD',
       '4 TB Bandwidth',
       'Root Access (SSH)',
-      'DirectAdmin License Included',
-      'R2,500 Managed Support Included',
       'Full Managed Stack',
       'Daily Backups (14-day)',
       'Dedicated IPv4 Address',
@@ -56,9 +52,9 @@ const plans = [
   },
   {
     tier: 'Linux VPS Enterprise',
-    price: '14,999',
+    price: '17,999',
     period: '/mo',
-    description: 'Enterprise-grade managed Linux VPS for high-traffic, mission-critical applications. Dedicated resources + 24/7 support.',
+    description: 'Enterprise-grade managed Linux VPS for high-traffic, mission-critical applications.',
     features: [
       'Linux VPS (Ubuntu/Debian/Alma)',
       '8 vCPU Cores',
@@ -66,8 +62,6 @@ const plans = [
       '250 GB NVMe SSD',
       '8 TB Bandwidth',
       'Root Access (SSH)',
-      'DirectAdmin License Included',
-      'R2,500 Managed Support Included',
       'Full Managed Stack',
       'Daily Backups (30-day)',
       'Dedicated IPv4 Address',
@@ -130,8 +124,8 @@ export default function VPSHostingPage() {
             Managed <span className="text-gradient">Linux VPS Hosting</span>
           </h1>
           <p className="mt-4 text-lg text-[var(--color-text-light)] max-w-[700px] mx-auto">
-            High-performance Linux VPS with dedicated resources, root access, and DirectAdmin — fully provisioned
-            and managed by our engineering team. <strong className="text-white">R2,500 server + R2,500 managed support.</strong>
+            High-performance Linux VPS with dedicated resources, root access, and full server management — fully provisioned
+            and managed by our engineering team. <strong className="text-white">Starting from R6,500/mo.</strong>
           </p>
         </div>
       </section>
@@ -143,17 +137,23 @@ export default function VPSHostingPage() {
             label="Linux VPS Plans"
             title="Choose Your"
             titleGradient="Linux VPS Plan"
-            description="Every Linux VPS includes full server provisioning, DirectAdmin license, security hardening, and R2,500/mo managed support. We handle the entire stack."
+            description="Every Linux VPS includes full server provisioning, security hardening, and managed support. We handle the entire stack."
             dark
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {plans.map((p) => (
-              <PricingCard key={p.tier} {...p} ctaHref="https://www.technicalrelief.co.za/billing/" />
+              <PricingCard key={p.tier} {...p} ctaHref="/get-started" />
             ))}
           </div>
           <p className="text-center text-[var(--color-text-muted)] text-xs mt-6">
             All prices exclude VAT. Billed monthly. Custom Linux configurations available on request.
           </p>
+          {/* VPS disclaimer */}
+          <div className="max-w-[700px] mx-auto mt-6 p-5 bg-amber-500/8 rounded-2xl border border-amber-500/15 text-center">
+            <p className="text-[var(--color-text-light)] text-sm">
+              <strong className="text-amber-400">Please note:</strong> VPS pricing does not include optional add-ons — DirectAdmin license (R100/mo), Paystack integration (R100/mo), or GoHighLevel (R2,500/mo). These are billed separately if required.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -265,7 +265,7 @@ export default function VPSHostingPage() {
             primaryText="Choose a Plan"
             primaryHref="#plans"
             secondaryText="Contact Sales"
-            secondaryHref="/about"
+            secondaryHref="/get-started"
           />
         </div>
       </section>

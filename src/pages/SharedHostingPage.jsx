@@ -9,7 +9,7 @@ import { BASE_PLANS } from '../services/pricingEngine'
 const plans = [
   {
     tier: 'Starter',
-    price: '899',
+    price: '1,500',
     period: '/mo',
     description: 'Perfect for personal sites and small blogs. Fully set up and managed by our team.',
     features: [
@@ -27,7 +27,7 @@ const plans = [
   },
   {
     tier: 'Professional',
-    price: '1,499',
+    price: '2,499',
     period: '/mo',
     featured: true,
     badge: 'Most Popular',
@@ -47,7 +47,7 @@ const plans = [
   },
   {
     tier: 'Business',
-    price: '2,499',
+    price: '3,999',
     period: '/mo',
     description: 'High-performance hosting for demanding websites and applications.',
     features: [
@@ -66,7 +66,7 @@ const plans = [
   },
   {
     tier: 'Enterprise',
-    price: '4,499',
+    price: '6,499',
     period: '/mo',
     description: 'Enterprise-grade shared hosting for mission-critical websites.',
     features: [
@@ -141,7 +141,7 @@ export default function SharedHostingPage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {plans.map((p) => (
-              <PricingCard key={p.tier} {...p} ctaHref="https://www.technicalrelief.co.za/billing/" />
+              <PricingCard key={p.tier} {...p} ctaHref="/get-started" />
             ))}
           </div>
           <p className="text-center text-[var(--color-text-muted)] text-xs mt-6">
@@ -234,7 +234,7 @@ export default function SharedHostingPage() {
             primaryText="Choose a Plan"
             primaryHref="#plans"
             secondaryText="Talk to Sales"
-            secondaryHref="/about"
+            secondaryHref="/get-started"
           />
         </div>
       </section>

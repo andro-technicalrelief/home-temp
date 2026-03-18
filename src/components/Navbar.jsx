@@ -82,6 +82,7 @@ export default function Navbar() {
           <NavLink to="/vps" active={isActive('/vps')}>VPS</NavLink>
           <NavLink to="/pricing" active={isActive('/pricing')}>Pricing</NavLink>
           <NavLink to="/knowledge-base" active={isActive('/knowledge-base')}>Help</NavLink>
+          <NavLink to="/beta" active={isActive('/beta')}>Beta</NavLink>
         </div>
 
         {/* Right side — Get Started dropdown */}
@@ -91,7 +92,7 @@ export default function Navbar() {
               Get Started <span className="text-xs">▾</span>
             </button>
             <div className="absolute top-full right-0 mt-2 min-w-[200px] bg-[var(--color-bg-navy)]/98 backdrop-blur-2xl border border-[var(--color-border-dark)] rounded-xl p-2 shadow-[0_20px_60px_rgba(0,0,0,0.4)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-250 translate-y-2 group-hover:translate-y-0">
-              <Link to="/register" className="flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-light)] hover:bg-[var(--color-bg-card-hover)] hover:text-white transition-all text-sm no-underline">
+              <Link to="/get-started" className="flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-light)] hover:bg-[var(--color-bg-card-hover)] hover:text-white transition-all text-sm no-underline">
                 🚀 Getting Started
               </Link>
               <Link to="/login" className="flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-light)] hover:bg-[var(--color-bg-card-hover)] hover:text-white transition-all text-sm no-underline">
@@ -150,10 +151,11 @@ export default function Navbar() {
         <MobileNavLink to="/vps" active={isActive('/vps')} onClick={() => setMobileOpen(false)}>VPS</MobileNavLink>
         <MobileNavLink to="/pricing" active={isActive('/pricing')} onClick={() => setMobileOpen(false)}>Pricing</MobileNavLink>
         <MobileNavLink to="/knowledge-base" active={isActive('/knowledge-base')} onClick={() => setMobileOpen(false)}>Help</MobileNavLink>
+        <MobileNavLink to="/beta" active={isActive('/beta')} onClick={() => setMobileOpen(false)}>Beta</MobileNavLink>
 
         <div className="mt-auto pt-6 border-t border-[var(--color-border-dark)] flex flex-col gap-2">
           <Link
-            to="/register"
+            to="/get-started"
             onClick={() => setMobileOpen(false)}
             className="flex items-center justify-center w-full py-3 bg-[var(--color-accent)] text-white font-semibold rounded-xl hover:bg-[var(--color-accent-hover)] transition-all no-underline"
           >

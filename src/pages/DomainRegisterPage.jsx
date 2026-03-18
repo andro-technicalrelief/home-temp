@@ -3,14 +3,14 @@ import SectionHeader from '../components/SectionHeader'
 import CTABanner from '../components/CTABanner'
 
 const tldPricing = [
-  { tld: '.co.za', register: '199', renew: '199', transfer: '199' },
-  { tld: '.com', register: '209', renew: '209', transfer: '209' },
-  { tld: '.net', register: '259', renew: '259', transfer: '259' },
-  { tld: '.org', register: '269', renew: '269', transfer: '269' },
-  { tld: '.africa', register: '409', renew: '409', transfer: '409' },
-  { tld: '.online', register: '159', renew: '159', transfer: '159' },
-  { tld: '.store', register: '159', renew: '159', transfer: '159' },
-  { tld: '.io', register: '719', renew: '719', transfer: '719' },
+  { tld: '.co.za', register: '249', renew: '249', transfer: '249' },
+  { tld: '.com', register: '259', renew: '259', transfer: '259' },
+  { tld: '.net', register: '309', renew: '309', transfer: '309' },
+  { tld: '.org', register: '319', renew: '319', transfer: '319' },
+  { tld: '.africa', register: '459', renew: '459', transfer: '459' },
+  { tld: '.online', register: '209', renew: '209', transfer: '209' },
+  { tld: '.store', register: '209', renew: '209', transfer: '209' },
+  { tld: '.io', register: '769', renew: '769', transfer: '769' },
 ]
 
 const features = [
@@ -42,12 +42,12 @@ export default function DomainRegisterPage() {
     setResults({
       query: domainName,
       suggestions: [
-        { domain: `${base}.co.za`, available: true, price: '199' },
-        { domain: `${base}.com`, available: Math.random() > 0.4, price: '209' },
-        { domain: `${base}.net`, available: true, price: '259' },
-        { domain: `${base}.org`, available: true, price: '269' },
-        { domain: `${base}.online`, available: true, price: '159' },
-        { domain: `${base}.africa`, available: true, price: '409' },
+        { domain: `${base}.co.za`, available: true, price: '249' },
+        { domain: `${base}.com`, available: Math.random() > 0.4, price: '259' },
+        { domain: `${base}.net`, available: true, price: '309' },
+        { domain: `${base}.org`, available: true, price: '319' },
+        { domain: `${base}.online`, available: true, price: '209' },
+        { domain: `${base}.africa`, available: true, price: '459' },
       ],
     })
     setSearching(false)
@@ -163,6 +163,12 @@ export default function DomainRegisterPage() {
               </tbody>
             </table>
           </div>
+          {/* Domain setup fee */}
+          <div className="max-w-[700px] mx-auto mt-8 p-5 bg-amber-500/8 rounded-2xl border border-amber-500/15 text-center">
+            <p className="text-[var(--color-text-light)] text-sm">
+              <strong className="text-amber-400">Domain Setup Fee:</strong> A once-off R350 setup fee applies to all new domain registrations. This covers DNS configuration, email setup, SSL pointing, and full integration with your hosting.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -196,7 +202,7 @@ export default function DomainRegisterPage() {
             primaryText="Search Domains"
             primaryHref="#"
             secondaryText="Contact Us"
-            secondaryHref="/about"
+            secondaryHref="/get-started"
           />
         </div>
       </section>
