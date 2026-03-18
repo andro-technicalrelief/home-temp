@@ -1,0 +1,57 @@
+name: Deploy to DirectAdmin VPS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_BLESTA_API_URL: ${{ secrets.BLESTA_API_URL }}
+
+      - name: Deploy to VPS via SSH
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          source: "dist/*"
+          target: "/home/${{ secrets.SSH_USER }}/domains/technicalrelief.co.za/public_html"
+          strip_components: 1
+          overwrite: true
+
+      - name: Post-deploy — set .htaccess for SPA routing
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            cat > /home/${{ secrets.SSH_USER }}/domains/technicalrelief.co.za/public_html/.htaccess << 'EOF'
+            <IfModule mod_rewrite.c>
+              RewriteEngine On
+              RewriteBase /
+              RewriteRule ^index\.html$ - [L]
+              RewriteCond %{REQUEST_FILENAME} !-f
+              RewriteCond %{REQUEST_FILENAME} !-d
+              RewriteRule . /index.html [L]
+            </IfModule>
+            EOF
