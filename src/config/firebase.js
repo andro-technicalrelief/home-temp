@@ -20,8 +20,28 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 }
 
-const app = initializeApp(firebaseConfig)
-const auth = getAuth(app)
+let app;
+let auth;
+
+try {
+  if (!import.meta.env.VITE_FIREBASE_API_KEY) {
+    throw new Error('Firebase API Key is missing. Check your .env file.')
+  }
+  app = initializeApp(firebaseConfig)
+  auth = getAuth(app)
+} catch (err) {
+  console.error("Firebase Initialization Error:", err.message)
+  app = { name: '[Firebase Initialization Failed]' }
+  auth = {
+    currentUser: null,
+    onAuthStateChanged: (observer) => { 
+      console.warn("Firebase Auth not available - defaulting to guest mode.");
+      if (typeof observer === 'function') observer(null);
+      else if (observer?.next) observer.next(null);
+      return () => {} 
+    }
+  }
+}
 
 export {
   auth,

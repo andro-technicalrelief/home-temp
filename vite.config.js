@@ -3,9 +3,13 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  server: {
+    host: true,
+    port: 5173,
+  },
   plugins: [
     react(),
     tailwindcss(),
   ],
-  base: './', //For Netlify base directory
+  base: '/', //Forced root base for dev/prod compatibility
 })

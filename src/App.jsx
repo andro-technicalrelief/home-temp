@@ -18,6 +18,7 @@ import DomainTransferPage from './pages/DomainTransferPage'
 import SharedHostingPage from './pages/SharedHostingPage'
 import VPSHostingPage from './pages/VPSHostingPage'
 import KnowledgeBasePage from './pages/KnowledgeBasePage'
+import LegalPage from './pages/LegalPage'
 
 // Auth pages
 import LoginPage from './pages/LoginPage'
@@ -95,6 +96,10 @@ function App() {
         <Route path="/knowledge-base" element={<PublicLayout><KnowledgeBasePage /></PublicLayout>} />
         <Route path="/get-started" element={<PublicLayout><GetStartedPage /></PublicLayout>} />
         <Route path="/beta" element={<PublicLayout><BetaPage /></PublicLayout>} />
+        <Route path="/terms" element={<PublicLayout><LegalPage /></PublicLayout>} />
+        <Route path="/privacy" element={<PublicLayout><LegalPage /></PublicLayout>} />
+        <Route path="/sla" element={<PublicLayout><LegalPage /></PublicLayout>} />
+        <Route path="/acceptable-use" element={<PublicLayout><LegalPage /></PublicLayout>} />
 
         {/* Auth Pages (no Navbar/Footer) */}
         <Route path="/login" element={<LoginPage />} />

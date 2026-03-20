@@ -9,7 +9,11 @@ export default function LiveChatWidget() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <motion.div 
+      drag
+      dragConstraints={{ left: -1000, right: 0, top: -800, bottom: 0 }}
+      className="fixed bottom-6 right-6 z-50 origin-bottom-right"
+    >
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -17,62 +21,74 @@ export default function LiveChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.25 }}
-            className="absolute bottom-[70px] right-0 w-[320px] bg-[var(--color-bg-card)] border border-[var(--color-border-dark)] rounded-2xl shadow-2xl overflow-hidden"
+            className="absolute bottom-[70px] right-0 w-[320px] bg-[var(--color-bg-card)] border border-[var(--color-border-dark)] rounded-2xl shadow-2xl overflow-hidden cursor-default"
+            onPointerDown={(e) => e.stopPropagation()} // Prevent drag when interacting with content
           >
             {/* Header */}
-            <div className="bg-[var(--color-accent)] px-5 py-4">
+            <div className="bg-[var(--color-accent)] px-5 py-4 cursor-move">
               <div className="flex items-center gap-2 mb-1">
                 <span className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse" />
                 <span className="text-white text-sm font-semibold">Technical Relief</span>
               </div>
-              <p className="text-white/80 text-xs">We typically reply within 2 hours</p>
+              <p className="text-white/80 text-xs">Drag widget to reposition • Usually replies in 2h</p>
             </div>
 
             {/* Quick actions */}
-            <div className="p-4 flex flex-col gap-2">
+            <div className="p-4 flex flex-col gap-2 max-h-[400px] overflow-y-auto custom-scrollbar">
               <p className="text-[var(--color-text-muted)] text-xs mb-1">How can we help?</p>
 
               <a
+                href="/hosting"
+                className="flex items-center gap-3 p-3 bg-[var(--color-bg-dark)] rounded-xl text-sm text-white hover:bg-[var(--color-accent)]/10 transition-colors no-underline border border-transparent hover:border-[var(--color-accent)]/20"
+              >
+                <span className="text-lg">🚀</span>
+                <div>
+                  <div className="font-medium">Discover Managed Hosting</div>
+                  <div className="text-[var(--color-text-muted)] text-xs">High-performance React/Node apps</div>
+                </div>
+              </a>
+
+              <a
+                href="/vps"
+                className="flex items-center gap-3 p-3 bg-[var(--color-bg-dark)] rounded-xl text-sm text-white hover:bg-[var(--color-accent)]/10 transition-colors no-underline border border-transparent hover:border-[var(--color-accent)]/20"
+              >
+                <span className="text-lg">💻</span>
+                <div>
+                  <div className="font-medium">Linux VPS Solutions</div>
+                  <div className="text-[var(--color-text-muted)] text-xs">Full root access & dedicated resources</div>
+                </div>
+              </a>
+
+              <a
                 href="/pricing"
-                className="flex items-center gap-3 p-3 bg-[var(--color-bg-dark)] rounded-xl text-sm text-white hover:bg-[var(--color-accent)]/10 transition-colors no-underline"
+                className="flex items-center gap-3 p-3 bg-[var(--color-bg-dark)] rounded-xl text-sm text-white hover:bg-[var(--color-accent)]/10 transition-colors no-underline border border-transparent hover:border-[var(--color-accent)]/20"
               >
                 <span className="text-lg">💳</span>
                 <div>
-                  <div className="font-medium">View Plans & Pricing</div>
-                  <div className="text-[var(--color-text-muted)] text-xs">Hosting, VPS, Development</div>
+                  <div className="font-medium">Compare All Plans</div>
+                  <div className="text-[var(--color-text-muted)] text-xs">Find the perfect fit for your project</div>
+                </div>
+              </a>
+
+              <a
+                href="/about"
+                className="flex items-center gap-3 p-3 bg-[var(--color-bg-dark)] rounded-xl text-sm text-white hover:bg-[var(--color-accent)]/10 transition-colors no-underline border border-transparent hover:border-[var(--color-accent)]/20"
+              >
+                <span className="text-lg">🏢</span>
+                <div>
+                  <div className="font-medium">What We Do</div>
+                  <div className="text-[var(--color-text-muted)] text-xs">Our philosophy and engineering team</div>
                 </div>
               </a>
 
               <a
                 href="/dashboard/support"
-                className="flex items-center gap-3 p-3 bg-[var(--color-bg-dark)] rounded-xl text-sm text-white hover:bg-[var(--color-accent)]/10 transition-colors no-underline"
+                className="flex items-center gap-3 p-3 bg-[var(--color-bg-dark)] rounded-xl text-sm text-white hover:bg-[var(--color-accent)]/10 transition-colors no-underline border border-transparent hover:border-[var(--color-accent)]/20"
               >
                 <span className="text-lg">🎫</span>
                 <div>
-                  <div className="font-medium">Submit a Support Ticket</div>
-                  <div className="text-[var(--color-text-muted)] text-xs">Get help from our team</div>
-                </div>
-              </a>
-
-              <a
-                href="/knowledge-base"
-                className="flex items-center gap-3 p-3 bg-[var(--color-bg-dark)] rounded-xl text-sm text-white hover:bg-[var(--color-accent)]/10 transition-colors no-underline"
-              >
-                <span className="text-lg">📖</span>
-                <div>
-                  <div className="font-medium">Knowledge Base</div>
-                  <div className="text-[var(--color-text-muted)] text-xs">FAQs & how-tos</div>
-                </div>
-              </a>
-
-              <a
-                href="mailto:support@technicalrelief.co.za"
-                className="flex items-center gap-3 p-3 bg-[var(--color-bg-dark)] rounded-xl text-sm text-white hover:bg-[var(--color-accent)]/10 transition-colors no-underline"
-              >
-                <span className="text-lg">📧</span>
-                <div>
-                  <div className="font-medium">Email Us</div>
-                  <div className="text-[var(--color-text-muted)] text-xs">support@technicalrelief.co.za</div>
+                  <div className="font-medium">Support Center</div>
+                  <div className="text-[var(--color-text-muted)] text-xs">Open a ticket with our technicians</div>
                 </div>
               </a>
             </div>
@@ -85,7 +101,7 @@ export default function LiveChatWidget() {
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 rounded-full bg-[var(--color-accent)] text-white shadow-lg shadow-[var(--color-accent)]/30 flex items-center justify-center cursor-pointer hover:bg-[var(--color-accent-hover)] transition-colors"
+        className="w-14 h-14 rounded-full bg-[var(--color-accent)] text-white shadow-lg shadow-[var(--color-accent)]/30 flex items-center justify-center cursor-grab active:cursor-grabbing hover:bg-[var(--color-accent-hover)] transition-colors"
       >
         {isOpen ? (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -97,6 +113,6 @@ export default function LiveChatWidget() {
           </svg>
         )}
       </motion.button>
-    </div>
+    </motion.div>
   )
 }

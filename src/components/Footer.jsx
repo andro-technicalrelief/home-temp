@@ -18,10 +18,10 @@ const footerLinks = {
     { label: 'Support', to: '/dashboard/support' },
   ],
   Legal: [
-    { label: 'Terms & Conditions', href: '#' },
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'SLA', href: '#' },
-    { label: 'Acceptable Use', href: '#' },
+    { label: 'Terms & Conditions', to: '/terms' },
+    { label: 'Privacy Policy', to: '/privacy' },
+    { label: 'SLA', to: '/sla' },
+    { label: 'Acceptable Use', to: '/acceptable-use' },
   ],
 }
 
@@ -113,9 +113,9 @@ export default function Footer() {
               © {new Date().getFullYear()} Technical Relief. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-[var(--color-text-muted)] hover:text-white text-sm transition-colors no-underline">Terms</a>
-              <a href="#" className="text-[var(--color-text-muted)] hover:text-white text-sm transition-colors no-underline">Privacy</a>
-              <a href="#" className="text-[var(--color-text-muted)] hover:text-white text-sm transition-colors no-underline">SLA</a>
+              <Link to="/terms" className="text-[var(--color-text-muted)] hover:text-white text-sm transition-colors no-underline">Terms</Link>
+              <Link to="/privacy" className="text-[var(--color-text-muted)] hover:text-white text-sm transition-colors no-underline">Privacy</Link>
+              <Link to="/sla" className="text-[var(--color-text-muted)] hover:text-white text-sm transition-colors no-underline">SLA</Link>
             </div>
           </div>
         </div>
