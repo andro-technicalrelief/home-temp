@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '@/lib/navigation'
 
 export default function PricingCard({ tier, price, period, description, features = [], ctaText = 'Get Started', ctaHref = '#', featured = false, badge = null }) {
   const btnClass = `inline-flex items-center justify-center py-3 px-6 rounded-xl font-semibold text-sm transition-all no-underline ${

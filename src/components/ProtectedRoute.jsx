@@ -1,9 +1,18 @@
-import { Navigate, useLocation } from 'react-router-dom'
-import { useAuth } from '../context/AuthContext'
+'use client'
+
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { useAuth } from '@/context/AuthContext'
 
 export default function ProtectedRoute({ children }) {
   const { isAuthenticated, loading } = useAuth()
-  const location = useLocation()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!loading && !isAuthenticated) {
+      router.replace('/login')
+    }
+  }, [loading, isAuthenticated, router])
 
   if (loading) {
     return (
@@ -17,7 +26,7 @@ export default function ProtectedRoute({ children }) {
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" state={{ from: location }} replace />
+    return null // Will redirect via useEffect
   }
 
   return children

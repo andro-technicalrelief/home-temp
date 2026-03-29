@@ -1,5 +1,7 @@
+'use client'
+
 import { useState } from 'react'
-import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom'
+import { Link, NavLink, useNavigate, useLocation } from '@/lib/navigation'
 import { useAuth } from '../context/AuthContext'
 
 // ═══════════════════════════════════════════════════════

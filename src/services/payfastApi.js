@@ -10,9 +10,9 @@
  * PayFast docs: https://developers.payfast.co.za/docs
  */
 
-const PAYFAST_BASE = import.meta.env.VITE_PAYFAST_URL || 'https://sandbox.payfast.co.za'
-const MERCHANT_ID = import.meta.env.VITE_PAYFAST_MERCHANT_ID || '10000100'
-const MERCHANT_KEY = import.meta.env.VITE_PAYFAST_MERCHANT_KEY || '46f0cd694581a'
+const PAYFAST_BASE = process.env.NEXT_PUBLIC_PAYFAST_URL || 'https://sandbox.payfast.co.za'
+const MERCHANT_ID = process.env.NEXT_PUBLIC_PAYFAST_MERCHANT_ID || '10000100'
+const MERCHANT_KEY = process.env.NEXT_PUBLIC_PAYFAST_MERCHANT_KEY || '46f0cd694581a'
 
 // ═══════════════════════════════════════════════════════
 // SIGNATURE GENERATION (client-side for redirects)

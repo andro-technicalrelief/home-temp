@@ -30,6 +30,32 @@ export const PRICE_FLOORS = {
 }
 
 // ═══════════════════════════════════════════════════════
+// DIRECTADMIN SUBSCRIPTION — R100/mo flat add-on
+// Charged to every hosting client
+// ═══════════════════════════════════════════════════════
+
+export const DIRECTADMIN_FEE = 100  // R100/month
+
+/**
+ * Calculate total monthly with DirectAdmin subscription included.
+ * @param {number} planPrice - Plan monthly price
+ * @param {boolean} includeDA - Whether to include DA fee (default true)
+ * @returns {{ planPrice: number, daFee: number, total: number }}
+ */
+export function calculateWithDirectAdmin(planPrice, includeDA = true) {
+  const daFee = includeDA ? DIRECTADMIN_FEE : 0
+  return {
+    planPrice,
+    daFee,
+    total: planPrice + daFee,
+    breakdown: [
+      { label: 'Hosting Plan', amount: planPrice },
+      ...(includeDA ? [{ label: 'DirectAdmin Panel Access', amount: DIRECTADMIN_FEE }] : []),
+    ],
+  }
+}
+
+// ═══════════════════════════════════════════════════════
 // BASE PLAN DEFINITIONS
 // ═══════════════════════════════════════════════════════
 

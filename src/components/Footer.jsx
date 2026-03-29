@@ -1,5 +1,7 @@
+'use client'
+
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from '@/lib/navigation'
 
 const footerLinks = {
   Services: [

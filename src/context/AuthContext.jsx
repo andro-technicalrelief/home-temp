@@ -1,3 +1,5 @@
+'use client'
+
 import { createContext, useContext, useState, useEffect, useCallback } from 'react'
 import {
   auth,
@@ -10,7 +12,8 @@ import {
   sendEmailVerification,
   fetchSignInMethodsForEmail,
 } from '../config/firebase'
-import { registerClient, getClientDetails } from '../services/blestaApi'
+import { createContact, searchContacts, getContact } from '../services/ghlApi'
+import { syncUserToN8N } from '../services/n8nApi'
 
 const AuthContext = createContext(null)
 
@@ -54,7 +57,7 @@ export function AuthProvider({ children }) {
     const unsubscribe = onAuthStateChanged(auth, async (fbUser) => {
       if (fbUser) {
         setFirebaseUser(fbUser)
-        // Build user profile from Firebase + any stored Blesta data
+        // Build user profile from Firebase + GHL CRM data
         const profile = {
           id: fbUser.uid,
           firebase_uid: fbUser.uid,
@@ -63,28 +66,47 @@ export function AuthProvider({ children }) {
           last_name: fbUser.displayName?.split(' ').slice(1).join(' ') || '',
           emailVerified: fbUser.emailVerified,
           phone: fbUser.phoneNumber || '',
-          // Try to fetch Blesta profile
           tier: 'sme',
+          ghl_contact_id: null,
         }
 
-        // Attempt to load Blesta client details
+        // Attempt to find or create GHL contact by email
         try {
-          const blestaData = await getClientDetails(fbUser.uid)
-          if (blestaData?.client) {
-            Object.assign(profile, blestaData.client, { firebase_uid: fbUser.uid })
+          const ghlResult = await searchContacts(fbUser.email)
+          if (ghlResult?.contacts?.length > 0) {
+            const ghlContact = ghlResult.contacts[0]
+            profile.ghl_contact_id = ghlContact.id
+            profile.first_name = ghlContact.firstName || profile.first_name
+            profile.last_name = ghlContact.lastName || profile.last_name
+            profile.phone = ghlContact.phone || profile.phone
+            profile.tags = ghlContact.tags || []
+          } else {
+            // No GHL contact found — auto-create one
+            try {
+              const newContact = await createContact({
+                firstName: profile.first_name,
+                lastName: profile.last_name,
+                email: fbUser.email,
+                phone: fbUser.phoneNumber || '',
+                tags: ['auto-synced'],
+                customFields: [{ key: 'firebase_uid', value: fbUser.uid }],
+              })
+              if (newContact?.contact?.id) {
+                profile.ghl_contact_id = newContact.contact.id
+                console.log('GHL contact auto-created on login:', newContact.contact.id)
+              }
+            } catch {
+              console.warn('GHL auto-create skipped — API not connected')
+            }
           }
         } catch {
-          // Blesta not connected yet — use Firebase profile only
+          // GHL not connected yet — use Firebase profile only
         }
 
-        if (!localStorage.getItem('demo_client_id')) {
-          setUser(profile)
-        }
+        setUser(profile)
       } else {
         setFirebaseUser(null)
-        if (!localStorage.getItem('demo_client_id')) {
-          setUser(null)
-        }
+        setUser(null)
       }
       setLoading(false)
     })
@@ -116,9 +138,9 @@ export function AuthProvider({ children }) {
     }
   }, [])
 
-  // ═══════════════════════════════════════════════════════
+   // ═══════════════════════════════════════════════════════
   // REGISTER
-  // Creates Firebase account + optional Blesta client record.
+  // Creates Firebase account + GHL CRM contact.
   // ═══════════════════════════════════════════════════════
 
   const register = useCallback(async (data) => {
@@ -132,19 +154,36 @@ export function AuthProvider({ children }) {
       // Send email verification
       await sendEmailVerification(cred.user)
 
-      // Try to create Blesta client record linked to Firebase UID
+      // Create GHL contact linked to Firebase UID
       try {
-        await registerClient({
-          ...profileData,
+        await syncUserToN8N({
+          firstName: profileData.first_name || profileData.firstName || '',
+          lastName: profileData.last_name || profileData.lastName || '',
+          name: `${profileData.first_name || profileData.firstName || ''} ${profileData.last_name || profileData.lastName || ''}`.trim(),
           email,
-          firebase_uid: cred.user.uid,
+          phone: profileData.phone || '',
+          tags: ["Technical Relief Signup", "New Lead"],
+          locationId: "ykYa2zxHu6dYJjJsW1Zn",
+          businessName: profileData.businessName || profileData.companyName || '',
+          companyName: profileData.companyName || profileData.businessName || '',
+          website: profileData.website || '',
+          streetAddress: profileData.streetAddress || profileData.address1 || '',
+          address1: profileData.address1 || profileData.streetAddress || '',
+          city: profileData.city || '',
+          state: profileData.state || '',
+          country: profileData.country || '',
+          postalCode: profileData.postalCode || '',
+          customFields: [{ key: 'firebase_uid', value: cred.user.uid }],
+          firebase_uid: cred.user.uid
         })
-      } catch {
-        // Blesta not connected yet — Firebase registration still succeeds
-        console.warn('Blesta client creation skipped — API not connected')
+        console.log('User synced to n8n successfully')
+          //
+        //
+      } catch (err) {
+        // Firebase registration still succeeds even if n8n sync fails
+        console.warn('n8n sync skipped or failed:', err.message)
       }
 
-      localStorage.removeItem('demo_client_id')
       setJustRegistered(true)
       return { success: true, uid: cred.user.uid, emailVerification: true }
     } catch (err) {
@@ -159,10 +198,8 @@ export function AuthProvider({ children }) {
   // ═══════════════════════════════════════════════════════
 
   const logout = useCallback(async () => {
-    // Clear demo session
-    localStorage.removeItem('demo_client_id')
-    localStorage.removeItem('blesta_token')
-    localStorage.removeItem('blesta_client_id')
+    // Clear session data
+    localStorage.removeItem('ghl_contact_id')
 
     // Sign out of Firebase
     try {

@@ -1,5 +1,7 @@
+'use client'
+
 import { useState } from 'react'
-import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom'
+import { Link, NavLink, useNavigate, useLocation } from '@/lib/navigation'
 import { useAuth } from '../context/AuthContext'
 import OnboardingTour from './OnboardingTour'
 
@@ -63,7 +65,7 @@ const allLinks = sidebarSections.flatMap((s) =>
 )
 
 const quickLinks = [
-  { label: 'DirectAdmin', href: import.meta.env.VITE_DIRECTADMIN_URL || 'https://server.technicalrelief.co.za:2222', icon: '🖥️' },
+  { label: 'DirectAdmin', href: process.env.NEXT_PUBLIC_DIRECTADMIN_URL || 'https://server.technicalrelief.co.za:2222', icon: '🖥️' },
   { label: 'Gmail', href: 'https://mail.google.com', icon: '📧' },
 ]
 

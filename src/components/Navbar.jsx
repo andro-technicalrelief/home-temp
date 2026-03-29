@@ -1,5 +1,7 @@
+'use client'
+
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from '@/lib/navigation'
 
 const navDropdowns = {
   Domains: [

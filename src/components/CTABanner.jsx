@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '@/lib/navigation'
 
 export default function CTABanner({ title, description, primaryText, primaryHref, secondaryText, secondaryHref }) {
   return (

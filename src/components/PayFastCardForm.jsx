@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import { useAuth } from '../context/AuthContext'
 import { initiateTokenization } from '../services/payfastApi'

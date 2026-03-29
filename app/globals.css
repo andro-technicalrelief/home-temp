@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary palette */
+  --color-bg-dark: #0a1628;
+  --color-bg-navy: #0f1d35;
+  --color-bg-card: #152240;
+  --color-bg-card-hover: #1a2d52;
+  --color-bg-light: #f8fafc;
+  --color-bg-gray: #f1f5f9;
+
+  /* Accent */
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+  --color-accent-light: #60a5fa;
+  --color-accent-glow: rgba(59, 130, 246, 0.25);
+  --color-accent-subtle: rgba(59, 130, 246, 0.08);
+
+  /* Secondary */
+  --color-secondary: #06b6d4;
+  --color-secondary-hover: #0891b2;
+
+  /* Status */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  /* Text */
+  --color-text-white: #ffffff;
+  --color-text-light: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --color-text-dark: #1e293b;
+  --color-text-body: #475569;
+
+  /* Borders */
+  --color-border-dark: rgba(255, 255, 255, 0.08);
+  --color-border-light: #e2e8f0;
+
+  /* Font families */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: var(--font-family-sans);
+    color: var(--color-text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+/* Text gradient utility */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-card);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
