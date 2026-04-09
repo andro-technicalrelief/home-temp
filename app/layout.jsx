@@ -5,6 +5,9 @@ export const metadata = {
   title: 'Technical Relief — Web Hosting, VPS & Domain Management',
   description: 'Professional web hosting, VPS servers, and domain management for South African businesses. Managed DirectAdmin hosting with 24/7 support.',
   keywords: 'web hosting, VPS, domain registration, South Africa, DirectAdmin, managed hosting',
+  icons: {
+    icon: '/icon.png',
+  },
 }
 
 export default function RootLayout({ children }) {
