@@ -84,7 +84,7 @@ export default function LiveChatWidget() {
               </a>
 
               <a
-                href="/dashboard/support"
+                href="/login"
                 className="flex items-center gap-3 p-3 bg-[var(--color-bg-dark)] rounded-xl text-sm text-white hover:bg-[var(--color-accent)]/10 transition-colors no-underline border border-transparent hover:border-[var(--color-accent)]/20"
               >
                 <span className="text-lg">🎫</span>

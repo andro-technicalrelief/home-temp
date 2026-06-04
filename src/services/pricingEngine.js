@@ -6,7 +6,7 @@
  * - Client user count → tier multiplier
  * - Pro-rata billing for mid-month changes
  *
- * Price floors enforced: Shared ≥ R550/mo, VPS ≥ R5,000/mo (R2,500 server + R2,500 management)
+ * Price floors enforced: Shared ≥ R3,000/mo, VPS ≥ R12,000/mo (R6,000 server + R6,000 management)
  */
 
 // ═══════════════════════════════════════════════════════
@@ -24,8 +24,8 @@ export const TIERS = {
 // ═══════════════════════════════════════════════════════
 
 export const PRICE_FLOORS = {
-  shared: 1500,
-  vps: 6500,   // Linux VPS base + managed support
+  shared: 3000,
+  vps: 12000,   // Linux VPS base + managed support
   custom_dev: 0,
 }
 
@@ -61,15 +61,15 @@ export function calculateWithDirectAdmin(planPrice, includeDA = true) {
 
 export const BASE_PLANS = {
   shared: [
-    { id: 'shared-starter',      name: 'Starter',      base: 1500,  category: 'shared' },
-    { id: 'shared-professional', name: 'Professional',  base: 2499,  category: 'shared' },
-    { id: 'shared-business',     name: 'Business',      base: 3999,  category: 'shared' },
-    { id: 'shared-enterprise',   name: 'Enterprise',    base: 6499,  category: 'shared' },
+    { id: 'shared-starter',      name: 'Starter',      base: 3000,  category: 'shared' },
+    { id: 'shared-professional', name: 'Professional',  base: 5000,  category: 'shared' },
+    { id: 'shared-business',     name: 'Business',      base: 8000,  category: 'shared' },
+    { id: 'shared-enterprise',   name: 'Enterprise',    base: 13000,  category: 'shared' },
   ],
   vps: [
-    { id: 'vps-starter',         name: 'Linux VPS Starter',       base: 6500,   category: 'vps' },
-    { id: 'vps-professional',    name: 'Linux VPS Professional',  base: 10500,  category: 'vps' },
-    { id: 'vps-enterprise',      name: 'Linux VPS Enterprise',    base: 17999,  category: 'vps' },
+    { id: 'vps-starter',         name: 'Linux VPS Starter',       base: 12000,  category: 'vps' },
+    { id: 'vps-professional',    name: 'Linux VPS Professional',  base: 20000,  category: 'vps' },
+    { id: 'vps-enterprise',      name: 'Linux VPS Enterprise',    base: 35000,  category: 'vps' },
   ],
   custom_dev: [
     { id: 'dev-portfolio',       name: 'Portfolio / Blog',       base: 8000,   category: 'custom_dev' },

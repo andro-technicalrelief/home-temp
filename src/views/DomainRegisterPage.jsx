@@ -3,16 +3,17 @@
 import { useState } from 'react'
 import SectionHeader from '../components/SectionHeader'
 import CTABanner from '../components/CTABanner'
+import { checkDomainAvailability } from '../services/hostafricaApi'
 
 const tldPricing = [
-  { tld: '.co.za', register: '249', renew: '249', transfer: '249' },
-  { tld: '.com', register: '259', renew: '259', transfer: '259' },
-  { tld: '.net', register: '309', renew: '309', transfer: '309' },
-  { tld: '.org', register: '319', renew: '319', transfer: '319' },
-  { tld: '.africa', register: '459', renew: '459', transfer: '459' },
-  { tld: '.online', register: '209', renew: '209', transfer: '209' },
-  { tld: '.store', register: '209', renew: '209', transfer: '209' },
-  { tld: '.io', register: '769', renew: '769', transfer: '769' },
+  { tld: '.co.za', register: '100', renew: '100', transfer: '100' },
+  { tld: '.com', register: '150', renew: '150', transfer: '150' },
+  { tld: '.net', register: '180', renew: '180', transfer: '180' },
+  { tld: '.org', register: '200', renew: '200', transfer: '200' },
+  { tld: '.africa', register: '250', renew: '250', transfer: '250' },
+  { tld: '.online', register: '120', renew: '120', transfer: '120' },
+  { tld: '.store', register: '120', renew: '120', transfer: '120' },
+  { tld: '.io', register: '450', renew: '450', transfer: '450' },
 ]
 
 const features = [
@@ -33,26 +34,65 @@ export default function DomainRegisterPage() {
     e.preventDefault()
     if (!query.trim()) return
     setSearching(true)
+    setResults(null)
 
-    // Simulate WHOIS lookup — in production this calls Blesta's domain lookup API
-    await new Promise((r) => setTimeout(r, 1200))
+    try {
+      const domainName = query.trim().replace(/^(https?:\/\/)?(www\.)?/, '').split('/')[0]
+      const hasExtension = domainName.includes('.')
+      const baseName = hasExtension ? domainName.split('.')[0] : domainName
 
-    const domainName = query.trim().replace(/^(https?:\/\/)?(www\.)?/, '').split('/')[0]
-    const hasExtension = domainName.includes('.')
-    const base = hasExtension ? domainName.split('.')[0] : domainName
+      // Check searched domain, plus standard extensions
+      const extensionsToCheck = hasExtension 
+        ? [domainName.substring(baseName.length)] 
+        : ['.co.za', '.com', '.net', '.org', '.online', '.africa']
 
-    setResults({
-      query: domainName,
-      suggestions: [
-        { domain: `${base}.co.za`, available: true, price: '249' },
-        { domain: `${base}.com`, available: Math.random() > 0.4, price: '259' },
-        { domain: `${base}.net`, available: true, price: '309' },
-        { domain: `${base}.org`, available: true, price: '319' },
-        { domain: `${base}.online`, available: true, price: '209' },
-        { domain: `${base}.africa`, available: true, price: '459' },
-      ],
-    })
-    setSearching(false)
+      const checkPromises = extensionsToCheck.map(async (tld) => {
+        const fullDomain = `${baseName}${tld}`
+        try {
+          const res = await checkDomainAvailability(fullDomain)
+          const isAvailable = res.available === true || res.status === 'available' || res.status === 0 || res.available === 1
+          const priceInfo = tldPricing.find((p) => p.tld === tld) || { register: '100' }
+          
+          return {
+            domain: fullDomain,
+            sld: baseName,
+            tld: tld,
+            available: isAvailable,
+            price: priceInfo.register,
+          }
+        } catch (err) {
+          console.error(`Failed to check ${fullDomain}:`, err)
+          const priceInfo = tldPricing.find((p) => p.tld === tld) || { register: '100' }
+          return {
+            domain: fullDomain,
+            sld: baseName,
+            tld: tld,
+            available: false,
+            error: true,
+            price: priceInfo.register,
+          }
+        }
+      })
+
+      const checkedDomains = await Promise.all(checkPromises)
+
+      setResults({
+        query: domainName,
+        suggestions: checkedDomains,
+      })
+    } catch (err) {
+      console.error('Error searching domains:', err)
+    } finally {
+      setSearching(false)
+    }
+  }
+
+  const handleBuyNow = (sld, tld) => {
+    const whmcsUrl = process.env.NEXT_PUBLIC_WHMCS_URL || 'https://billing.technicalrelief.co.za'
+    const cleanTld = tld.startsWith('.') ? tld : `.${tld}`
+    const redirectUrl = `${whmcsUrl}/cart.php?a=add&domain=register&sld=${encodeURIComponent(sld)}&tld=${encodeURIComponent(cleanTld)}`
+    
+    window.location.href = redirectUrl
   }
 
   return (
@@ -121,8 +161,11 @@ export default function DomainRegisterPage() {
                   <div className="flex items-center gap-4">
                     <span className="text-white font-bold">R{r.price}<span className="text-[var(--color-text-muted)] text-xs">/yr</span></span>
                     {r.available && (
-                      <button className="px-4 py-2 bg-[var(--color-accent)] text-white text-sm font-semibold rounded-lg hover:bg-[var(--color-accent-hover)] transition-all cursor-pointer">
-                        Add to Cart
+                      <button 
+                        onClick={() => handleBuyNow(r.sld, r.tld)}
+                        className="px-4 py-2 bg-[var(--color-accent)] text-white text-sm font-semibold rounded-lg hover:bg-[var(--color-accent-hover)] transition-all cursor-pointer"
+                      >
+                        Register Now
                       </button>
                     )}
                   </div>

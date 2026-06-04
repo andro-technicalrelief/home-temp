@@ -1,15 +1,14 @@
 import SectionHeader from '../components/SectionHeader'
 import PricingCard from '../components/PricingCard'
 import CTABanner from '../components/CTABanner'
-import PricingSlider from '../components/PricingSlider'
-import { BASE_PLANS } from '../services/pricingEngine'
+import UnifiedPricingSlider from '../components/UnifiedPricingSlider'
 
-/* Price floor: minimum R550/mo — DirectAdmin license included */
+/* Price floor: minimum R3,000/mo — DirectAdmin license included */
 
 const plans = [
   {
     tier: 'Starter',
-    price: '1,500',
+    price: '3,000',
     period: '/mo',
     description: 'Perfect for personal sites and small blogs. Fully set up and managed by our team.',
     features: [
@@ -27,7 +26,7 @@ const plans = [
   },
   {
     tier: 'Professional',
-    price: '2,499',
+    price: '5,000',
     period: '/mo',
     featured: true,
     badge: 'Most Popular',
@@ -47,7 +46,7 @@ const plans = [
   },
   {
     tier: 'Business',
-    price: '3,999',
+    price: '8,000',
     period: '/mo',
     description: 'High-performance hosting for demanding websites and applications.',
     features: [
@@ -66,7 +65,7 @@ const plans = [
   },
   {
     tier: 'Enterprise',
-    price: '6,499',
+    price: '13,000',
     period: '/mo',
     description: 'Enterprise-grade shared hosting for mission-critical websites.',
     features: [
@@ -160,11 +159,7 @@ export default function SharedHostingPage() {
             description="Our tiered pricing adjusts based on your team size. Slide to see how your plan scales across SME, Growth, and Enterprise tiers."
             dark
           />
-          <div className="flex flex-col gap-6">
-            {BASE_PLANS.shared.map((plan) => (
-              <PricingSlider key={plan.id} plan={plan} />
-            ))}
-          </div>
+          <UnifiedPricingSlider category="shared" plansProp={plans} />
         </div>
       </section>
 

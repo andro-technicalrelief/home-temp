@@ -54,6 +54,22 @@ export async function GET(request, { params }) {
   try {
     const { path } = await params
     const { searchParams } = new URL(request.url)
+    
+    // Fallback mock check if HostAfrica credentials are not configured
+    const isCheck = path[0] === 'domains' && path[1] === 'check'
+    const email = process.env.HOSTAFRICA_API_EMAIL
+    const apiKey = process.env.HOSTAFRICA_API_KEY
+    if (isCheck && (!email || !apiKey)) {
+      const domain = searchParams.get('domain') || ''
+      const isAvailable = !domain.toLowerCase().includes('taken')
+      console.warn(`HostAfrica domain API credentials not configured. Returning mock response for: ${domain}`)
+      return NextResponse.json({
+        available: isAvailable,
+        status: isAvailable ? 'available' : 'unavailable',
+        domain
+      })
+    }
+    
     const { url: apiUrl, headers } = resolveEndpoint(path)
     
     const fullUrl = new URL(apiUrl)

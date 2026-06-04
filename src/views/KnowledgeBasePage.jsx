@@ -171,7 +171,7 @@ export default function KnowledgeBasePage() {
             title="Still Need Help?"
             description="Our support team is here for you. Submit a ticket and we'll get back to you within 24 hours."
             primaryText="Submit a Ticket"
-            primaryHref="/dashboard/support"
+            primaryHref="/login"
             secondaryText="Contact Us"
             secondaryHref="/get-started"
           />

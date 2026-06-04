@@ -11,13 +11,13 @@ const footerLinks = {
     { label: 'Domain Registration', to: '/domains/register' },
     { label: 'Domain Transfer', to: '/domains/transfer' },
     { label: 'Pricing', to: '/pricing' },
-    { label: 'Beta Program', to: '/beta' },
+    { label: 'Beta Program', to: '/software?tab=beta' },
   ],
   Company: [
     { label: 'About Us', to: '/about' },
     { label: 'Knowledge Base', to: '/knowledge-base' },
     { label: 'Client Area', to: '/login' },
-    { label: 'Support', to: '/dashboard/support' },
+    { label: 'Support', to: '/login' },
   ],
   Legal: [
     { label: 'Terms & Conditions', to: '/terms' },

@@ -60,6 +60,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-6">
           <NavLink to="/" active={isActive('/')}>Home</NavLink>
           <NavLink to="/about" active={isActive('/about')}>About</NavLink>
+          <NavLink to="/software" active={isActive('/software')}>Software</NavLink>
 
           {Object.entries(navDropdowns).map(([label, items]) => (
             <div key={label} className="relative group">
@@ -84,7 +85,6 @@ export default function Navbar() {
           <NavLink to="/vps" active={isActive('/vps')}>VPS</NavLink>
           <NavLink to="/pricing" active={isActive('/pricing')}>Pricing</NavLink>
           <NavLink to="/knowledge-base" active={isActive('/knowledge-base')}>Help</NavLink>
-          <NavLink to="/beta" active={isActive('/beta')}>Beta</NavLink>
         </div>
 
         {/* Right side — Get Started dropdown */}
@@ -124,6 +124,7 @@ export default function Navbar() {
       >
         <MobileNavLink to="/" active={isActive('/')} onClick={() => setMobileOpen(false)}>Home</MobileNavLink>
         <MobileNavLink to="/about" active={isActive('/about')} onClick={() => setMobileOpen(false)}>About</MobileNavLink>
+        <MobileNavLink to="/software" active={isActive('/software')} onClick={() => setMobileOpen(false)}>Software</MobileNavLink>
 
         {Object.entries(navDropdowns).map(([label, items]) => (
           <div key={label}>
@@ -153,7 +154,6 @@ export default function Navbar() {
         <MobileNavLink to="/vps" active={isActive('/vps')} onClick={() => setMobileOpen(false)}>VPS</MobileNavLink>
         <MobileNavLink to="/pricing" active={isActive('/pricing')} onClick={() => setMobileOpen(false)}>Pricing</MobileNavLink>
         <MobileNavLink to="/knowledge-base" active={isActive('/knowledge-base')} onClick={() => setMobileOpen(false)}>Help</MobileNavLink>
-        <MobileNavLink to="/beta" active={isActive('/beta')} onClick={() => setMobileOpen(false)}>Beta</MobileNavLink>
 
         <div className="mt-auto pt-6 border-t border-[var(--color-border-dark)] flex flex-col gap-2">
           <Link

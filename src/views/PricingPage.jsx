@@ -105,22 +105,22 @@ const enterpriseTier = {
 
 const sharedHosting = [
   {
-    tier: 'Starter', price: '1,500', period: '/mo',
+    tier: 'Starter', price: '3,000', period: '/mo',
     description: 'Personal sites and simple blogs. Fully set up and managed.',
     features: ['10 GB NVMe SSD', '1 Website', '5 Email Accounts', 'Free SSL', 'Weekly Backups', '500 GB Bandwidth', 'DirectAdmin Panel', 'Full Setup Included'],
   },
   {
-    tier: 'Professional', price: '2,499', period: '/mo', featured: true, badge: 'Most Popular',
+    tier: 'Professional', price: '5,000', period: '/mo', featured: true, badge: 'Most Popular',
     description: 'Growing businesses and professional portfolios. We handle everything.',
     features: ['30 GB NVMe SSD', '5 Websites', '25 Email Accounts', 'Free SSL', 'Daily Backups (14-day)', '1 TB Bandwidth', 'DirectAdmin Panel', 'Priority Support'],
   },
   {
-    tier: 'Business', price: '3,999', period: '/mo',
+    tier: 'Business', price: '8,000', period: '/mo',
     description: 'High-performance hosting for demanding websites and applications.',
     features: ['60 GB NVMe SSD', '15 Websites', '50 Email Accounts', 'Wildcard SSL', 'Daily Backups (30-day)', '2 TB Bandwidth', 'Redis Caching', 'Premium Support'],
   },
   {
-    tier: 'Enterprise', price: '6,499', period: '/mo',
+    tier: 'Enterprise', price: '13,000', period: '/mo',
     description: 'Enterprise-grade hosting for mission-critical websites.',
     features: ['120 GB NVMe SSD', 'Unlimited Websites', 'Unlimited Email', 'Wildcard SSL', 'Daily Backups (60-day)', '5 TB Bandwidth', 'Dedicated IP', 'White-Glove Support'],
   },
@@ -132,17 +132,17 @@ const sharedHosting = [
 
 const vpsPlans = [
   {
-    tier: 'Linux VPS Starter', price: '6,500', period: '/mo',
+    tier: 'Linux VPS Starter', price: '12,000', period: '/mo',
     description: 'Managed Linux VPS for small to medium workloads. Full server management included.',
     features: ['Linux OS (Ubuntu/Debian/Alma)', '2 vCPU · 4 GB RAM', '50 GB NVMe SSD', '2 TB Bandwidth', 'Root Access (SSH)', 'Full Server Setup', 'Managed Security & Firewall', 'Standard Support'],
   },
   {
-    tier: 'Linux VPS Professional', price: '10,500', period: '/mo', featured: true, badge: 'Recommended',
+    tier: 'Linux VPS Professional', price: '20,000', period: '/mo', featured: true, badge: 'Recommended',
     description: 'High-performance managed Linux VPS for production apps and e-commerce.',
     features: ['Linux OS (Ubuntu/Debian/Alma)', '4 vCPU · 8 GB RAM', '120 GB NVMe SSD', '4 TB Bandwidth', 'Root Access (SSH)', 'Full Managed Stack', 'Daily Backups (14-day)', 'Priority Support'],
   },
   {
-    tier: 'Linux VPS Enterprise', price: '17,999', period: '/mo',
+    tier: 'Linux VPS Enterprise', price: '35,000', period: '/mo',
     description: 'Enterprise-grade managed Linux VPS for mission-critical applications.',
     features: ['Linux OS (Ubuntu/Debian/Alma)', '8 vCPU · 16 GB RAM', '250 GB NVMe SSD', '8 TB Bandwidth', 'Root Access (SSH)', 'Full Managed Stack', 'Daily Backups (30-day)', 'Dedicated Account Manager'],
     ctaText: 'Contact Sales',
@@ -289,7 +289,7 @@ export default function PricingPage() {
             label="Infrastructure · Managed Linux VPS"
             title="Managed Linux VPS"
             titleGradient="Plans"
-            description={<>Dedicated Linux VPS with full management, monitoring, and security. R2,500 server + R2,500 managed support included. <strong className="text-white">We configure your entire Linux server stack from scratch.</strong></>}
+            description={<>Dedicated Linux VPS with full management, monitoring, and security. R6,000 server + R6,000 managed support included. <strong className="text-white">We configure your entire Linux server stack from scratch.</strong></>}
             dark
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

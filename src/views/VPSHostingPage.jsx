@@ -1,15 +1,14 @@
 import SectionHeader from '../components/SectionHeader'
 import PricingCard from '../components/PricingCard'
 import CTABanner from '../components/CTABanner'
-import PricingSlider from '../components/PricingSlider'
-import { BASE_PLANS } from '../services/pricingEngine'
+import UnifiedPricingSlider from '../components/UnifiedPricingSlider'
 
 /* Fully managed Linux VPS with dedicated resources */
 
 const plans = [
   {
     tier: 'Linux VPS Starter',
-    price: '6,500',
+    price: '12,000',
     period: '/mo',
     description: 'Managed Linux VPS for small to medium workloads. Full server management included.',
     features: [
@@ -29,7 +28,7 @@ const plans = [
   },
   {
     tier: 'Linux VPS Professional',
-    price: '10,500',
+    price: '20,000',
     period: '/mo',
     featured: true,
     badge: 'Recommended',
@@ -52,7 +51,7 @@ const plans = [
   },
   {
     tier: 'Linux VPS Enterprise',
-    price: '17,999',
+    price: '35,000',
     period: '/mo',
     description: 'Enterprise-grade managed Linux VPS for high-traffic, mission-critical applications.',
     features: [
@@ -125,7 +124,7 @@ export default function VPSHostingPage() {
           </h1>
           <p className="mt-4 text-lg text-[var(--color-text-light)] max-w-[700px] mx-auto">
             High-performance Linux VPS with dedicated resources, root access, and full server management — fully provisioned
-            and managed by our engineering team. <strong className="text-white">Starting from R6,500/mo.</strong>
+            and managed by our engineering team. <strong className="text-white">Starting from R12,000/mo.</strong>
           </p>
         </div>
       </section>
@@ -167,11 +166,7 @@ export default function VPSHostingPage() {
             description="Our tiered pricing adjusts based on your team size. Resources and support scale automatically across SME, Growth, and Enterprise tiers."
             dark
           />
-          <div className="flex flex-col gap-6">
-            {BASE_PLANS.vps.map((plan) => (
-              <PricingSlider key={plan.id} plan={plan} />
-            ))}
-          </div>
+          <UnifiedPricingSlider category="vps" plansProp={plans} />
         </div>
       </section>
 

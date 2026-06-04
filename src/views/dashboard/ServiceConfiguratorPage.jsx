@@ -8,8 +8,8 @@ import PricingSlider from '../../components/PricingSlider'
 import ProRataCalculator from '../../components/ProRataCalculator'
 
 const CATEGORIES = [
-  { id: 'shared', label: 'Shared Hosting', icon: '🖥️', description: 'Managed web hosting with DirectAdmin', floor: 'From R899/mo' },
-  { id: 'vps', label: 'Linux VPS Hosting', icon: '🐧', description: 'Managed Linux VPS with root access', floor: 'From R5,000/mo' },
+  { id: 'shared', label: 'Shared Hosting', icon: '🖥️', description: 'Managed web hosting with DirectAdmin', floor: 'From R3,000/mo' },
+  { id: 'vps', label: 'Linux VPS Hosting', icon: '🐧', description: 'Managed Linux VPS with root access', floor: 'From R12,000/mo' },
   { id: 'custom_dev', label: 'Custom Development', icon: '⚡', description: 'Bespoke websites & applications', floor: 'From R8,000' },
 ]
 
