@@ -6,7 +6,12 @@ export const metadata = {
   description: 'Professional web hosting, VPS servers, and domain management for South African businesses. Managed DirectAdmin hosting with 24/7 support.',
   keywords: 'web hosting, VPS, domain registration, South Africa, DirectAdmin, managed hosting',
   icons: {
-    icon: '/icon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '64x64' },
+      { url: '/images/headericon.svg', type: 'image/svg+xml' }
+    ],
+    apple: '/icon.png',
   },
 }
 
