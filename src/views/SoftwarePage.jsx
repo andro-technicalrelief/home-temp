@@ -99,12 +99,12 @@ const platformScreenshots = [
   { 
     image: '/images/platform/dashboard_custom.png', 
     title: 'Command Center', 
-    desc: 'Monitor your pipeline opportunities, conversion rates, and custom marketing funnels from a single high-precision analytics dashboard.' 
+    desc: 'Monitor your R254,000+ monthly revenue and track 843+ monthly leads with high-precision analytics. 99.98% uptime guaranteed.' 
   },
   { 
     image: '/images/platform/crm_custom.png', 
-    title: 'Email & Campaign Marketing', 
-    desc: 'Track and analyze campaign metrics with precision. Monitor open rates and delivery stats for 25,000+ sent messages.' 
+    title: 'Visual Pipelines', 
+    desc: 'Scale from Jane Doe to David Chen. Track R70k+ deals from Globex Inc and Innovate LLC with zero data leakage.' 
   },
   { 
     icon: '💬', 
