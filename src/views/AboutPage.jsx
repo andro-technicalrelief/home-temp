@@ -20,19 +20,16 @@ const infraSteps = [
 
 const timeline = [
   { icon: '💡', date: 'Jan 2026', event: 'The Idea Takes Shape', desc: 'Identified a gap in the SA market — businesses paying premium prices for "managed" hosting that was anything but. Technical Relief is born.', status: 'done' },
-  { icon: '🏗️', date: 'Feb 2026', event: 'Infrastructure Goes Live', desc: 'First VPS deployed on local infrastructure. DirectAdmin configured, Blesta billing integrated, security hardening complete. Foundation laid.', status: 'done' },
-  { icon: '🎨', date: 'Mar 2026', event: 'Command Center Launched', desc: 'Custom React dashboard goes live — billing, infrastructure monitoring, wallet, subscriptions, and project management in one unified portal.', status: 'active' },
-  { icon: '🤝', date: 'Q2 2026', event: 'First Clients Onboarded', desc: 'Onboarding our first wave of clients with fully managed shared hosting and VPS packages. Every service set up and configured end-to-end.', status: 'upcoming' },
-  { icon: '💻', date: 'Q3 2026', event: 'Custom Development Arm', desc: 'Expanding into full-stack development — custom web applications, APIs, and enterprise systems built with modern technologies.', status: 'upcoming' },
-  { icon: '🤖', date: 'Q4 2026', event: 'AI & Automation Integration', desc: 'n8n workflow automation, AI-powered monitoring, predictive scaling, and intelligent alerting. Building the infrastructure of tomorrow.', status: 'upcoming' },
-  { icon: '🚀', date: '2027', event: 'Scale & Grow', desc: 'Enterprise partnerships, expanded data centre presence, and a marketplace for one-click deployments. Making world-class hosting accessible to every SA business.', status: 'upcoming' },
+  { icon: '🏗️', date: 'Feb 2026', event: 'Infrastructure Goes Live', desc: 'First VPS deployed on local infrastructure. DirectAdmin configured, security hardening complete. Foundation laid.', status: 'done' },
+  { icon: '🎨', date: 'Mar 2026', event: 'Command Center Launched', desc: 'Custom React dashboard goes live — billing, infrastructure monitoring, wallet, subscriptions, and project management in one unified portal.', status: 'done' },
+  { icon: '🚀', date: 'Q2 2026', event: 'Full Launch & Operational Status', desc: 'Successfully launched and fully operational. All core services (shared hosting, VPS) are active, and our systems are fully certified with POPIA and HIPAA compliance.', status: 'active' },
 ]
 
 const values = [
   { icon: '🎯', title: 'Clarity Over Complexity', desc: 'We believe technology should fade into the background. If our clients need to think about their hosting, we\'ve failed.' },
   { icon: '🔧', title: 'Engineering Over Sales', desc: 'We\'d rather solve a real problem well than upsell you something you don\'t need. Our revenue comes from doing great work.' },
-  { icon: '🤝', title: 'Partnerships Over Transactions', desc: 'Every client is a long-term relationship. We grow with your business — scaling infrastructure as you scale revenue.' },
   { icon: '🛡️', title: 'Security Over Shortcuts', desc: 'We don\'t cut corners on security. Every server is hardened, every connection encrypted, every backup verified.' },
+  { icon: '⚖️', title: 'Compliance & Protection', desc: 'Fully compliant with HIPAA and POPIA standards. Your customer and patient data is protected with enterprise-level encryption and strict access controls.' },
 ]
 
 export default function AboutPage() {

@@ -1,7 +1,18 @@
 import { Link } from '@/lib/navigation'
 
-export default function PricingCard({ tier, price, period, description, features = [], ctaText = 'Get Started', ctaHref = '#', featured = false, badge = null }) {
-  const btnClass = `inline-flex items-center justify-center py-3 px-6 rounded-xl font-semibold text-sm transition-all no-underline ${
+export default function PricingCard({
+  tier,
+  price,
+  period,
+  description,
+  features = [],
+  ctaText = 'Get Started',
+  ctaHref = '#',
+  ctaOnClick = null,
+  featured = false,
+  badge = null,
+}) {
+  const btnClass = `inline-flex items-center justify-center py-3 px-6 rounded-xl font-semibold text-sm transition-all no-underline cursor-pointer ${
     featured
       ? 'bg-[var(--color-accent)] text-white shadow-[0_4px_15px_rgba(59,130,246,0.3)] hover:bg-[var(--color-accent-hover)] hover:-translate-y-0.5'
       : 'border-[1.5px] border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white'
@@ -48,7 +59,11 @@ export default function PricingCard({ tier, price, period, description, features
         ))}
       </ul>
 
-      {ctaHref.startsWith('/') ? (
+      {ctaOnClick ? (
+        <button onClick={ctaOnClick} className={btnClass}>
+          {ctaText}
+        </button>
+      ) : ctaHref.startsWith('/') ? (
         <Link to={ctaHref} className={btnClass}>
           {ctaText}
         </Link>

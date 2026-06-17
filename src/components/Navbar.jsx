@@ -2,8 +2,16 @@
 
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from '@/lib/navigation'
+import { useApp } from '@/context/AppContext'
 
 const navDropdowns = {
+  Industries: [
+    { label: 'Medical & Doctors', to: '/industries/doctors' },
+    { label: 'Construction & Property', to: '/industries/construction' },
+    { label: 'Coaches & Educators', to: '/industries/coaches' },
+    { label: 'Lawyers & Accountants', to: '/industries/lawyers-accountants' },
+    { label: 'Realtors & Agencies', to: '/industries/realtors' },
+  ],
   Domains: [
     { label: 'Register a Domain', to: '/domains/register' },
     { label: 'Transfer a Domain', to: '/domains/transfer' },
@@ -15,6 +23,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(null)
   const location = useLocation()
+  const { openBooking } = useApp()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -97,6 +106,12 @@ export default function Navbar() {
               <Link to="/get-started" className="flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-light)] hover:bg-[var(--color-bg-card-hover)] hover:text-white transition-all text-sm no-underline">
                 🚀 Getting Started
               </Link>
+              <button
+                onClick={openBooking}
+                className="w-full text-left flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-light)] hover:bg-[var(--color-bg-card-hover)] hover:text-white transition-all text-sm no-underline cursor-pointer"
+              >
+                📅 Book a Call
+              </button>
               <Link to="/login" className="flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-light)] hover:bg-[var(--color-bg-card-hover)] hover:text-white transition-all text-sm no-underline">
                 🔑 Login
               </Link>
@@ -159,10 +174,19 @@ export default function Navbar() {
           <Link
             to="/get-started"
             onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center w-full py-3 bg-[var(--color-accent)] text-white font-semibold rounded-xl hover:bg-[var(--color-accent-hover)] transition-all no-underline"
+            className="flex items-center justify-center w-full py-3 border border-[var(--color-border-dark)] text-[var(--color-text-light)] font-semibold rounded-xl hover:text-white hover:border-white/20 transition-all no-underline"
           >
             🚀 Get Started
           </Link>
+          <button
+            onClick={() => {
+              setMobileOpen(false)
+              openBooking()
+            }}
+            className="flex items-center justify-center w-full py-3 bg-[var(--color-accent)] text-white font-semibold rounded-xl hover:bg-[var(--color-accent-hover)] transition-all no-underline cursor-pointer"
+          >
+            📅 Book a Call
+          </button>
           <Link
             to="/login"
             onClick={() => setMobileOpen(false)}

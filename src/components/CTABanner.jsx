@@ -1,6 +1,15 @@
 import { Link } from '@/lib/navigation'
 
-export default function CTABanner({ title, description, primaryText, primaryHref, secondaryText, secondaryHref }) {
+export default function CTABanner({
+  title,
+  description,
+  primaryText,
+  primaryHref,
+  primaryOnClick,
+  secondaryText,
+  secondaryHref,
+  secondaryOnClick,
+}) {
   return (
     <div className="relative bg-gradient-to-br from-[var(--color-bg-navy)] to-[var(--color-bg-dark)] rounded-3xl p-12 md:p-16 text-center overflow-hidden border border-[var(--color-border-dark)]">
       {/* Glow */}
@@ -13,7 +22,14 @@ export default function CTABanner({ title, description, primaryText, primaryHref
           <p className="text-[var(--color-text-light)] text-lg max-w-[600px] mx-auto mb-8">{description}</p>
         )}
         <div className="flex flex-wrap justify-center gap-4">
-          {primaryHref?.startsWith('/') ? (
+          {primaryOnClick ? (
+            <button
+              onClick={primaryOnClick}
+              className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-accent)] text-white font-semibold rounded-xl shadow-[0_4px_15px_rgba(59,130,246,0.3)] hover:bg-[var(--color-accent-hover)] hover:-translate-y-0.5 transition-all no-underline text-[17px] cursor-pointer"
+            >
+              {primaryText}
+            </button>
+          ) : primaryHref?.startsWith('/') ? (
             <Link to={primaryHref} className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-accent)] text-white font-semibold rounded-xl shadow-[0_4px_15px_rgba(59,130,246,0.3)] hover:bg-[var(--color-accent-hover)] hover:-translate-y-0.5 transition-all no-underline text-[17px]">
               {primaryText}
             </Link>
@@ -23,7 +39,14 @@ export default function CTABanner({ title, description, primaryText, primaryHref
             </a>
           )}
           {secondaryText && (
-            secondaryHref?.startsWith('/') ? (
+            secondaryOnClick ? (
+              <button
+                onClick={secondaryOnClick}
+                className="inline-flex items-center justify-center px-8 py-4 border-[1.5px] border-white/25 text-white font-semibold rounded-xl hover:bg-white/8 hover:border-white/50 transition-all no-underline text-[17px] cursor-pointer"
+              >
+                {secondaryText}
+              </button>
+            ) : secondaryHref?.startsWith('/') ? (
               <Link to={secondaryHref} className="inline-flex items-center justify-center px-8 py-4 border-[1.5px] border-white/25 text-white font-semibold rounded-xl hover:bg-white/8 hover:border-white/50 transition-all no-underline text-[17px]">
                 {secondaryText}
               </Link>

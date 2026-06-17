@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader'
 import PricingCard from '../components/PricingCard'
 import CTABanner from '../components/CTABanner'
 import FadeIn, { StaggerContainer, StaggerItem } from '../components/FadeIn'
+import { useApp } from '@/context/AppContext'
 
 const softwarePlans = [
   {
@@ -120,6 +121,7 @@ const platformScreenshots = [
 ]
 
 export default function SoftwarePage() {
+  const { openBooking } = useApp()
   return (
     <main className="bg-[var(--color-bg-dark)]">
       {/* Hero Section */}
@@ -139,12 +141,12 @@ export default function SoftwarePage() {
               Consolidate your entire tech stack into a single, powerful platform. From lead generation to automated fulfillment, manage your entire business on the go.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link 
-                to="/get-started" 
-                className="px-8 py-4 bg-[var(--color-accent)] text-white font-bold rounded-xl shadow-[0_4px_20px_rgba(59,130,246,0.4)] hover:bg-[var(--color-accent-hover)] transition-all hover:-translate-y-1 no-underline"
+              <button 
+                onClick={openBooking} 
+                className="px-8 py-4 bg-[var(--color-accent)] text-white font-bold rounded-xl shadow-[0_4px_20px_rgba(59,130,246,0.4)] hover:bg-[var(--color-accent-hover)] transition-all hover:-translate-y-1 no-underline cursor-pointer"
               >
                 Book a Call
-              </Link>
+              </button>
               <a 
                 href="#plans" 
                 className="px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white/10 transition-all no-underline backdrop-blur-sm"
@@ -259,12 +261,12 @@ export default function SoftwarePage() {
                 ))}
               </ul>
               <div className="flex gap-4">
-                <Link 
-                  to="/get-started" 
-                  className="px-8 py-3 bg-[var(--color-accent)] text-white font-semibold rounded-xl hover:bg-[var(--color-accent-hover)] transition-all no-underline"
+                <button 
+                  onClick={openBooking} 
+                  className="px-8 py-3 bg-[var(--color-accent)] text-white font-semibold rounded-xl hover:bg-[var(--color-accent-hover)] transition-all no-underline cursor-pointer"
                 >
                   Book a Call
-                </Link>
+                </button>
               </div>
             </FadeIn>
           </div>
@@ -358,7 +360,7 @@ export default function SoftwarePage() {
               <PricingCard 
                 key={p.tier} 
                 {...p} 
-                ctaHref="/get-started" 
+                ctaOnClick={openBooking} 
               />
             ))}
           </div>
@@ -375,7 +377,7 @@ export default function SoftwarePage() {
             title="Start Your Digital Transformation"
             description="Talk to our team to see how Technical Relief can automate your sales, capture leads, and support your clients."
             primaryText="Talk to Our Team"
-            primaryHref="/get-started"
+            primaryOnClick={openBooking}
             secondaryText="Learn More"
             secondaryHref="#features"
           />

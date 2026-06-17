@@ -10,6 +10,7 @@ const AppContext = createContext(null)
  */
 export function AppProvider({ children }) {
   const [toasts, setToasts] = useState([])
+  const [isBookingOpen, setIsBookingOpen] = useState(false)
 
   const addToast = useCallback((message, type = 'info', duration = 4000) => {
     const id = Date.now() + Math.random()
@@ -19,8 +20,11 @@ export function AppProvider({ children }) {
     }, duration)
   }, [])
 
+  const openBooking = useCallback(() => setIsBookingOpen(true), [])
+  const closeBooking = useCallback(() => setIsBookingOpen(false), [])
+
   return (
-    <AppContext.Provider value={{ toasts, addToast }}>
+    <AppContext.Provider value={{ toasts, addToast, isBookingOpen, openBooking, closeBooking }}>
       {children}
       {/* Toast container */}
       <div className="fixed bottom-6 right-6 z-[9999] flex flex-col gap-3">

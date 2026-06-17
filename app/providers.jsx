@@ -2,6 +2,7 @@
 
 import { AuthProvider } from '@/context/AuthContext'
 import { AppProvider } from '@/context/AppContext'
+import BookingModal from '@/components/BookingModal'
 
 /**
  * Client-side providers wrapper.
@@ -12,6 +13,7 @@ export function Providers({ children }) {
     <AuthProvider>
       <AppProvider>
         {children}
+        <BookingModal />
       </AppProvider>
     </AuthProvider>
   )

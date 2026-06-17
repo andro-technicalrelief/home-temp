@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import SectionHeader from '../components/SectionHeader'
 import CTABanner from '../components/CTABanner'
 import FadeIn, { StaggerContainer, StaggerItem } from '../components/FadeIn'
+import { useApp } from '@/context/AppContext'
 
 
 /* ═══════════════════════════════════════════════════════
@@ -108,6 +109,7 @@ function FAQAccordion({ items }) {
    ═══════════════════════════════════════════════════════ */
 
 export default function HomePage() {
+  const { openBooking } = useApp()
   return (
     <main>
       {/* ─── HERO ─── */}
@@ -410,7 +412,7 @@ export default function HomePage() {
               primaryText="View Plans & Pricing"
               primaryHref="/pricing"
               secondaryText="Talk to Our Team"
-              secondaryHref="/get-started"
+              secondaryOnClick={openBooking}
             />
           </FadeIn>
         </div>
