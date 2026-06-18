@@ -24,7 +24,7 @@ export default function BookingModal() {
 
   const bookingUrl =
     process.env.NEXT_PUBLIC_BOOKING_URL ||
-    'https://api.leadconnectorhq.com/widget/booking/ykYa2zxHu6dYJjJsW1Zn'
+    'https://api.leadconnectorhq.com/widget/booking/mVorgr835HYpP90X68o5'
 
   return (
     <AnimatePresence>
