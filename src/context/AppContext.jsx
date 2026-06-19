@@ -20,7 +20,17 @@ export function AppProvider({ children }) {
     }, duration)
   }, [])
 
-  const openBooking = useCallback(() => setIsBookingOpen(true), [])
+  const openBooking = useCallback(() => {
+    if (typeof window !== 'undefined' && (window.innerWidth < 768 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent))) {
+      const bookingUrl =
+        process.env.NEXT_PUBLIC_BOOKING_URL ||
+        'https://api.leadconnectorhq.com/widget/booking/mVorgr835HYpP90X68o5'
+      window.open(bookingUrl, '_blank')
+    } else {
+      setIsBookingOpen(true)
+    }
+  }, [])
+
   const closeBooking = useCallback(() => setIsBookingOpen(false), [])
 
   return (
