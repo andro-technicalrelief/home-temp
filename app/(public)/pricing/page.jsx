@@ -1,7 +1,5 @@
-'use client'
-
-import PricingPage from '@/views/PricingPage'
+import { redirect } from 'next/navigation'
 
 export default function Page() {
-  return <PricingPage />
+  redirect('/get-started')
 }
