@@ -2,8 +2,16 @@
 
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from '@/lib/navigation'
+import { useApp } from '@/context/AppContext'
 
 const navDropdowns = {
+  Industries: [
+    { label: 'Medical & Doctors', to: '/industries/doctors' },
+    { label: 'Construction & Property', to: '/industries/construction' },
+    { label: 'Coaches & Educators', to: '/industries/coaches' },
+    { label: 'Lawyers & Accountants', to: '/industries/lawyers-accountants' },
+    { label: 'Realtors & Agencies', to: '/industries/realtors' },
+  ],
   Domains: [
     { label: 'Register a Domain', to: '/domains/register' },
     { label: 'Transfer a Domain', to: '/domains/transfer' },
@@ -15,6 +23,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(null)
   const location = useLocation()
+  const { openBooking } = useApp()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -59,7 +68,7 @@ export default function Navbar() {
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-6">
           <NavLink to="/" active={isActive('/')}>Home</NavLink>
-          <NavLink to="/#architecture" active={false}>Architecture</NavLink>
+          <NavLink to="/about" active={isActive('/about')}>About</NavLink>
 
           {Object.entries(navDropdowns).map(([label, items]) => (
             <div key={label} className="relative group">
@@ -80,24 +89,33 @@ export default function Navbar() {
             </div>
           ))}
 
-          <NavLink to="/about" active={isActive('/about')}>About</NavLink>
-          <NavLink to="/knowledge-base" active={isActive('/knowledge-base')}>Knowledge Base</NavLink>
+          <NavLink to="/hosting" active={isActive('/hosting')}>Hosting</NavLink>
+          <NavLink to="/vps" active={isActive('/vps')}>VPS</NavLink>
+          <NavLink to="/pricing" active={isActive('/pricing')}>Pricing</NavLink>
+          <NavLink to="/knowledge-base" active={isActive('/knowledge-base')}>Help</NavLink>
         </div>
 
-        {/* Right side — CTA + Login */}
-        <div className="flex items-center gap-3">
-          <Link
-            to="/login"
-            className="hidden lg:inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium text-[var(--color-text-light)] hover:text-white transition-colors no-underline"
-          >
-            Login
-          </Link>
-          <Link
-            to="/get-started"
-            className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-xl bg-[var(--color-accent)] text-white shadow-[0_4px_15px_rgba(59,130,246,0.3)] hover:bg-[var(--color-accent-hover)] hover:-translate-y-0.5 hover:shadow-[0_6px_25px_rgba(59,130,246,0.4)] transition-all no-underline"
-          >
-            Request Architecture Session
-          </Link>
+        {/* Right side — Get Started dropdown */}
+        <div className="flex items-center gap-4">
+          <div className="hidden lg:block relative group">
+            <button className="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl bg-[var(--color-accent)] text-white shadow-[0_4px_15px_rgba(59,130,246,0.3)] hover:bg-[var(--color-accent-hover)] hover:-translate-y-0.5 hover:shadow-[0_6px_25px_rgba(59,130,246,0.4)] transition-all cursor-pointer">
+              Get Started <span className="text-xs">▾</span>
+            </button>
+            <div className="absolute top-full right-0 mt-2 min-w-[200px] bg-[var(--color-bg-navy)]/98 backdrop-blur-2xl border border-[var(--color-border-dark)] rounded-xl p-2 shadow-[0_20px_60px_rgba(0,0,0,0.4)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-250 translate-y-2 group-hover:translate-y-0">
+              <Link to="/get-started" className="flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-light)] hover:bg-[var(--color-bg-card-hover)] hover:text-white transition-all text-sm no-underline">
+                🚀 Getting Started
+              </Link>
+              <button
+                onClick={openBooking}
+                className="w-full text-left flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-light)] hover:bg-[var(--color-bg-card-hover)] hover:text-white transition-all text-sm no-underline cursor-pointer"
+              >
+                📅 Book a Call
+              </button>
+              <Link to="/login" className="flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-light)] hover:bg-[var(--color-bg-card-hover)] hover:text-white transition-all text-sm no-underline">
+                🔑 Login
+              </Link>
+            </div>
+          </div>
 
           {/* Mobile Toggle */}
           <button
@@ -119,7 +137,7 @@ export default function Navbar() {
         }`}
       >
         <MobileNavLink to="/" active={isActive('/')} onClick={() => setMobileOpen(false)}>Home</MobileNavLink>
-        <MobileNavLink to="/#architecture" active={false} onClick={() => setMobileOpen(false)}>Architecture</MobileNavLink>
+        <MobileNavLink to="/about" active={isActive('/about')} onClick={() => setMobileOpen(false)}>About</MobileNavLink>
 
         {Object.entries(navDropdowns).map(([label, items]) => (
           <div key={label}>
@@ -145,23 +163,34 @@ export default function Navbar() {
           </div>
         ))}
 
-        <MobileNavLink to="/about" active={isActive('/about')} onClick={() => setMobileOpen(false)}>About</MobileNavLink>
-        <MobileNavLink to="/knowledge-base" active={isActive('/knowledge-base')} onClick={() => setMobileOpen(false)}>Knowledge Base</MobileNavLink>
+        <MobileNavLink to="/hosting" active={isActive('/hosting')} onClick={() => setMobileOpen(false)}>Hosting</MobileNavLink>
+        <MobileNavLink to="/vps" active={isActive('/vps')} onClick={() => setMobileOpen(false)}>VPS</MobileNavLink>
+        <MobileNavLink to="/pricing" active={isActive('/pricing')} onClick={() => setMobileOpen(false)}>Pricing</MobileNavLink>
+        <MobileNavLink to="/knowledge-base" active={isActive('/knowledge-base')} onClick={() => setMobileOpen(false)}>Help</MobileNavLink>
 
         <div className="mt-auto pt-6 border-t border-[var(--color-border-dark)] flex flex-col gap-2">
+          <Link
+            to="/get-started"
+            onClick={() => setMobileOpen(false)}
+            className="flex items-center justify-center w-full py-3 border border-[var(--color-border-dark)] text-[var(--color-text-light)] font-semibold rounded-xl hover:text-white hover:border-white/20 transition-all no-underline"
+          >
+            🚀 Get Started
+          </Link>
+          <button
+            onClick={() => {
+              setMobileOpen(false)
+              openBooking()
+            }}
+            className="flex items-center justify-center w-full py-3 bg-[var(--color-accent)] text-white font-semibold rounded-xl hover:bg-[var(--color-accent-hover)] transition-all no-underline cursor-pointer"
+          >
+            📅 Book a Call
+          </button>
           <Link
             to="/login"
             onClick={() => setMobileOpen(false)}
             className="flex items-center justify-center w-full py-3 border border-[var(--color-border-dark)] text-[var(--color-text-light)] font-semibold rounded-xl hover:text-white hover:border-white/20 transition-all no-underline"
           >
             🔑 Login
-          </Link>
-          <Link
-            to="/get-started"
-            onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center w-full py-3 bg-[var(--color-accent)] text-white font-semibold rounded-xl hover:bg-[var(--color-accent-hover)] transition-all no-underline"
-          >
-            Request Architecture Session
           </Link>
         </div>
       </div>

@@ -4,17 +4,19 @@ import { useState, useEffect } from 'react'
 import { Link } from '@/lib/navigation'
 
 const footerLinks = {
-  Platform: [
-    { label: 'Architecture', to: '/#architecture' },
-    { label: 'Command Center', to: '/#command-center' },
-    { label: 'Edge Hosting', to: '/#architecture' },
+  Services: [
+    { label: 'Managed Hosting', to: '/hosting' },
+    { label: 'Linux VPS Hosting', to: '/vps' },
+    { label: 'Netlify Hosting', to: '/pricing#netlify-hosting' },
     { label: 'Domain Registration', to: '/domains/register' },
     { label: 'Domain Transfer', to: '/domains/transfer' },
+    { label: 'Pricing', to: '/pricing' },
   ],
   Company: [
     { label: 'About Us', to: '/about' },
     { label: 'Knowledge Base', to: '/knowledge-base' },
-    { label: 'Client Login', to: '/login' },
+    { label: 'Client Area', to: '/login' },
+    { label: 'Support', to: '/login' },
   ],
   Legal: [
     { label: 'Terms & Conditions', to: '/terms' },
@@ -69,7 +71,7 @@ export default function Footer() {
                 </div>
               </Link>
               <p className="text-[var(--color-text-muted)] text-sm leading-relaxed mb-4">
-                Custom-engineered Next.js applications and Command Center backends, deployed on bulletproof edge infrastructure. Built for established businesses that demand performance.
+                Premium managed hosting, full-stack development, and custom backend integrations. Everything is set up and managed for you — enterprise-grade infrastructure with engineering discipline.
               </p>
               <div className="flex items-center gap-2 text-[var(--color-success)] text-xs font-medium">
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-success)] animate-pulse" />
